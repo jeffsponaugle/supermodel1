@@ -47,5 +47,11 @@ On the current PCB power usage is about 2.6 watts running VGA output and an 8Mhz
 
 ![First Prototype PCB](SM1_ProtoB.jpeg)
 
+### Technical Notes
+
+Video memory is shared between the CPU and the Video Drive Processor (the CPLD that creates video) via a shared timeslot clock.  The timeslot clock runs at 12.5875 Mhz (25.175/2), and each full clock period is allocated to either the CPU or the VDP.  This clock perios is much smaller than the minumum access time needed by either requested so it allows completion of the transaction within to allocated time without adding wait_states or skipping pixels on the output.  This gives access to the video memory from the CPU without the aritifacts present on the original TRS-80 model 1.
+
+Video out is either NTSC B&W Composite *or* VGA 640x480.  Due to resource limiations in the CPLD it is not possible to do both at the same time.  The actual video pixel output is 512x384 using a 8x12 font resource in the default 64x16/32x16 text mode.  Support is also possible for 80x24 using 640x480 using 8x10 font resouces, as well as a bitmap 512x384 direct bit access.  All output is currently B&W only.
+
 
 (Authors:  Jeff Sponaugle, Neil Bradley)
