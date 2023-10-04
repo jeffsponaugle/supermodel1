@@ -22,6 +22,8 @@ This work is Open-Source, Open-Hardware, and free for anyone to use.
 
 + 256K of FONT RAM with direct CPU access to allow software fonts (8x16)
 
++ Real-Time-Clock and 192 bytes of NVRAM for setup/boot characteristic. 
+
 + Compatible exeternal inteface port for original Tandy/RadioShack Expansion Interface
 
 + Cassette interface
