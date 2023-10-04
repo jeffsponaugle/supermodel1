@@ -1,0 +1,471 @@
+{COMPONENT C:\VID_MAIN_VGA.SYM
+
+ {ENVIRONMENT
+  {PDIFvrev 3.00}
+  {Program "CUPL(WM) Version 5.0a"}
+  {DBtype "Schematic"}
+  {DBvrev 1.01}
+  {DBtime "Mon Oct 02 20:40:23 2023 "}
+  {DBunit "MIL"}
+  {DBgrid 10}
+  {Lyrstr "WIRES" 1 "BUS" 1 "GATE" 2 "IEEE" 2 "PINFUN" 3 "PINNUM" 1 
+          "PINNAM" 6 "PINCON" 4 "REFDES" 2 "ATTR" 6 "SDOT" 1 
+          "DEVICE" 5 "OUTLIN" 5 "ATTR2" 6 "NOTES" 6 "NETNAM" 4 
+          "CMPNAM" 5 "BORDER" 5}
+ }
+
+ {USER
+  {VIEW
+   {Mode SYMB}
+   {Nlst OPEN}
+   {Vw 0 0 2}
+   {Lv 12 2 2 2 0 0 2 2 2 2 0 0 2 1 2 0 0 0 0}
+   {Gs 10 10}
+  }
+ }
+
+ {DISPLAY
+  [Ly "PINNUM"]
+  [Ls "SOLID"][Wd 0]
+  [Ts 15][Tj "LC"][Tr 0][Tm "N"]
+ }
+
+ {SYMBOL
+  {PIN_DEF
+   [Ly "PINCON"]
+   {P CLK_25M {Pt "INPUT"}{Lq 0}{Ploc 100 760}}
+   {P RESET_IN {Pt "INPUT"}{Lq 0}{Ploc 100 720}}
+   {P V64OR32M {Pt "INPUT"}{Lq 0}{Ploc 100 700}}
+   {P VID_MEM_ {Pt "INPUT"}{Lq 0}{Ploc 100 680}}
+   {P VID_RW {Pt "INPUT"}{Lq 0}{Ploc 100 660}}
+   {P FONTLI2 {Pt "INPUT"}{Lq 0}{Ploc 100 640}}
+   {P CPU_A0 {Pt "INPUT"}{Lq 0}{Ploc 100 620}}
+   {P CPU_A1 {Pt "INPUT"}{Lq 0}{Ploc 100 600}}
+   {P VID_CP6 {Pt "INPUT"}{Lq 0}{Ploc 100 580}}
+   {P Z80_WAIT {Pt "INPUT"}{Lq 0}{Ploc 100 560}}
+   {P MODE0 {Pt "INPUT"}{Lq 0}{Ploc 100 540}}
+   {P MODE1 {Pt "INPUT"}{Lq 0}{Ploc 100 520}}
+   {P MODE2 {Pt "INPUT"}{Lq 0}{Ploc 100 500}}
+   {P VM_ADDR_ {Pt "INPUT"}{Lq 0}{Ploc 100 480}}
+   {P DIN0 {Pt "INPUT"}{Lq 0}{Ploc 100 460}}
+   {P DIN1 {Pt "INPUT"}{Lq 0}{Ploc 100 440}}
+   {P DIN2 {Pt "INPUT"}{Lq 0}{Ploc 100 420}}
+   {P DIN3 {Pt "INPUT"}{Lq 0}{Ploc 100 400}}
+   {P DIN4 {Pt "INPUT"}{Lq 0}{Ploc 100 380}}
+   {P DIN5 {Pt "INPUT"}{Lq 0}{Ploc 100 360}}
+   {P DIN6 {Pt "INPUT"}{Lq 0}{Ploc 100 340}}
+   {P DIN7 {Pt "INPUT"}{Lq 0}{Ploc 100 320}}
+   {P NTSC_SYN {Pt "INPUT"}{Lq 0}{Ploc 100 300}}
+   {P NTSC_PIX {Pt "INPUT"}{Lq 0}{Ploc 100 280}}
+   {P VGA_HSYN {Pt "INPUT"}{Lq 0}{Ploc 100 260}}
+   {P VGA_VSYN {Pt "INPUT"}{Lq 0}{Ploc 100 240}}
+   {P VGA_VIDE {Pt "INPUT"}{Lq 0}{Ploc 100 220}}
+   {P CPU_D0 {Pt "INPUT"}{Lq 0}{Ploc 100 200}}
+   {P CPU_D1 {Pt "INPUT"}{Lq 0}{Ploc 100 180}}
+   {P CPU_D2 {Pt "INPUT"}{Lq 0}{Ploc 100 160}}
+   {P CPU_D3 {Pt "INPUT"}{Lq 0}{Ploc 100 140}}
+   {P CPU_D4 {Pt "INPUT"}{Lq 0}{Ploc 100 120}}
+   {P CPU_D5 {Pt "INPUT"}{Lq 0}{Ploc 100 100}}
+   {P CPU_D6 {Pt "INPUT"}{Lq 0}{Ploc 100 80}}
+   {P CPU_D7 {Pt "INPUT"}{Lq 0}{Ploc 100 60}}
+   {P VID_CP5 {Pt "INPUT"}{Lq 0}{Ploc 100 40}}
+   {P VID_IO_C {Pt "INPUT"}{Lq 0}{Ploc 100 20}}
+   {P FONTLI0 {Pt "I/O"}{Lq 0}{Ploc 360 20}}
+   {P FONTLI1 {Pt "I/O"}{Lq 0}{Ploc 360 40}}
+   {P FONTLI3 {Pt "I/O"}{Lq 0}{Ploc 360 60}}
+   {P FONTSEL0 {Pt "I/O"}{Lq 0}{Ploc 360 80}}
+   {P FONTSEL1 {Pt "I/O"}{Lq 0}{Ploc 360 100}}
+   {P FONTSEL2 {Pt "I/O"}{Lq 0}{Ploc 360 120}}
+   {P FONTSEL3 {Pt "I/O"}{Lq 0}{Ploc 360 140}}
+   {P FM_A10 {Pt "I/O"}{Lq 0}{Ploc 360 160}}
+   {P FM_A11 {Pt "I/O"}{Lq 0}{Ploc 360 180}}
+   {P VM_PAGE0 {Pt "I/O"}{Lq 0}{Ploc 360 200}}
+   {P VM_PAGE1 {Pt "I/O"}{Lq 0}{Ploc 360 220}}
+   {P VM_PAGE2 {Pt "I/O"}{Lq 0}{Ploc 360 240}}
+   {P VM_PAGE3 {Pt "I/O"}{Lq 0}{Ploc 360 260}}
+   {P VM_OE {Pt "I/O"}{Lq 0}{Ploc 360 280}}
+   {P VM_WE {Pt "I/O"}{Lq 0}{Ploc 360 300}}
+   {P CP_VM_AD {Pt "I/O"}{Lq 0}{Ploc 360 320}}
+   {P VM_DATA {Pt "I/O"}{Lq 0}{Ploc 360 340}}
+   {P VM_DATA_ {Pt "I/O"}{Lq 0}{Ploc 360 360}}
+   {P CP_FM_DA {Pt "I/O"}{Lq 0}{Ploc 360 380}}
+   {P VM_ADD {Pt "I/O"}{Lq 0}{Ploc 360 400}}
+   {P VM_ADDR {Pt "I/O"}{Lq 0}{Ploc 360 420}}
+   {P CP_VM_DW {Pt "I/O"}{Lq 0}{Ploc 360 440}}
+   {P CP_VM_D {Pt "I/O"}{Lq 0}{Ploc 360 460}}
+   {P CP_VM_DR {Pt "I/O"}{Lq 0}{Ploc 360 480}}
+   {P FM_WE {Pt "I/O"}{Lq 0}{Ploc 360 500}}
+   {P FM_OE {Pt "I/O"}{Lq 0}{Ploc 360 520}}
+   {P VID_CP4 {Pt "I/O"}{Lq 0}{Ploc 360 540}}
+  }
+
+  {PKG
+   [Ly "REFDES"]
+   [Ts 25][Tj "CB"][Tr 0][Tm "N"]
+   {Rdl 230 790}
+
+   [Ly "PINNUM"]
+   [Ts 15][Tj "RC"]
+   {Pnl 120 770}
+   [Ts 15][Tj "RC"]
+   {Pnl 120 730}
+   {Pnl 120 710}
+   {Pnl 120 690}
+   {Pnl 120 670}
+   {Pnl 120 650}
+   {Pnl 120 630}
+   {Pnl 120 610}
+   {Pnl 120 590}
+   {Pnl 120 570}
+   {Pnl 120 550}
+   {Pnl 120 530}
+   {Pnl 120 510}
+   {Pnl 120 490}
+   {Pnl 120 470}
+   {Pnl 120 450}
+   {Pnl 120 430}
+   {Pnl 120 410}
+   {Pnl 120 390}
+   {Pnl 120 370}
+   {Pnl 120 350}
+   {Pnl 120 330}
+   {Pnl 120 310}
+   {Pnl 120 290}
+   {Pnl 120 270}
+   {Pnl 120 250}
+   {Pnl 120 230}
+   {Pnl 120 210}
+   {Pnl 120 190}
+   {Pnl 120 170}
+   {Pnl 120 150}
+   {Pnl 120 130}
+   {Pnl 120 110}
+   {Pnl 120 90}
+   {Pnl 120 70}
+   {Pnl 120 50}
+   {Pnl 120 30}
+   [Ts 15][Tj "LC"]
+   {Pnl 340 30}
+   {Pnl 340 50}
+   {Pnl 340 70}
+   {Pnl 340 90}
+   {Pnl 340 110}
+   {Pnl 340 130}
+   {Pnl 340 150}
+   {Pnl 340 170}
+   {Pnl 340 190}
+   {Pnl 340 210}
+   {Pnl 340 230}
+   {Pnl 340 250}
+   {Pnl 340 270}
+   {Pnl 340 290}
+   {Pnl 340 310}
+   {Pnl 340 330}
+   {Pnl 340 350}
+   {Pnl 340 370}
+   {Pnl 340 390}
+   {Pnl 340 410}
+   {Pnl 340 430}
+   {Pnl 340 450}
+   {Pnl 340 470}
+   {Pnl 340 490}
+   {Pnl 340 510}
+   {Pnl 340 530}
+   {Pnl 340 550}
+
+   {Sd A 83 1 2 4 5 9 17 18 22 29 33 34 35 44 50 51 52 54 55 56 57 58 60 61 63 64 65 67 68 69 70 73 74 75 76 81 84 6 8 10 11 12 15 16 20 21 24 25 27 28 30 31 36 37 39 40 41 45 46 48 49 77 79 80}
+  }
+
+  {PIC
+   [Ly "GATE"]
+   [Ts 15][Tj "LC"][Tr 0][Tm "N"]
+   {R 130 780 330 0}
+   {L 130 760 100 760}
+   {L 130 770 140 760 130 750}
+   {L 130 720 100 720}
+   {L 130 700 100 700}
+   {L 130 680 100 680}
+   {L 130 660 100 660}
+   {L 130 640 100 640}
+   {L 130 620 100 620}
+   {L 130 600 100 600}
+   {L 130 580 100 580}
+   {L 130 560 100 560}
+   {L 130 540 100 540}
+   {L 130 520 100 520}
+   {L 130 500 100 500}
+   {L 130 480 100 480}
+   {L 130 460 100 460}
+   {L 130 440 100 440}
+   {L 130 420 100 420}
+   {L 130 400 100 400}
+   {L 130 380 100 380}
+   {L 130 360 100 360}
+   {L 130 340 100 340}
+   {L 130 320 100 320}
+   {L 130 300 100 300}
+   {L 130 280 100 280}
+   {L 130 260 100 260}
+   {L 130 240 100 240}
+   {L 130 220 100 220}
+   {L 130 200 100 200}
+   {L 130 180 100 180}
+   {L 130 160 100 160}
+   {L 130 140 100 140}
+   {L 130 120 100 120}
+   {L 130 100 100 100}
+   {L 130 80 100 80}
+   {L 130 60 100 60}
+   {L 130 40 100 40}
+   {L 130 20 100 20}
+   {L 330 20 360 20}
+   {L 330 40 360 40}
+   {L 330 60 360 60}
+   {L 330 80 360 80}
+   {L 330 100 360 100}
+   {L 330 120 360 120}
+   {L 330 140 360 140}
+   {L 330 160 360 160}
+   {L 330 180 360 180}
+   {L 330 200 360 200}
+   {L 330 220 360 220}
+   {L 330 240 360 240}
+   {L 330 260 360 260}
+   {L 330 280 360 280}
+   {L 330 300 360 300}
+   {L 330 320 360 320}
+   {L 330 340 360 340}
+   {L 330 360 360 360}
+   {L 330 380 360 380}
+   {L 330 400 360 400}
+   {L 330 420 360 420}
+   {L 330 440 360 440}
+   {L 330 460 360 460}
+   {L 330 480 360 480}
+   {L 330 500 360 500}
+   {L 330 520 360 520}
+   {L 330 540 360 540}
+   [Ly "PINNAM"]
+   [Tj "LC"]
+   {T "CLK_25M" 140 760}
+   {T "RESET_IN" 140 720}
+   {T "V64OR32M" 140 700}
+   {T "VID_MEM_" 140 680}
+   {T "VID_RW" 140 660}
+   {T "FONTLI2" 140 640}
+   {T "CPU_A0" 140 620}
+   {T "CPU_A1" 140 600}
+   {T "VID_CP6" 140 580}
+   {T "Z80_WAIT" 140 560}
+   {T "MODE0" 140 540}
+   {T "MODE1" 140 520}
+   {T "MODE2" 140 500}
+   {T "VM_ADDR_" 140 480}
+   {T "DIN0" 140 460}
+   {T "DIN1" 140 440}
+   {T "DIN2" 140 420}
+   {T "DIN3" 140 400}
+   {T "DIN4" 140 380}
+   {T "DIN5" 140 360}
+   {T "DIN6" 140 340}
+   {T "DIN7" 140 320}
+   {T "NTSC_SYN" 140 300}
+   {T "NTSC_PIX" 140 280}
+   {T "VGA_HSYN" 140 260}
+   {T "VGA_VSYN" 140 240}
+   {T "VGA_VIDE" 140 220}
+   {T "CPU_D0" 140 200}
+   {T "CPU_D1" 140 180}
+   {T "CPU_D2" 140 160}
+   {T "CPU_D3" 140 140}
+   {T "CPU_D4" 140 120}
+   {T "CPU_D5" 140 100}
+   {T "CPU_D6" 140 80}
+   {T "CPU_D7" 140 60}
+   {T "VID_CP5" 140 40}
+   {T "VID_IO_C" 140 20}
+   [Tj "RC"]
+   {T "FONTLI0" 320 20}
+   {T "FONTLI1" 320 40}
+   {T "FONTLI3" 320 60}
+   {T "FONTSEL0" 320 80}
+   {T "FONTSEL1" 320 100}
+   {T "FONTSEL2" 320 120}
+   {T "FONTSEL3" 320 140}
+   {T "FM_A10" 320 160}
+   {T "FM_A11" 320 180}
+   {T "VM_PAGE0" 320 200}
+   {T "VM_PAGE1" 320 220}
+   {T "VM_PAGE2" 320 240}
+   {T "VM_PAGE3" 320 260}
+   {T "VM_OE" 320 280}
+   {T "VM_WE" 320 300}
+   {T "CP_VM_AD" 320 320}
+   {T "VM_DATA" 320 340}
+   {T "VM_DATA_" 320 360}
+   {T "CP_FM_DA" 320 380}
+   {T "VM_ADD" 320 400}
+   {T "VM_ADDR" 320 420}
+   {T "CP_VM_DW" 320 440}
+   {T "CP_VM_D" 320 460}
+   {T "CP_VM_DR" 320 480}
+   {T "FM_WE" 320 500}
+   {T "FM_OE" 320 520}
+   {T "VID_CP4" 320 540}
+   [Ly "DEVICE"]
+   [Tj "CT"]
+   {T "F1508ISPPLCC84" 230 -10}
+  }
+
+  {ATR
+   {IN
+    {Org 100 20}
+    {Ty 255}
+   }
+   {EX
+    [Ly "ATTR2"]
+    [Ts 12][Tj "CT"][Tr 0][Tm "N"]
+    {At PLD C:\VID_MAIN_VGA 230 780}
+   }
+  }
+ }
+
+ {DETAIL
+  {ANNOTATE
+  }
+
+  {NET_DEF
+   {N CLK_25M
+   }
+   {N RESET_IN
+   }
+   {N V64OR32M
+   }
+   {N VID_MEM_
+   }
+   {N VID_RW
+   }
+   {N FONTLI2
+   }
+   {N CPU_A0
+   }
+   {N CPU_A1
+   }
+   {N VID_CP6
+   }
+   {N Z80_WAIT
+   }
+   {N MODE0
+   }
+   {N MODE1
+   }
+   {N MODE2
+   }
+   {N VM_ADDR_
+   }
+   {N DIN0
+   }
+   {N DIN1
+   }
+   {N DIN2
+   }
+   {N DIN3
+   }
+   {N DIN4
+   }
+   {N DIN5
+   }
+   {N DIN6
+   }
+   {N DIN7
+   }
+   {N NTSC_SYN
+   }
+   {N NTSC_PIX
+   }
+   {N VGA_HSYN
+   }
+   {N VGA_VSYN
+   }
+   {N VGA_VIDE
+   }
+   {N CPU_D0
+   }
+   {N CPU_D1
+   }
+   {N CPU_D2
+   }
+   {N CPU_D3
+   }
+   {N CPU_D4
+   }
+   {N CPU_D5
+   }
+   {N CPU_D6
+   }
+   {N CPU_D7
+   }
+   {N VID_CP5
+   }
+   {N VID_IO_C
+   }
+   {N FONTLI0
+   }
+   {N FONTLI1
+   }
+   {N FONTLI3
+   }
+   {N FONTSEL0
+   }
+   {N FONTSEL1
+   }
+   {N FONTSEL2
+   }
+   {N FONTSEL3
+   }
+   {N FM_A10
+   }
+   {N FM_A11
+   }
+   {N VM_PAGE0
+   }
+   {N VM_PAGE1
+   }
+   {N VM_PAGE2
+   }
+   {N VM_PAGE3
+   }
+   {N VM_OE
+   }
+   {N VM_WE
+   }
+   {N CP_VM_AD
+   }
+   {N VM_DATA
+   }
+   {N VM_DATA_
+   }
+   {N CP_FM_DA
+   }
+   {N VM_ADD
+   }
+   {N VM_ADDR
+   }
+   {N CP_VM_DW
+   }
+   {N CP_VM_D
+   }
+   {N CP_VM_DR
+   }
+   {N FM_WE
+   }
+   {N FM_OE
+   }
+   {N VID_CP4
+   }
+  }
+
+  {SUBCOMP
+  }
+ }
+}

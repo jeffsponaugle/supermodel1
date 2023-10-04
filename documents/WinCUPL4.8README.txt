@@ -1,0 +1,399 @@
+                         ********************************
+                          WELCOME TO Atmel-WINCUPL V4.8a
+                         ********************************
+
+This README file contains important information about CUPL. For the latest
+information about CUPL read this entire file.
+
+*****************
+TABLE OF CONTENTS
+*****************
+1.  How to Get Assistance
+         -- Sources of information
+2.  Installation
+         -- Installing WINCUPL
+3.  New Features
+4.  Important Information
+5.  ATMEL ATF1500 Fitter Support
+6.  CUPL Manual
+7.  CUPL Examples
+
+
+===========================
+1. |HOW TO GET ASSISTANCE |
+===========================
+
+If you have any problems, please read this file.  If you need need assistance,
+please contact Atmel at:
+
+PLD Hotline at (408) 436-4333
+E-mail: pld@atmel.com.
+WEB Homepage: http://www.atmel.com
+BBS: (408) 436-4309
+
+You can also contact Logical Devices' technical support at:
+Phone: (303) 722 6868
+Fax:   (303) 733 6868
+E-mail: logdev@henge.com.
+Web: http:\\www.logical.com
+
+When reporting bugs please be detailed as possible, send your PLD source
+file and indicate the version of Atmel-CUPL/WINCUPL with the problem. 
+
+
+==================
+2. |INSTALLATION |
+==================
+
+To install Atmel-WINCUPL,
+1.  Put disk 1 in your floppy drive.
+2.  In Program Manager, choose File|Run.
+3.  Type A:\SETUP (If your disk drive is not drive A, type the appropriate 
+    letter instead.)
+4.  Choose OK.
+5.  Follow the instructions on the screen.
+
+It is recommended that you install all of the executable files in the default
+directories.
+
+
+==================
+3. | NEW FEATURES|
+==================
+Atmel-WINCUPL V4.8a includes the following new features:
+
+DEVICE SUPPORT
+--------------
+
+ATF16V8C/ATF22V10C - This version support these new Atmel product. Selecting
+these device type (E.g. g22v10cp) automatically enables the pin controlled
+power down feature on these device. WinCUPL will check if your logic is using
+the power down pin and report an error.
+
+ATF1508 - The ATF1508-68PLCC, ATF1508-84PLCC and ATF1508-100QFP devices are
+now support on this release. Manually pin assignment like the ATF1500/A are
+not necessary. A device fitter for the ATF1508 is included in this release. 
+
+BUG FIXES:
+----------
+Refer to the CUPL_BUG.TXT file included with this version of CUPL for a list of
+bug fixes. You can obtain the latest version of this file from the Atmel BBS 
+and check it to see if there is a workaround for your particular bug. If you 
+find a bug that is not included in this list, please contact Atmel PLD 
+Applications. 
+
+CUPL MODULE CHANGES:
+--------------------
+Device Library: Added ATF16V8C/CZ, ATF22V10C/CZ and ATF1500A device support
+
+CUPLB:          Fixed f1500 device types that had two term equations being 
+                demorganized but were not expanded correctly in the pla file.
+		    Module now checks is ISP device is select for a design that
+		    uses the JTAG port pins. Syntax error point to signal name.
+
+CUPLC:          Fixed some memory corruption bugs. Changed the v2500b jedec 
+                mapping to configure the IO cells better. 
+
+VSIMA:          Fixed some simulation support bugs for the ATF1500 device.
+
+BACKPIN:        Upgraded version allows for back-annotation of Atmel ATF1500 
+                fitter pin assignments. 
+
+ONLINE HELP:
+------------
+On-line help is available. Use to on-line help to obtain information about CUPL
+syntax, suffix usage, Keywords, How to use Atmel-Wincupl and error messages.
+To use the On-line help:
+
+1. Run Atmel-WinCUPL
+
+2. In the Atmel-WinCUPL main menu select the Help topic.
+
+3. Click on Index
+
+4. A list of help topic are displayed. You can either browse through these topic
+   list or find help on a particular topic.
+
+5. To find help on a particular topic. Click Search with the Help Menu open
+   Select the help topic to display from the listing
+
+FLIP-FLOP SYNTHESIS:
+--------------------
+You can use D,T,JK or RS type flip-flops to capture your design.
+WINCUPL can automatically convert equations for these flip-flop into
+equivalent expression for D or T type flip-flops supported by Atmel devices
+through the REGISTER_SELECT Keyword. This keyword can also be used to allow
+WINCUPL to automatically choose the appropriate flip-flop type that results
+in the fewest number of product terms for your design.
+More information on this Keyword is available in the WINCUPL On-line HELP.
+
+Refer to CONVERT.PLD CUPL example.  Note that all CUPL example files
+are located in the EXAMPLES directory.
+
+
+=========================
+4. IMPORTANT INFORMATION
+=========================
+
+GENERAL:
+-------
+You may notice that some large text files (> 24Kbytes) such as PLD source,
+simulation input, output and/or fitter report files may fail to open in WINCUPL.
+You may see an "Out of Memory","Fail to read" of General Protection Fault errors
+when attempting to view a particular file.  If you experience the 
+"Out of Memory" or "Fail to read" error you can still view the file provided 
+that it exists.  To view the file:
+
+1. Select DOS PROMPT under the UTILITIES menu in WINCUPL. This will open
+   the DOS prompt in WINCUPL.
+
+2. Type: edit <filename> where <filename> represents the DOS path to the file.
+   This will invoke the DOS editor to allow the file to be viewed.
+
+3. Type: EXIT from the FILE Menu in the DOS editor.
+   This will exit the DOS editor and return to the DOS prompt 
+
+4. Type: EXIT in the DOS prompt. This will close the DOS prompt and return to 
+   the WINCUPL main menu.   
+
+If you see a General Protection Fault (GPF) error, exit WinCUPL and re-run this
+should correct the problem. This error can also be minimized by having fewer 
+file open during compilation.
+
+DEVICE SPECIFICS:
+-----------------
+A. Support has been added for the Atmel ATF16V8C/CZ device.
+   - If you want to enable the pin-controlled power down feature on the Atmel
+     ATF16V8C select the "g16v8cp" device type.  Refer to GATES_C.PLD file.
+     Note: If you select this device type, you will need to select the ATF16V8C
+           device with a "EXT" suffix on your programmer device menu listing.
+   - If you want to disable pin-controlled power down feature select "g16v8a"
+     device type.
+
+B. If you are generating a simulation file for the g16v8cp device type you must 
+   specify pin 4 to be zero. If you do not, WINCUPL will automatically 
+   overwrite it to a zero. This is required for functional verification of the
+   ATF16V8C/CZ on the programmer when the pin-controlled power down mode is 
+   enabled.
+
+C. Support has been added for the Atmel ATF22V10C/CZ device. 
+   - If you want to enable the pin-controlled power down feature select either
+     the "g22v10cp" or "g22v10cplcc" device types for DIP or PLCC packages 
+     respectively.  Refer to LOOKUP.PLD file.
+     Note: If you select this device type, you will need to select the ATF22V10C
+           device with a "EXT" suffix" on your programmer device menu listing.
+   - If you want to disable the pin-controlled power down feature select 
+     either the "g22v10" or "g22v10lcc" device types.  
+     Note: If you select this device type, you may need to select the ATF22V10C
+           device with a "U" or "UES" suffix on your programmer device menu 
+           listing.
+
+D. If you are generating a simulation file for the g22v10cp or g22v10cplcc 
+   device types you must specify pin 4 for DIP or pin 5 for PLCC to be zero. 
+   If you do not, WINCUPL will automatically overwrite it to a zero. This is 
+   required for functional verification of the ATF22V10C/CZ on the programmer 
+   when the pin-controlled power down mode is enabled.  Refer to CUPL_BUG.TXT
+   for bug information.
+
+E. Support has been added for the ATF1500A device. This device allows the 
+   Bus-friendly Pin Keeper circuits to be enabled or disabled.  The pin keeper
+   circuit will weakly hold all outputs to their previoulsy defined states when
+   the outputs are disabled. The pin-keeper circuits are easily overdriven when
+   the ouputs are enabled. When this feature is disabled all output will float
+   when tri-stated. 
+
+   Note: Pin Keeper circuits are also available on the ATF1500 devices, but they
+         cannot be disabled.
+
+   Refer to the "Atmel PLD Design Guidelines" applications note on information 
+   on the pin-keeper circuits.
+
+   You can enable of disable the pin-keeper circuits by using the CUPL property
+   statement.
+
+   1. To Disable this Feature:
+      In your PLD source file add the line:
+
+         PROPERTY ATMEL { pin_keep OFF };
+
+      and re-compile your design for either the F1500A or F1500AT
+      device types. The fitter will automatically create a JEDEC file
+      which when programming into the ATF1500A device will disable the
+      pin-keeper circuits. 
+
+   2.  To Enable this feature:
+
+         PROPERTY ATMEL { pin_keep ON };  /* This is the default condition,
+                                             so this statement can be omitted */
+
+   Refer to PINKEEP.PLD CUPL example.
+
+F. Security Bit
+   You can secure your ATF1500A designs by programming the security bit. To 
+   secure a design
+
+   1. Select either the F1500A or F1500AT device type
+
+   2. In you PLD source file add the line:
+
+        PROPERTY ATMEL { security ON };
+
+      and re-compile your design. The fitter will automatically create a
+      JEDEC file which, when programmed into the ATF1500A device, will secure 
+      the device.
+
+   Note that some programmers require you to manually enable the security bit
+   via their menu options (regardless of whether the security bit is enabled in
+   the JEDEC file).
+
+   Refer to PINKEEP.PLD CUPL example.
+
+G. For ATF1500/A designs, the Atmel ATF1500 fitter can generate pin assignments for
+   you and WINCUPL can automatically back-annotate them into your PLD source 
+   file. It you are interested in using this feature do the following:
+
+   1. Generate your PLD source file for the ATF1500/A without pin assignments.
+   
+   2. Compile the design in WINCUPL. The fitter will run automatically.
+
+   3. Run the BACKPIN utility. 
+      In the DOS prompt,
+      Type: backpin <device mnemonic> <PLD source file> 
+
+      The <device mnemonic> is the appropriate CUPL ATF1500 device type
+      For example: f1500, f1500t, f1500a, f1500at
+
+      The <PLD source file> is the (*.pld) PLD source file which describes your
+      design.
+
+      The BACKPIN utility reads a pin assignment file (*.plc file) automatically 
+      generated by the Atmel ATF1500 fitter and produces a new PLD source file 
+      (*.pld file). The new source file will have the fitter pin assignments back-
+      annotated within it. Backpin will automatically make a backup copy of the 
+      original source file. This file is named using the (*.bak) suffix. 
+
+   4. In the new source file include this line:
+
+      PROPERTY ATMEL {PREASSIGN KEEP}; 
+
+      The KEEP fitter pre-assignment property allows you to fix your pin 
+      assignments in your PLD source file, whether generated automatically by 
+      BACKPIN or manually.
+
+   5. Re-save the PLD source file. 
+
+   6. Re-compile the PLD source File in WINCUPL. 
+
+H. For ATF1508 design WinCUPL support two device types. One device type disables
+   the JTAG port, and allow design that use the JTAG port pin to be programmed once.
+   The other device type enables the JTAG port and allow design that DO NOT use
+   the JTAG port pin to be programmed. If you plan to program the ATF1508 using
+   In-System Programming (ISP) you must choose the ISP device type. If you select
+   an ISP device type for a design that uses the JTAG port pin WinCUPL will generate
+   an error. See table below for ATF1508 WinCUPL Device types
+
+            Table 1- WINCUPL ATF1508 Device Types
+   -------------------------------------------------------
+   |Device            |  JTAG Port | WINCUPL Device Type |
+    -----------------------------------------------------
+   |ATF1508 -68PLCC   |  Enabled   | f1508ispplcc68      |
+   |                  |  Disabled  | f1508plcc68         |
+   -------------------------------------------------------
+   |ATF1508 -84PLCC   |  Enabled   | f1508ispplcc84      |
+   |                  |  Disabled  | f1508plcc84         |
+   -------------------------------------------------------
+   |ATF1508 -100QFP   |  Enabled   | f1508ispqfp100      |
+   |                  |  Disabled  | f1508qfp100         |
+   -------------------------------------------------------
+
+   The information in Table 1 above is subject to change as new device are added
+   contact Atmel PLD Applications for the latest information.
+ 
+
+
+
+==================================
+5. | Atmel ATF1500 Fitter Support|
+==================================
+
+This version of Atmel-CUPL includes the Atmel ATF1500 device fitter (V2.32)
+CUPL will automatically run this fitter when compiling ATF1500 designs. 
+If you need a later version of this fitter download the FIT1500.ZIP file from
+the Atmel BBS. A fitter macro file FIT1500.M has also been included in this  
+version. This macro file allows you to specify commonly used fitter properties 
+in your PLD source file.  
+
+More information on the Atmel ATF1500 device fitter, it properties and macro
+support is provided in the ATF1500 CPLD Fitter Manual available from your local
+Atmel representative.  The manual is also available for download from Atmel BBS 
+or Web (Please call the Atmel PLD Hotline for more information.).
+
+Note: Property statements are used to control the following
+      ATF1500 features:
+        - preassign = [ TRY | keep | ignore ]
+        - optimize = [ ON | off ]
+        - soft_buffer [ OFF | on | = node1, node2...]
+        - xor_synthesis [ OFF | on | = pin1, pin2...]
+        - cascade_logic [ ON | off | = pin1, pin2...]
+        - foldback_logic [ ON | off | = node1, pin2...]
+        - expander [ = node1, node2... ] (inverted)
+        - output_fast [ on | OFF | = pin1, pin2, ..]
+        - dedicated_input [ ON | off | = pin1, pin2...]
+        - security = [ OFF | on ]
+        - pin_keep = [ ON | off ]
+        - sleep [ OFF | on | = pin_name ] (power_down mode)
+        - jedec_file = file_name
+        - vector_file = file_name
+        - verilog_file = file_name
+        - tPD = [ 15 | 7 | 10 | 12 | 25 ]
+        - time_file = file_name
+      The option in uppercase is the default condition.
+
+      Please refer to the FIT1500.M file in the WINCUPL\EXAMPLES
+      directory for for information.
+
+=============================
+6. | ATF1508 Fitter Support |
+=============================
+
+This version of Atmel-CUPL includes the Atmel ATF1508 device fitter
+(V1.7) CUPL will automatically run this fitter when compiling
+ATF1508 designs. This fitter version is a pre-release version and future
+updates will occur. Contact Atmel PLD applications for the latest version.
+
+Note: Property statement are used to control all ATF1508 fitter strategies
+shown below.
+   -strategy preassign = [ TRY | keep | ignore ]
+   -strategy optimize = [ ON | off ]
+   -strategy soft_buffer [ OFF | on | = node1, node2...]
+   -strategy xor_synthesis [ OFF | on | = pin1, pin2...]
+   -strategy cascade_logic [ ON | off | = pin1, pin2...]
+   -strategy foldback_logic [ ON | off | = node1, pin2...]
+   -strategy expander [ = node1, node2... ] (inverted)
+   -strategy output_fast [ on | OFF | = pin1, pin2, ..]
+   -strategy dedicated_input [ ON | off | = pin1, pin2...]
+   -strategy security = [ OFF | on ]
+   -strategy pin_keep = [ ON | off ]
+   -strategy jedec_file = file_name
+   -strategy vector_file = file_name
+   -strategy verilog_file = file_name
+   -strategy tPD = [ 15 | 7 | 10 | 12 | 25 ]
+   -strategy time_file = file_name
+   -strategy pd1 [ OFF | on | = pin_name ] (power down 1)
+   -strategy pd2 [ OFF | on | = pin_name ] (power down 2)
+   -strategy power_reset = [ OFF | on ] 
+   -strategy MC_power [ OFF | on | = pin1, pin2...] 
+   -strategy open_collector [ OFF | on | = pin1, pin2...] 
+   -strategy fast_inlatch [ ON | off | = pin1, pin2...] 
+   -strategy JTAG = [ OFF | on ] 
+   -strategy TDI_pullup = [ OFF | on ] 
+   -strategy TMS_pullup = [ OFF | on ] 
+
+===================
+7. | CUPL Examples|
+===================
+
+Atmel-WinCUPL has several example file that you can try out to become familiar
+with the syntax and capabilites of WinCUPL. The example files are installed
+in the EXAMPLES subdirectory. The EXAMPLES.TXT included in this directory
+also gives a description for all the examples.

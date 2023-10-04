@@ -1,0 +1,45 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww18060\viewh12860\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Z80 Region 0 (0x0000-0x#FFF)\
+1 Config Register (IO 0x70)\
+	Bit 6 = READ SRC (0=FLASH, 1=SRAM)\
+           BIt 5 = 0=RO, 1=RW\
+	Bit 4,3,2,1,0 = Page Number for FLASH/SRAM (0-31)\
+\
+\
+Z80 Region 1 (0x4000-0x7FFF)\
+1 Config Register (IO 0x71)\
+	Bit 6 = READ SRC (0=FLASH, 1=SRAM)\
+           BIt 5 = 0=RO, 1=RW\
+	Bit 4,3,2,1,0 = Page Number for FLASH/SRAM (0-31)\
+\
+Z80 Region 2 (0x8000-0xBFFF)\
+1 Config Register (IO 0x72)\
+	Bit 6 = READ SRC (0=FLASH, 1=SRAM)\
+           BIt 5 = 0=RO, 1=RW\
+	Bit 4,3,2,1,0 = Page Number for FLASH/SRAM (0-31)\
+\
+Z80 Region 0A (0xC000-0xFFFF)\
+1 Config Register (IO 0x73)\
+	Bit 6 = READ SRC (0=FLASH, 1=SRAM)\
+           BIt 5 = 0=RO, 1=RW\
+	Bit 4,3,2,1,0 = Page Number for FLASH/SRAM (0-31)\
+\
+HARDWARE CONFIG Register\
+1 Config Register (IO 0x74)\
+	Bit 0,1 = CPU Speed 00=/16, 01=/8, 10=/4, 11=/2\
+           Bit 2    = Keyboard Hardware: 0=MemoryMapped, 1=IOMapped\
+           Bit 3    = Keyboard Memory Location: 0=0x3800, 1=0xF800\
+           Bit 4    = 1K Regular Video Memory: 0=MemoryMapped, 1=IOMapped\
+           Bit 5    = 1K Regular Video Memory Location: 0=0x3C00, 1=0xFC00\
+           Bit 6    = 80x24 Video Memory: 0=MemoryMapped, 1=IOMapped\
+           Bit 7    = 80x24 Video Memory Location: 0=0x3000, 1=0xF000\
+\
+\
+\
+}

@@ -1,0 +1,279 @@
+{COMPONENT C:\USERS\JBS\DOCUMENTS\SRC\RSC68K\CPLD\TRS80M1-VIDEO\VID_ADDR.SYM
+
+ {ENVIRONMENT
+  {PDIFvrev 3.00}
+  {Program "CUPL(WM) Version 5.0a"}
+  {DBtype "Schematic"}
+  {DBvrev 1.01}
+  {DBtime "Mon Sep 25 10:52:42 2023 "}
+  {DBunit "MIL"}
+  {DBgrid 10}
+  {Lyrstr "WIRES" 1 "BUS" 1 "GATE" 2 "IEEE" 2 "PINFUN" 3 "PINNUM" 1 
+          "PINNAM" 6 "PINCON" 4 "REFDES" 2 "ATTR" 6 "SDOT" 1 
+          "DEVICE" 5 "OUTLIN" 5 "ATTR2" 6 "NOTES" 6 "NETNAM" 4 
+          "CMPNAM" 5 "BORDER" 5}
+ }
+
+ {USER
+  {VIEW
+   {Mode SYMB}
+   {Nlst OPEN}
+   {Vw 0 0 2}
+   {Lv 12 2 2 2 0 0 2 2 2 2 0 0 2 1 2 0 0 0 0}
+   {Gs 10 10}
+  }
+ }
+
+ {DISPLAY
+  [Ly "PINNUM"]
+  [Ls "SOLID"][Wd 0]
+  [Ts 15][Tj "LC"][Tr 0][Tm "N"]
+ }
+
+ {SYMBOL
+  {PIN_DEF
+   [Ly "PINCON"]
+   {P VM_ADDR_ {Pt "INPUT"}{Lq 0}{Ploc 100 240}}
+   {P VM_ADDR {Pt "INPUT"}{Lq 0}{Ploc 100 200}}
+   {P VM_PAGE3 {Pt "INPUT"}{Lq 0}{Ploc 100 180}}
+   {P VM_PAGE2 {Pt "INPUT"}{Lq 0}{Ploc 100 160}}
+   {P VM_PAGE1 {Pt "INPUT"}{Lq 0}{Ploc 100 140}}
+   {P VM_PAGE0 {Pt "INPUT"}{Lq 0}{Ploc 100 120}}
+   {P VID_CP6 {Pt "INPUT"}{Lq 0}{Ploc 100 100}}
+   {P MODE2 {Pt "INPUT"}{Lq 0}{Ploc 100 80}}
+   {P MODE1 {Pt "INPUT"}{Lq 0}{Ploc 100 60}}
+   {P MODE0 {Pt "INPUT"}{Lq 0}{Ploc 100 40}}
+   {P VM_ADD {Pt "INPUT"}{Lq 0}{Ploc 100 20}}
+   {P VM_A0 {Pt "I/O"}{Lq 0}{Ploc 350 20}}
+   {P VM_A1 {Pt "I/O"}{Lq 0}{Ploc 350 40}}
+   {P VM_A2 {Pt "I/O"}{Lq 0}{Ploc 350 60}}
+   {P VM_A3 {Pt "I/O"}{Lq 0}{Ploc 350 80}}
+   {P VM_A4 {Pt "I/O"}{Lq 0}{Ploc 350 100}}
+   {P UNUSED5 {Pt "I/O"}{Lq 0}{Ploc 350 120}}
+   {P UNUSED2 {Pt "I/O"}{Lq 0}{Ploc 350 140}}
+   {P UNUSED3 {Pt "I/O"}{Lq 0}{Ploc 350 160}}
+   {P UNUSED4 {Pt "I/O"}{Lq 0}{Ploc 350 180}}
+   {P VM_A5 {Pt "I/O"}{Lq 0}{Ploc 350 200}}
+   {P VM_A6 {Pt "I/O"}{Lq 0}{Ploc 350 220}}
+   {P VM_A7 {Pt "I/O"}{Lq 0}{Ploc 350 240}}
+   {P UNUSED7 {Pt "I/O"}{Lq 0}{Ploc 350 260}}
+   {P UNUSED8 {Pt "I/O"}{Lq 0}{Ploc 350 280}}
+   {P UNUSED6 {Pt "I/O"}{Lq 0}{Ploc 350 300}}
+   {P VM_A9 {Pt "I/O"}{Lq 0}{Ploc 350 320}}
+   {P VM_A8 {Pt "I/O"}{Lq 0}{Ploc 350 340}}
+   {P VM_A10 {Pt "I/O"}{Lq 0}{Ploc 350 360}}
+   {P VM_A11 {Pt "I/O"}{Lq 0}{Ploc 350 380}}
+   {P VM_A12 {Pt "I/O"}{Lq 0}{Ploc 350 400}}
+   {P VM_A13 {Pt "I/O"}{Lq 0}{Ploc 350 420}}
+  }
+
+  {PKG
+   [Ly "REFDES"]
+   [Ts 25][Tj "CB"][Tr 0][Tm "N"]
+   {Rdl 225 450}
+
+   [Ly "PINNUM"]
+   [Ts 15][Tj "RC"]
+   {Pnl 120 250}
+   [Ts 15][Tj "RC"]
+   {Pnl 120 210}
+   {Pnl 120 190}
+   {Pnl 120 170}
+   {Pnl 120 150}
+   {Pnl 120 130}
+   {Pnl 120 110}
+   {Pnl 120 90}
+   {Pnl 120 70}
+   {Pnl 120 50}
+   {Pnl 120 30}
+   [Ts 15][Tj "LC"]
+   {Pnl 330 30}
+   {Pnl 330 50}
+   {Pnl 330 70}
+   {Pnl 330 90}
+   {Pnl 330 110}
+   {Pnl 330 130}
+   {Pnl 330 150}
+   {Pnl 330 170}
+   {Pnl 330 190}
+   {Pnl 330 210}
+   {Pnl 330 230}
+   {Pnl 330 250}
+   {Pnl 330 270}
+   {Pnl 330 290}
+   {Pnl 330 310}
+   {Pnl 330 330}
+   {Pnl 330 350}
+   {Pnl 330 370}
+   {Pnl 330 390}
+   {Pnl 330 410}
+   {Pnl 330 430}
+
+   {Sd A 43 1 2 4 5 6 8 39 40 41 44 9 11 12 14 16 17 18 19 20 21 24 25 26 27 28 29 31 33 34 36 37}
+  }
+
+  {PIC
+   [Ly "GATE"]
+   [Ts 15][Tj "LC"][Tr 0][Tm "N"]
+   {R 130 440 320 0}
+   {L 130 240 100 240}
+   {L 130 250 140 240 130 230}
+   {L 130 200 100 200}
+   {L 130 180 100 180}
+   {L 130 160 100 160}
+   {L 130 140 100 140}
+   {L 130 120 100 120}
+   {L 130 100 100 100}
+   {L 130 80 100 80}
+   {L 130 60 100 60}
+   {L 130 40 100 40}
+   {L 130 20 100 20}
+   {L 320 20 350 20}
+   {L 320 40 350 40}
+   {L 320 60 350 60}
+   {L 320 80 350 80}
+   {L 320 100 350 100}
+   {L 320 120 350 120}
+   {L 320 140 350 140}
+   {L 320 160 350 160}
+   {L 320 180 350 180}
+   {L 320 200 350 200}
+   {L 320 220 350 220}
+   {L 320 240 350 240}
+   {L 320 260 350 260}
+   {L 320 280 350 280}
+   {L 320 300 350 300}
+   {L 320 320 350 320}
+   {L 320 340 350 340}
+   {L 320 360 350 360}
+   {L 320 380 350 380}
+   {L 320 400 350 400}
+   {L 320 420 350 420}
+   [Ly "PINNAM"]
+   [Tj "LC"]
+   {T "VM_ADDR_" 140 240}
+   {T "VM_ADDR" 140 200}
+   {T "VM_PAGE3" 140 180}
+   {T "VM_PAGE2" 140 160}
+   {T "VM_PAGE1" 140 140}
+   {T "VM_PAGE0" 140 120}
+   {T "VID_CP6" 140 100}
+   {T "MODE2" 140 80}
+   {T "MODE1" 140 60}
+   {T "MODE0" 140 40}
+   {T "VM_ADD" 140 20}
+   [Tj "RC"]
+   {T "VM_A0" 310 20}
+   {T "VM_A1" 310 40}
+   {T "VM_A2" 310 60}
+   {T "VM_A3" 310 80}
+   {T "VM_A4" 310 100}
+   {T "UNUSED5" 310 120}
+   {T "UNUSED2" 310 140}
+   {T "UNUSED3" 310 160}
+   {T "UNUSED4" 310 180}
+   {T "VM_A5" 310 200}
+   {T "VM_A6" 310 220}
+   {T "VM_A7" 310 240}
+   {T "UNUSED7" 310 260}
+   {T "UNUSED8" 310 280}
+   {T "UNUSED6" 310 300}
+   {T "VM_A9" 310 320}
+   {T "VM_A8" 310 340}
+   {T "VM_A10" 310 360}
+   {T "VM_A11" 310 380}
+   {T "VM_A12" 310 400}
+   {T "VM_A13" 310 420}
+   [Ly "DEVICE"]
+   [Tj "CT"]
+   {T "F1504ISPPLCC44" 225 -10}
+  }
+
+  {ATR
+   {IN
+    {Org 100 20}
+    {Ty 255}
+   }
+   {EX
+    [Ly "ATTR2"]
+    [Ts 12][Tj "CT"][Tr 0][Tm "N"]
+    {At PLD C:\USERS\JBS\DOCUMENTS\SRC\RSC68K\CPLD\TRS80M1-VIDEO\VID_ADDR 225 440}
+   }
+  }
+ }
+
+ {DETAIL
+  {ANNOTATE
+  }
+
+  {NET_DEF
+   {N VM_ADDR_
+   }
+   {N VM_ADDR
+   }
+   {N VM_PAGE3
+   }
+   {N VM_PAGE2
+   }
+   {N VM_PAGE1
+   }
+   {N VM_PAGE0
+   }
+   {N VID_CP6
+   }
+   {N MODE2
+   }
+   {N MODE1
+   }
+   {N MODE0
+   }
+   {N VM_ADD
+   }
+   {N VM_A0
+   }
+   {N VM_A1
+   }
+   {N VM_A2
+   }
+   {N VM_A3
+   }
+   {N VM_A4
+   }
+   {N UNUSED5
+   }
+   {N UNUSED2
+   }
+   {N UNUSED3
+   }
+   {N UNUSED4
+   }
+   {N VM_A5
+   }
+   {N VM_A6
+   }
+   {N VM_A7
+   }
+   {N UNUSED7
+   }
+   {N UNUSED8
+   }
+   {N UNUSED6
+   }
+   {N VM_A9
+   }
+   {N VM_A8
+   }
+   {N VM_A10
+   }
+   {N VM_A11
+   }
+   {N VM_A12
+   }
+   {N VM_A13
+   }
+  }
+
+  {SUBCOMP
+  }
+ }
+}

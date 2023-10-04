@@ -1,0 +1,296 @@
+Name	 VGA4A;
+PartNo   VGA4A;
+Date     05/10/2022;
+Revision 01;
+Designer Sponaugle;
+Company  Ratiometric;
+Assembly None;
+Location None;
+Device   f1504ispplcc44;
+
+PROPERTY ATMEL {TDI_PULLUP = ON};
+PROPERTY ATMEL {TMS_PULLUP = ON};
+
+Pin[43] = CLK_25M;                  /* 25.175Mhz input clock  - Master Pixel Clock */
+Pin[1]  = RESET_IN;                /* Active Low Reset */
+Pin[2]  = V64OR32MODE;
+Pin[5]  = SYNC_OUT;
+Pin[4]  = PIXEL_OUT;
+Pin[6]  = CLK_12M;
+Pin[8,9,11,12,14,16] = [CHAR_COL0..5];        /* 6 bits for picking which character to display */
+Pin[20,21,24,25]     = [FONTLINE0..3];        /* 4 bits for picking the font row (but only 0-11 are used ) */
+Pin[31,33,34,36,37,39,40,41]     = [DIN0..7];
+
+NODE [HSYNC_COUNTER0..9];
+NODE [VSYNC_COUNTER0..9];
+NODE VSYNC_CLOCK_A,VSYNC_CLOCK_B;
+NODE HSYNC_ZERO;
+NODE VSYNC_ZERO;
+NODE VSYNC_DISPLAY_ACTIVE;
+NODE [SHIFTREG0..7];
+
+CLK_12M.d = !CLK_12M;
+CLK_12M.ck = CLK_25M;
+CLK_12M.ar = !RESET_IN;
+
+/* Horizontal Sync 10 bit counter, 0-799.  HSYNC_ZERO is used to reset this counter so it loops from 799 back to 0 */
+
+HSYNC_COUNTER0.d = !HSYNC_COUNTER0 & HSYNC_ZERO;
+HSYNC_COUNTER0.ck = CLK_12M;
+HSYNC_COUNTER0.ar = !RESET_IN;
+
+HSYNC_COUNTER1.d = ((HSYNC_COUNTER0&!HSYNC_COUNTER1) # (!HSYNC_COUNTER0&HSYNC_COUNTER1)) & HSYNC_ZERO;
+HSYNC_COUNTER1.ck = CLK_12M;
+HSYNC_COUNTER1.ar = !RESET_IN;
+
+HSYNC_COUNTER2T = HSYNC_COUNTER0&HSYNC_COUNTER1;
+HSYNC_COUNTER2.d = ((HSYNC_COUNTER2T&!HSYNC_COUNTER2) # (!HSYNC_COUNTER2T&HSYNC_COUNTER2)) & HSYNC_ZERO;
+HSYNC_COUNTER2.ck = CLK_12M;
+HSYNC_COUNTER2.ar = !RESET_IN;
+
+HSYNC_COUNTER3T = HSYNC_COUNTER2T&HSYNC_COUNTER2;
+HSYNC_COUNTER3.d = ((HSYNC_COUNTER3T&!HSYNC_COUNTER3) # (!HSYNC_COUNTER3T&HSYNC_COUNTER3)) & HSYNC_ZERO;
+HSYNC_COUNTER3.ck = CLK_12M;
+HSYNC_COUNTER3.ar = !RESET_IN;
+
+HSYNC_COUNTER4T = HSYNC_COUNTER3T&HSYNC_COUNTER3;
+HSYNC_COUNTER4.d = ((HSYNC_COUNTER4T&!HSYNC_COUNTER4) # (!HSYNC_COUNTER4T&HSYNC_COUNTER4)) & HSYNC_ZERO;
+HSYNC_COUNTER4.ck = CLK_12M;
+HSYNC_COUNTER4.ar = !RESET_IN;
+
+HSYNC_COUNTER5T = HSYNC_COUNTER4T&HSYNC_COUNTER4;
+HSYNC_COUNTER5.d = ((HSYNC_COUNTER5T&!HSYNC_COUNTER5) # (!HSYNC_COUNTER5T&HSYNC_COUNTER5)) & HSYNC_ZERO;
+HSYNC_COUNTER5.ck = CLK_12M;
+HSYNC_COUNTER5.ar = !RESET_IN;
+
+HSYNC_COUNTER6T = HSYNC_COUNTER5T&HSYNC_COUNTER5;
+HSYNC_COUNTER6.d = ((HSYNC_COUNTER6T&!HSYNC_COUNTER6) # (!HSYNC_COUNTER6T&HSYNC_COUNTER6)) & HSYNC_ZERO;
+HSYNC_COUNTER6.ck = CLK_12M;
+HSYNC_COUNTER6.ar = !RESET_IN;
+
+HSYNC_COUNTER7T = HSYNC_COUNTER6T&HSYNC_COUNTER6;
+HSYNC_COUNTER7.d = ((HSYNC_COUNTER7T&!HSYNC_COUNTER7) # (!HSYNC_COUNTER7T&HSYNC_COUNTER7)) & HSYNC_ZERO;
+HSYNC_COUNTER7.ck = CLK_12M;
+HSYNC_COUNTER7.ar = !RESET_IN;
+
+HSYNC_COUNTER8T = HSYNC_COUNTER7T&HSYNC_COUNTER7;
+HSYNC_COUNTER8.d = ((HSYNC_COUNTER8T&!HSYNC_COUNTER8) # (!HSYNC_COUNTER8T&HSYNC_COUNTER8)) & HSYNC_ZERO;
+HSYNC_COUNTER8.ck = CLK_12M;
+HSYNC_COUNTER8.ar = !RESET_IN;
+
+HSYNC_COUNTER9T = HSYNC_COUNTER8T&HSYNC_COUNTER8;
+HSYNC_COUNTER9.d = ((HSYNC_COUNTER9T&!HSYNC_COUNTER9) # (!HSYNC_COUNTER9T&HSYNC_COUNTER9)) & HSYNC_ZERO;
+HSYNC_COUNTER9.ck = CLK_12M;
+HSYNC_COUNTER9.ar = !RESET_IN;
+
+FIELD hsync_counter_field = [HSYNC_COUNTER9..0];
+FIELD hsync_counter_3_field = [HSYNC_COUNTER2..0];
+FIELD hsync_counter_4_field = [HSYNC_COUNTER3..0];
+
+/* 
+   HSYNC_ZERO is 0 when we need to loop the counter.  This is Logical AND'ed with the other inputs to each
+   counters .d value, so when we are at the loop location, the next location loaded will be 0.
+   HSYNC_ZERO us normally at 1, and goes to 0 for 1 clock cycle ( CLK25 low to CLK25 low ), and that
+   edge is also used to increment the vertical counters via VSYNC_CLOCK.
+*/
+
+HSYNC_ZERO = !(hsync_counter_field:['d'799]);
+
+/* 
+   The VSYNC_CLOCK signal is used to increment the V_SYNC counter at the end of each horizontal sync row.   
+   The reason for two FFs is to first capture the HSYNC value (on the clock edge opposite of the counter itself changing)
+   followed by a second FF to sync the V_SYNC increment with the rising edge of CLK_25M.   This allows both the H_SYNC and V_SYNC 
+   counters to be used in logical operations that are clocked on the same clock signal (falling CLK_25M)
+*/
+
+
+VSYNC_CLOCK_A.d = !HSYNC_ZERO;
+VSYNC_CLOCK_A.ck = !CLK_12M;
+VSYNC_CLOCK_A.ar = !RESET_IN;
+
+VSYNC_CLOCK_B.d = VSYNC_CLOCK_A;
+VSYNC_CLOCK_B.ck = CLK_12M;
+VSYNC_CLOCK_B.ar = !RESET_IN;
+
+/* Vertical Sync 9 bit counter, 0-498.  VSYNC_ZERO is used to reset this counter so it loops from 498 back to 0 */
+
+VSYNC_COUNTER0.d = (!VSYNC_COUNTER0) & VSYNC_ZERO;
+VSYNC_COUNTER0.ck = VSYNC_CLOCK_B;
+VSYNC_COUNTER0.ar = !RESET_IN;
+
+VSYNC_COUNTER1.d = ((VSYNC_COUNTER0&!VSYNC_COUNTER1) # (!VSYNC_COUNTER0&VSYNC_COUNTER1)) & VSYNC_ZERO;
+VSYNC_COUNTER1.ck = VSYNC_CLOCK_B;
+VSYNC_COUNTER1.ar = !RESET_IN;
+
+VSYNC_COUNTER2T = VSYNC_COUNTER0&VSYNC_COUNTER1;
+VSYNC_COUNTER2.d = ((VSYNC_COUNTER2T&!VSYNC_COUNTER2) # (!VSYNC_COUNTER2T&VSYNC_COUNTER2)) & VSYNC_ZERO;
+VSYNC_COUNTER2.ck = VSYNC_CLOCK_B;
+VSYNC_COUNTER2.ar = !RESET_IN;
+
+VSYNC_COUNTER3T = VSYNC_COUNTER2T&VSYNC_COUNTER2;
+VSYNC_COUNTER3.d = ((VSYNC_COUNTER3T&!VSYNC_COUNTER3) # (!VSYNC_COUNTER3T&VSYNC_COUNTER3)) & VSYNC_ZERO;
+VSYNC_COUNTER3.ck = VSYNC_CLOCK_B;
+VSYNC_COUNTER3.ar = !RESET_IN;
+
+VSYNC_COUNTER4T = VSYNC_COUNTER3T&VSYNC_COUNTER3;
+VSYNC_COUNTER4.d = ((VSYNC_COUNTER4T&!VSYNC_COUNTER4) # (!VSYNC_COUNTER4T&VSYNC_COUNTER4)) & VSYNC_ZERO;
+VSYNC_COUNTER4.ck = VSYNC_CLOCK_B;
+VSYNC_COUNTER4.ar = !RESET_IN;
+
+VSYNC_COUNTER5T = VSYNC_COUNTER4T&VSYNC_COUNTER4;
+VSYNC_COUNTER5.d = ((VSYNC_COUNTER5T&!VSYNC_COUNTER5) # (!VSYNC_COUNTER5T&VSYNC_COUNTER5)) & VSYNC_ZERO;
+VSYNC_COUNTER5.ck = VSYNC_CLOCK_B;
+VSYNC_COUNTER5.ar = !RESET_IN;
+
+VSYNC_COUNTER6T = VSYNC_COUNTER5T&VSYNC_COUNTER5;
+VSYNC_COUNTER6.d = ((VSYNC_COUNTER6T&!VSYNC_COUNTER6) # (!VSYNC_COUNTER6T&VSYNC_COUNTER6)) & VSYNC_ZERO;
+VSYNC_COUNTER6.ck = VSYNC_CLOCK_B;
+VSYNC_COUNTER6.ar = !RESET_IN;
+
+VSYNC_COUNTER7T = VSYNC_COUNTER6T&VSYNC_COUNTER6;
+VSYNC_COUNTER7.d = ((VSYNC_COUNTER7T&!VSYNC_COUNTER7) # (!VSYNC_COUNTER7T&VSYNC_COUNTER7)) & VSYNC_ZERO;
+VSYNC_COUNTER7.ck = VSYNC_CLOCK_B;
+VSYNC_COUNTER7.ar = !RESET_IN;
+
+VSYNC_COUNTER8T = VSYNC_COUNTER7T&VSYNC_COUNTER7;
+VSYNC_COUNTER8.d = ((VSYNC_COUNTER8T&!VSYNC_COUNTER8) # (!VSYNC_COUNTER8T&VSYNC_COUNTER8)) & VSYNC_ZERO;
+VSYNC_COUNTER8.ck = VSYNC_CLOCK_B;
+VSYNC_COUNTER8.ar = !RESET_IN;
+
+VSYNC_COUNTER9T = VSYNC_COUNTER8T&VSYNC_COUNTER8;
+VSYNC_COUNTER9.d = ((VSYNC_COUNTER9T&!VSYNC_COUNTER9) # (!VSYNC_COUNTER9T&VSYNC_COUNTER9)) & VSYNC_ZERO;
+VSYNC_COUNTER9.ck = VSYNC_CLOCK_B;
+VSYNC_COUNTER9.ar = !RESET_IN;
+
+FIELD vsync_counter_field = [VSYNC_COUNTER9..0];
+FIELD vsync_counter_4_field = [VSYNC_COUNTER3..0];
+
+VSYNC_ZERO = !(vsync_counter_field:['d'263]);
+
+/* FONTLINE_RESET - Reset counter if the value==11, so it counts from 0-11.  Also hold in reset
+    if we are not in the active area (VSYNC_DISPLAY_ACTIVE) */
+NODE FONTLINE_RESET;
+
+FONTLINE_RESET = (FONTLINE0 & FONTLINE1 & !FONTLINE2 & FONTLINE3) # !VSYNC_DISPLAY_ACTIVE;
+FONTLINE_INC = 'b'1;
+
+FONTLINE0.d =  (  (FONTLINE_INC&!FONTLINE0) 
+        # (!FONTLINE_INC&FONTLINE0)
+        ) & !FONTLINE_RESET;     
+FONTLINE0.ck = VSYNC_CLOCK_B;
+
+FONTLINE1.d =  (  (FONTLINE_INC&((FONTLINE0&!FONTLINE1) # (!FONTLINE0&FONTLINE1))) 
+        # ((!FONTLINE_INC&FONTLINE1))
+        ) & !FONTLINE_RESET;
+FONTLINE1.ck = VSYNC_CLOCK_B;
+
+FONTLINE2T = FONTLINE0&FONTLINE1;
+FONTLINE2.d =  (  (FONTLINE_INC&((FONTLINE2T&!FONTLINE2) # (!FONTLINE2T&FONTLINE2))) 
+        # ((!FONTLINE_INC&FONTLINE2))
+        ) & !FONTLINE_RESET;
+FONTLINE2.ck = VSYNC_CLOCK_B;
+
+FONTLINE3T = FONTLINE2T&FONTLINE2;
+FONTLINE3.d =  ( (FONTLINE_INC&((FONTLINE3T&!FONTLINE3) # (!FONTLINE3T&FONTLINE3))) 
+        # ((!FONTLINE_INC&FONTLINE3))
+        ) & !FONTLINE_RESET;
+FONTLINE3.ck = VSYNC_CLOCK_B;
+
+/* The CHAR_COL outputs count from 0-63 starting at HSYNC_COUNTER value 192.  
+   This is used to directly drive the character ROM for a test image.  In normal use
+   these bits will be used to derive the memory address for the video memory lookup.
+   It takes teh HSYNC_COUNTER bits from 3-6 and as binary 101 to the upper three bit.  
+   This is equivilent to subtracting 192 from the total counter value, but only providing
+   bits 3-8;
+*/
+
+CHAR_COL0 = HSYNC_COUNTER3;
+CHAR_COL1 = HSYNC_COUNTER4;
+CHAR_COL2 = HSYNC_COUNTER5;
+CHAR_COL3 = !HSYNC_COUNTER6;
+CHAR_COL4 = (  (HSYNC_COUNTER6 & !HSYNC_COUNTER7)
+	          # (!HSYNC_COUNTER6 & HSYNC_COUNTER7));
+CHAR_COL5 = (  (!HSYNC_COUNTER8 & !HSYNC_COUNTER7)
+	          # (HSYNC_COUNTER6 & HSYNC_COUNTER8 & HSYNC_COUNTER7)
+	          # (!HSYNC_COUNTER6 & !HSYNC_COUNTER8));
+
+/*
+A0 = HSYNC_COUNTER6;
+A1 = HSYNC_COUNTER7;
+A2 = HSYNC_COUNTER8;
+A3 = HSYNC_COUNTER9;
+
+S0 = !HSYNC_COUNTER6;
+
+S1 = ((HSYNC_COUNTER6 & !HSYNC_COUNTER7)
+	# (!HSYNC_COUNTER6 & HSYNC_COUNTER7));
+
+S2 = ((!A2 & !HSYNC_COUNTER7)
+	# (HSYNC_COUNTER6 & HSYNC_COUNTER8 & HSYNC_COUNTER7)
+	# (!HSYNC_COUNTER6 & !HSYNC_COUNTER8));
+
+S3 = ((!HSYNC_COUNTER8 & !HSYNC_COUNTER9 & !HSYNC_COUNTER6)
+	# (HSYNC_COUNTER7 & HSYNC_COUNTER9 & HSYNC_COUNTER6)
+	# (HSYNC_COUNTER8 & HSYNC_COUNTER9)
+	# (!HSYNC_COUNTER7 & !HSYNC_COUNTER8 & !HSYNC_COUNTER9));
+
+*/
+/* SHIFTREG_LOAD = 1 if the shift register will load from the databus, ==0 and it will shift from 0 to 7; */
+
+SHIFTREG_LOAD = hsync_counter_3_field:['b'111];
+
+SHIFTREG0.d = (SHIFTREG_LOAD & DIN0);
+SHIFTREG1.d = (SHIFTREG_LOAD & DIN1) # ( !SHIFTREG_LOAD & SHIFTREG0);
+SHIFTREG2.d = (SHIFTREG_LOAD & DIN2) # ( !SHIFTREG_LOAD & SHIFTREG1);
+SHIFTREG3.d = (SHIFTREG_LOAD & DIN3) # ( !SHIFTREG_LOAD & SHIFTREG2);
+SHIFTREG4.d = (SHIFTREG_LOAD & DIN4) # ( !SHIFTREG_LOAD & SHIFTREG3);
+SHIFTREG5.d = (SHIFTREG_LOAD & DIN5) # ( !SHIFTREG_LOAD & SHIFTREG4);
+SHIFTREG6.d = (SHIFTREG_LOAD & DIN6) # ( !SHIFTREG_LOAD & SHIFTREG5);
+SHIFTREG7.d = (SHIFTREG_LOAD & DIN7) # ( !SHIFTREG_LOAD & SHIFTREG6);
+
+[SHIFTREG0..7].ck = !CLK_12M;
+[SHIFTREG0..7].ar = !RESET_IN;
+
+/* VSYNC_DISPLAY_ACTIVE == 1 when on an active output row that we want to output pixel data.  Rows 32-223 (192 rows) */
+VSYNC_DISPLAY_ACTIVE = (vsync_counter_field:['d'40..'d'231]);
+
+/* VSYNC_OUTPUT_VSYNC == 1 when on a row that we want to output a vertical sync signal on. The last 3 rows */
+VSYNC_OUTPUT_VSYNC = (vsync_counter_field:['d'262..'d'263]);
+
+/* HSYNC_DISPLAY_ACTIVE == 1 when on the part of a line where we want output pixel data */
+HSYNC_DISPLAY_ACTIVE = (hsync_counter_field:['d'200..'d'711]);
+
+/* VSYNC_PATTERN describes what a SYNC output line looks like for the display to see a Vertical SYNC, but inverted.  
+   This value is ==1 at the locations that we want the SYNC signal to be 0. */
+VSYNC_PATTERN = (hsync_counter_field:['d'0..'d'639]);
+
+/* HSYNC_PATTERN describes what a SYNC output line looks like for the display to see a Horizontal SYNC, but inverted.  
+   This value is ==1 at the locations that we want the SYNC signal to be 0. */
+HSYNC_PATTERN = (hsync_counter_field:['d'0..'d'63]);
+
+
+/* The actual SYNC output pin is either doing a line with the HSYNC pattern, or the VSYNC pattern */
+
+SYNC_OUT.d = !( 
+                 (VSYNC_OUTPUT_VSYNC & VSYNC_PATTERN)
+               # (!VSYNC_OUTPUT_VSYNC & HSYNC_PATTERN)
+              );
+SYNC_OUT.ck = !CLK_12M;
+SYNC_OUT.ap = !RESET_IN;
+
+PIXEL_OUT.d = (HSYNC_DISPLAY_ACTIVE & VSYNC_DISPLAY_ACTIVE & SHIFTREG7);
+PIXEL_OUT.ck = !CLK_12M;
+PIXEL_OUT.ar = !RESET_IN;
+
+/*
+Total dedicated input used:	2/4 	(50%)
+Total I/O pins used		25/32 	(78%)
+Total Logic cells used 		59/64 	(92%)
+Total Flip-Flop used 		37/64 	(57%)
+Total Foldback logic used 	2/64 	(3%)
+Total Nodes+FB/MCells 		60/64 	(93%)
+Total cascade used 		1
+Total input pins 		14
+Total output pins 		13
+Total Pts 			233
+*/

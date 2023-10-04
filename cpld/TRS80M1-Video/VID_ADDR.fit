@@ -1,0 +1,762 @@
+Atmel ATF1504AS Fitter Version 1.8.7.8 ,running Mon Sep 25 10:52:43 2023
+
+
+fit1504 C:\USERS\JBS\DOCUMENTS\SRC\RSC68K\CPLD\TRS80M1-VIDEO\VID_ADDR.tt2 -CUPL -dev P1504C44 -JTAG ON
+
+
+****** Initial fitting strategy and property ******
+ Pla_in_file = VID_ADDR.tt2
+ Pla_out_file = VID_ADDR.tt3
+ Jedec_file = VID_ADDR.jed
+ Vector_file = VID_ADDR.tmv
+ verilog_file = VID_ADDR.vt
+ Time_file = 
+ Log_file = VID_ADDR.fit
+ err_file = 
+ Device_name = PLCC44
+ Module_name = 
+ Package_type = PLCC
+ Preassign_file = 
+ Property_file = 
+ Sleep_mode = 
+ Preassignment = 
+ Security_mode = OFF
+ Pin_keep_mode = ON
+ Dedicated_input_clock = 
+ Dedicated_input_reset = 
+ Dedicated_input_oe = 
+ supporter = CUPL
+ optimize = ON
+ Soft_buffer = 
+ Xor_synthesis = OFF
+ Foldback_logic =  on
+ Expander = 
+ Cascade_logic = OFF
+ Dedicated_input = 
+ Output_fast = OFF
+ *******************************
+ Power down pin 1 = OFF
+ Power down pin 2 = OFF
+ power_reset = OFF
+ JTAG = ON
+ TDI pullup = OFF
+ TMS pullup = OFF
+ MC_power = OFF
+ Open_collector = OFF
+ ITD0 = ON
+ ITD1 = ON
+ ITD2 = ON
+ Fast_inlatch = off
+ *******************************
+Info: C:\USERS\JBS\DOCUMENTS\SRC\RSC68K\CPLD\TRS80M1-VIDEO\VID_ADDR uses 95% of the pins available in device PLCC44
+  If you wish to have more pins available for future logic changes
+  Atmel  recommends using a larger device
+---------------------------------------------------------
+ Fitter_Pass 1, Preassign = KEEP, LOGIC_DOUBLING : OFF 
+ ... 
+## ERROR : Bad user pin assignement : 52
+ ## ERROR : Bad user pin assignement 
+---------------------------------------------------------
+ Fitter_Pass 2, Preassign = KEEP, NODE ASSIGN : OFF 
+ ... 
+ ## Warning : Placement fail 
+---------------------------------------------------------
+ Fitter_Pass 3, Preassign = KEEP, CASCADE_LOGIC : (TRY) 
+ ... 
+ ## Warning : Placement fail 
+---------------------------------------------------------
+ Fitter_Pass 4, Preassign = KEEP, CASCADE_LOGIC : (OFF) 
+ ... 
+
+Performing global Output Enable pin assignments ...
+
+Performing global pin assignments ...
+--------------------------------------
+
+
+
+Final global control pins assignment (if applicable)...
+-------------------------------------------------------
+VM_ADDR_CLOCK assigned to pin  43
+
+
+
+Performing input pin pre-assignments ...
+------------------------------------
+VM_PAGE3 assigned to pin  2
+VM_ADDR_CLOCK assigned to pin  43
+VM_ADDR_OE assigned to pin  1
+VM_ADDR_RESET assigned to pin  44
+
+Attempt to place floating signals ...
+------------------------------------
+VM_A2 is placed at pin 12 (MC 1)
+C7 is placed at feedback node 602 (MC 2)
+VM_A1 is placed at pin 11 (MC 3)
+VM_A0 is placed at pin 9 (MC 4)
+VID_CPLD_6 is placed at pin 8 (MC 5)
+S12 is placed at feedback node 605 (MC 5)
+S10 is placed at feedback node 606 (MC 6)
+S11 is placed at feedback node 607 (MC 7)
+TDI is placed at pin 7 (MC 8)
+XXL_149 is placed at feedback node 608 (MC 8)
+C6 is placed at feedback node 609 (MC 9)
+XXL_150 is placed at feedback node 610 (MC 10)
+VM_PAGE0 is placed at pin 6 (MC 11)
+XXL_136 is placed at feedback node 611 (MC 11)
+XXL_138 is placed at feedback node 612 (MC 12)
+XXL_137 is placed at feedback node 613 (MC 13)
+VM_PAGE1 is placed at pin 5 (MC 14)
+XXL_148 is placed at feedback node 614 (MC 14)
+XXL_139 is placed at feedback node 615 (MC 15)
+VM_PAGE2 is placed at pin 4 (MC 16)
+XXL_140 is placed at feedback node 616 (MC 16)
+VM_A5 is placed at pin 21 (MC 17)
+UNUSED4 is placed at pin 20 (MC 19)
+UNUSED3 is placed at pin 19 (MC 20)
+UNUSED2 is placed at pin 18 (MC 21)
+C9 is placed at feedback node 622 (MC 22)
+C8 is placed at feedback node 623 (MC 23)
+UNUSED5 is placed at pin 17 (MC 24)
+VM_A4 is placed at pin 16 (MC 25)
+XXL_151 is placed at feedback node 626 (MC 26)
+S13 is placed at feedback node 627 (MC 27)
+XXL_135 is placed at feedback node 628 (MC 28)
+XXL_147 is placed at feedback node 629 (MC 29)
+VM_A3 is placed at pin 14 (MC 30)
+XXL_142 is placed at feedback node 631 (MC 31)
+TMS is placed at pin 13 (MC 32)
+XXL_141 is placed at feedback node 632 (MC 32)
+VM_A6 is placed at pin 24 (MC 33)
+VM_A7 is placed at pin 25 (MC 35)
+UNUSED7 is placed at pin 26 (MC 36)
+UNUSED8 is placed at pin 27 (MC 37)
+C13 is placed at feedback node 638 (MC 38)
+C12 is placed at feedback node 639 (MC 39)
+UNUSED6 is placed at pin 28 (MC 40)
+VM_A9 is placed at pin 29 (MC 41)
+C11 is placed at feedback node 642 (MC 42)
+C10 is placed at feedback node 643 (MC 43)
+XXL_146 is placed at feedback node 644 (MC 44)
+XXL_145 is placed at feedback node 645 (MC 45)
+VM_A8 is placed at pin 31 (MC 46)
+XXL_144 is placed at feedback node 647 (MC 47)
+TCK is placed at pin 32 (MC 48)
+XXL_143 is placed at feedback node 648 (MC 48)
+VM_A10 is placed at pin 33 (MC 49)
+VM_A11 is placed at pin 34 (MC 51)
+VM_A12 is placed at pin 36 (MC 52)
+VM_A13 is placed at pin 37 (MC 53)
+TDO is placed at pin 38 (MC 56)
+MODE2 is placed at pin 39 (MC 57)
+MODE1 is placed at pin 40 (MC 62)
+MODE0 is placed at pin 41 (MC 64)
+
+                                                                 
+                                                                 
+                                 V                               
+                                 M                               
+                  V  V  V     V  _                               
+                  M  M  M     M  A                               
+                  _  _  _     _  D                               
+                  P  P  P     P  D          M  M                 
+                  A  A  A     A  R          O  O                 
+                  G  G  G  V  G  _       G  D  D                 
+                  E  E  E  C  E  O       N  E  E                 
+                  0  1  2  C  3  E       D  0  1                 
+               ____________________________________              
+              /   6  5  4  3  2  1 44 43 42 41 40  \             
+         TDI |  7                                39 | MODE2      
+  VID_CPLD_6 |  8                                38 | TDO        
+       VM_A0 |  9                                37 | VM_A13     
+         GND | 10                                36 | VM_A12     
+       VM_A1 | 11                                35 | VCC        
+       VM_A2 | 12            ATF1504             34 | VM_A11     
+         TMS | 13          44-Lead PLCC          33 | VM_A10     
+       VM_A3 | 14                                32 | TCK        
+         VCC | 15                                31 | VM_A8      
+       VM_A4 | 16                                30 | GND        
+     UNUSED5 | 17                                29 | VM_A9      
+             |   18 19 20 21 22 23 24 25 26 27 28   |            
+              \____________________________________/             
+                 U  U  U  V  G  V  V  V  U  U  U                 
+                 N  N  N  M  N  C  M  M  N  N  N                 
+                 U  U  U  _  D  C  _  _  U  U  U                 
+                 S  S  S  A        A  A  S  S  S                 
+                 E  E  E  5        6  7  E  E  E                 
+                 D  D  D                 D  D  D                 
+                 2  3  4                 7  8  6                 
+
+
+
+VCC = Supply Voltage pin which must be connected to (5.0V or 3.0V)
+
+GND = GND pin which must be connected to ground
+
+TMS,TDI,TDO,TDI = JTAG pins which must reserved for the JTAG interface
+
+NC = Unused I/O pins which must be unconnected on the board
+
+Universal-Interconnect-Multiplexer assignments
+------------------------------------------------
+FanIn assignment for block A [25]
+{
+C6,C12,C11,C10,
+MODE2,MODE0,MODE1,
+S11,S12,S10,
+VM_A1,VM_A0,VM_A2,VM_ADDR_RESET,VM_A3,VM_A4,VM_ADDR_OE,VM_A5,VM_A6,
+XXL_144,XXL_136,XXL_145,XXL_137,XXL_135,XXL_146,
+}
+Multiplexer assignment for block A
+VM_A1			(MC2	FB)  : MUX 2		Ref (A3fb)
+XXL_144			(MC20	FB)  : MUX 3		Ref (C47fb)
+VM_A0			(MC3	FB)  : MUX 4		Ref (A4fb)
+C6			(MC7	FB)  : MUX 5		Ref (A9fb)
+C12			(MC15	FB)  : MUX 6		Ref (C39fb)
+VM_A2			(MC1	FB)  : MUX 8		Ref (A1fb)
+XXL_136			(MC8	FB)  : MUX 11		Ref (A11fb)
+VM_ADDR_RESET		(MC23	FB)  : MUX 13		Ref (OE1)
+VM_A3			(MC13	FB)  : MUX 15		Ref (B30fb)
+MODE2			(MC22	P)   : MUX 16		Ref (D57p)
+XXL_145			(MC19	FB)  : MUX 19		Ref (C45fb)
+MODE0			(MC25	P)   : MUX 20		Ref (D64p)
+VM_A4			(MC11	FB)  : MUX 21		Ref (B25fb)
+S11			(MC6	FB)  : MUX 22		Ref (A7fb)
+XXL_137			(MC9	FB)  : MUX 23		Ref (A13fb)
+XXL_135			(MC12	FB)  : MUX 25		Ref (B28fb)
+MODE1			(MC24	P)   : MUX 26		Ref (D62p)
+S12			(MC4	FB)  : MUX 28		Ref (A5fb)
+C11			(MC16	FB)  : MUX 31		Ref (C42fb)
+VM_ADDR_OE		(MC21	FB)  : MUX 32		Ref (GCLR)
+VM_A5			(MC10	FB)  : MUX 34		Ref (B17fb)
+XXL_146			(MC18	FB)  : MUX 35		Ref (C44fb)
+VM_A6			(MC14	FB)  : MUX 36		Ref (C33fb)
+S10			(MC5	FB)  : MUX 38		Ref (A6fb)
+C10			(MC17	FB)  : MUX 39		Ref (C43fb)
+
+FanIn assignment for block B [24]
+{
+C7,C13,C6,C8,
+MODE2,MODE0,MODE1,
+S13,
+VM_A8,VM_A2,VM_A3,VM_A1,VM_ADDR_RESET,VM_A0,VID_CPLD_6,VM_A6,VM_ADDR_OE,VM_A7,
+XXL_147,XXL_138,XXL_149,XXL_148,XXL_140,XXL_139,
+}
+Multiplexer assignment for block B
+C7			(MC2	FB)  : MUX 0		Ref (A2fb)
+XXL_147			(MC13	FB)  : MUX 1		Ref (B29fb)
+C13			(MC17	FB)  : MUX 2		Ref (C38fb)
+C6			(MC6	FB)  : MUX 3		Ref (A9fb)
+VM_A8			(MC18	FB)  : MUX 5		Ref (C46fb)
+VM_A2			(MC1	FB)  : MUX 6		Ref (A1fb)
+MODE2			(MC20	P)   : MUX 8		Ref (D57p)
+XXL_138			(MC7	FB)  : MUX 9		Ref (A12fb)
+C8			(MC11	FB)  : MUX 10		Ref (B23fb)
+VM_A3			(MC14	FB)  : MUX 15		Ref (B30fb)
+VM_A1			(MC3	FB)  : MUX 16		Ref (A3fb)
+VM_ADDR_RESET		(MC21	FB)  : MUX 17		Ref (OE1)
+VM_A0			(MC4	FB)  : MUX 18		Ref (A4fb)
+MODE0			(MC23	P)   : MUX 20		Ref (D64p)
+VID_CPLD_6		(MC24	P)   : MUX 21		Ref (A5p)
+XXL_149			(MC5	FB)  : MUX 24		Ref (A8fb)
+MODE1			(MC22	P)   : MUX 26		Ref (D62p)
+XXL_148			(MC8	FB)  : MUX 27		Ref (A14fb)
+VM_A6			(MC15	FB)  : MUX 28		Ref (C33fb)
+XXL_140			(MC10	FB)  : MUX 29		Ref (A16fb)
+XXL_139			(MC9	FB)  : MUX 31		Ref (A15fb)
+VM_ADDR_OE		(MC19	FB)  : MUX 32		Ref (GCLR)
+S13			(MC12	FB)  : MUX 33		Ref (B27fb)
+VM_A7			(MC16	FB)  : MUX 34		Ref (C35fb)
+
+FanIn assignment for block C [22]
+{
+C7,C8,C12,C9,C10,C11,
+MODE2,MODE1,
+S10,S11,S12,
+VM_A8,VM_ADDR_RESET,VID_CPLD_6,VM_A7,VM_A9,VM_ADDR_OE,
+XXL_150,XXL_142,XXL_143,XXL_141,XXL_151,
+}
+Multiplexer assignment for block C
+C7			(MC1	FB)  : MUX 0		Ref (A2fb)
+XXL_150			(MC5	FB)  : MUX 1		Ref (A10fb)
+XXL_142			(MC9	FB)  : MUX 3		Ref (B31fb)
+C8			(MC7	FB)  : MUX 4		Ref (B23fb)
+MODE2			(MC19	P)   : MUX 8		Ref (D57p)
+XXL_143			(MC17	FB)  : MUX 9		Ref (C48fb)
+VM_A8			(MC16	FB)  : MUX 13		Ref (C46fb)
+C12			(MC12	FB)  : MUX 14		Ref (C39fb)
+XXL_141			(MC10	FB)  : MUX 17		Ref (B32fb)
+C9			(MC6	FB)  : MUX 18		Ref (B22fb)
+VM_ADDR_RESET		(MC20	FB)  : MUX 19		Ref (OE1)
+S10			(MC3	FB)  : MUX 20		Ref (A6fb)
+VID_CPLD_6		(MC22	P)   : MUX 21		Ref (A5p)
+S11			(MC4	FB)  : MUX 26		Ref (A7fb)
+C10			(MC15	FB)  : MUX 27		Ref (C43fb)
+S12			(MC2	FB)  : MUX 28		Ref (A5fb)
+MODE1			(MC21	P)   : MUX 30		Ref (D62p)
+C11			(MC14	FB)  : MUX 31		Ref (C42fb)
+VM_A7			(MC11	FB)  : MUX 34		Ref (C35fb)
+XXL_151			(MC8	FB)  : MUX 35		Ref (B26fb)
+VM_A9			(MC13	FB)  : MUX 37		Ref (C41fb)
+VM_ADDR_OE		(MC18	FB)  : MUX 38		Ref (GCLR)
+
+FanIn assignment for block D [5]
+{
+VM_PAGE0,VM_PAGE3,VM_PAGE1,VM_PAGE2,VM_ADDR_OE,
+}
+Multiplexer assignment for block D
+VM_PAGE0		(MC2	P)   : MUX 0		Ref (A11p)
+VM_PAGE3		(MC5	FB)  : MUX 12		Ref (OE2)
+VM_PAGE1		(MC3	P)   : MUX 32		Ref (A14p)
+VM_PAGE2		(MC4	P)   : MUX 36		Ref (A16p)
+VM_ADDR_OE		(MC1	FB)  : MUX 38		Ref (GCLR)
+
+Creating JEDEC file C:\USERS\JBS\DOCUMENTS\SRC\RSC68K\CPLD\TRS80M1-VIDEO\VID_ADDR.jed ...
+
+PLCC44 programmed logic:
+-----------------------------------
+C6 = ((MODE0 & !MODE2 & VM_A5.Q & VM_A0.Q & VM_A1.Q & VM_A2.Q & VM_A3.Q & VM_A4.Q)
+	# (MODE0 & MODE1 & !MODE2 & VM_A4.Q)
+	# (MODE0 & MODE1 & !MODE2 & VM_A5.Q));
+
+VM_A0.D = (XXL_135);
+
+VM_A1.D = (XXL_136);
+
+VM_A2.D = ((MODE2 & VM_A2.Q)
+	# XXL_137);
+
+VM_A4.D = (XXL_148
+	# XXL_149);
+
+VM_A3.D = ((!MODE2 & !VM_A3.Q & !MODE1 & MODE0 & VM_A0.Q & VM_A1.Q & VM_A2.Q)
+	# (MODE2 & VM_A3.Q)
+	# XXL_138);
+
+VM_A5.D = (XXL_139
+	# XXL_140);
+
+UNUSED3 = VID_CPLD_6;
+
+UNUSED4 = VID_CPLD_6;
+
+UNUSED2 = VID_CPLD_6;
+
+UNUSED7 = VID_CPLD_6;
+
+UNUSED5 = VID_CPLD_6;
+
+UNUSED6 = VID_CPLD_6;
+
+UNUSED8 = VID_CPLD_6;
+
+VM_A10 = (VM_ADDR_OE & VM_PAGE0);
+
+VM_A11 = (VM_ADDR_OE & VM_PAGE1);
+
+VM_A12 = (VM_ADDR_OE & VM_PAGE2);
+
+VM_A13 = (VM_ADDR_OE & VM_PAGE3);
+
+VM_A6.D = (XXL_150
+	# XXL_151);
+
+C7 = ((!MODE0 & MODE1 & !MODE2 & C6)
+	# (VM_A6.Q & C6)
+	# (!MODE0 & MODE1 & !MODE2 & VM_A6.Q));
+
+C8 = ((MODE1 & !MODE2 & C7)
+	# (VM_A7.Q & C7)
+	# (MODE1 & !MODE2 & VM_A7.Q));
+
+VM_A7.D = ((!C7 & MODE1 & !MODE2 & !VM_A7.Q)
+	# XXL_141);
+
+C9 = ((MODE1 & !MODE2 & C8)
+	# (VM_A8.Q & C8)
+	# (MODE1 & !MODE2 & VM_A8.Q));
+
+VM_A8.D = ((!C8 & MODE1 & !MODE2 & !VM_A8.Q)
+	# XXL_142);
+
+VM_A9.D = ((!C9 & MODE1 & !MODE2 & !VM_A9.Q)
+	# XXL_143);
+
+C10 = ((MODE1 & !MODE2 & C9)
+	# (VM_A9.Q & C9)
+	# (MODE1 & !MODE2 & VM_A9.Q));
+
+C11 = ((MODE1 & !MODE2 & C10)
+	# (S10.Q & C10)
+	# (MODE1 & !MODE2 & S10.Q));
+
+S10.D = ((!C10 & MODE1 & !MODE2 & !S10.Q)
+	# XXL_144);
+
+C12 = ((MODE1 & !MODE2 & C11)
+	# (S11.Q & C11)
+	# (MODE1 & !MODE2 & S11.Q));
+
+S11.D = ((!C11 & MODE1 & !MODE2 & !S11.Q)
+	# XXL_145);
+
+S12.D = ((!C12 & MODE1 & !MODE2 & !S12.Q)
+	# XXL_146);
+
+C13 = ((MODE1 & !MODE2 & C12)
+	# (S12.Q & C12)
+	# (MODE1 & !MODE2 & S12.Q));
+
+S13.D = ((!C13 & MODE1 & !MODE2 & !S13.Q)
+	# XXL_147);
+
+XXL_135 = ((VM_A0.Q & MODE1)
+	# (VM_A0.Q & !MODE0)
+	# (!MODE2 & !VM_A0.Q & !MODE1 & MODE0)
+	# (MODE2 & VM_A0.Q));
+
+XXL_136 = ((VM_A1.Q & MODE1)
+	# (VM_A1.Q & !MODE0)
+	# (VM_A1.Q & !VM_A0.Q)
+	# (!MODE2 & !VM_A1.Q & !MODE1 & MODE0 & VM_A0.Q)
+	# (MODE2 & VM_A1.Q));
+
+XXL_137 = ((VM_A2.Q & MODE1)
+	# (VM_A2.Q & !MODE0)
+	# (VM_A2.Q & !VM_A0.Q)
+	# (VM_A2.Q & !VM_A1.Q)
+	# (!MODE2 & !VM_A2.Q & !MODE1 & MODE0 & VM_A0.Q & VM_A1.Q));
+
+XXL_138 = ((VM_A3.Q & MODE1)
+	# (VM_A3.Q & !MODE0)
+	# (VM_A3.Q & !VM_A0.Q)
+	# (VM_A3.Q & !VM_A1.Q)
+	# (VM_A3.Q & !VM_A2.Q));
+
+XXL_139 = ((!MODE2 & !VM_A5.Q & MODE0 & MODE1 & !VM_A4.Q)
+	# (VM_A5.Q & !MODE0)
+	# (VM_A5.Q & !MODE1 & !VM_A0.Q)
+	# (VM_A5.Q & !MODE1 & !VM_A1.Q)
+	# (VM_A5.Q & !MODE1 & !VM_A2.Q));
+
+XXL_140 = ((VM_A5.Q & !MODE1 & !VM_A4.Q)
+	# (VM_A5.Q & !MODE1 & !VM_A3.Q)
+	# (!MODE2 & !VM_A5.Q & MODE0 & !MODE1 & VM_A4.Q & VM_A0.Q & VM_A1.Q & VM_A2.Q & VM_A3.Q)
+	# (VM_A5.Q & MODE1 & VM_A4.Q)
+	# (MODE2 & VM_A5.Q));
+
+XXL_141 = ((!C7 & !MODE1 & VM_A7.Q)
+	# (!C7 & MODE2 & VM_A7.Q)
+	# (C7 & !MODE1 & !VM_A7.Q)
+	# (C7 & MODE2 & !VM_A7.Q)
+	# (C7 & MODE1 & !MODE2 & VM_A7.Q));
+
+XXL_142 = ((!C8 & !MODE1 & VM_A8.Q)
+	# (!C8 & MODE2 & VM_A8.Q)
+	# (C8 & !MODE1 & !VM_A8.Q)
+	# (C8 & MODE2 & !VM_A8.Q)
+	# (C8 & MODE1 & !MODE2 & VM_A8.Q));
+
+XXL_143 = ((!C9 & !MODE1 & VM_A9.Q)
+	# (!C9 & MODE2 & VM_A9.Q)
+	# (C9 & !MODE1 & !VM_A9.Q)
+	# (C9 & MODE2 & !VM_A9.Q)
+	# (C9 & MODE1 & !MODE2 & VM_A9.Q));
+
+XXL_144 = ((!C10 & !MODE1 & S10.Q)
+	# (!C10 & MODE2 & S10.Q)
+	# (C10 & !MODE1 & !S10.Q)
+	# (C10 & MODE2 & !S10.Q)
+	# (C10 & MODE1 & !MODE2 & S10.Q));
+
+XXL_145 = ((!C11 & !MODE1 & S11.Q)
+	# (!C11 & MODE2 & S11.Q)
+	# (C11 & !MODE1 & !S11.Q)
+	# (C11 & MODE2 & !S11.Q)
+	# (C11 & MODE1 & !MODE2 & S11.Q));
+
+XXL_146 = ((!C12 & !MODE1 & S12.Q)
+	# (!C12 & MODE2 & S12.Q)
+	# (C12 & !MODE1 & !S12.Q)
+	# (C12 & MODE2 & !S12.Q)
+	# (C12 & MODE1 & !MODE2 & S12.Q));
+
+XXL_147 = ((!C13 & !MODE1 & S13.Q)
+	# (!C13 & MODE2 & S13.Q)
+	# (C13 & !MODE1 & !S13.Q)
+	# (C13 & MODE2 & !S13.Q)
+	# (C13 & MODE1 & !MODE2 & S13.Q));
+
+XXL_148 = ((!MODE2 & !VM_A4.Q & MODE0 & MODE1)
+	# (VM_A4.Q & !MODE0)
+	# (VM_A4.Q & !MODE1 & !VM_A0.Q)
+	# (VM_A4.Q & !MODE1 & !VM_A1.Q)
+	# (VM_A4.Q & !MODE1 & !VM_A2.Q));
+
+XXL_149 = ((VM_A4.Q & !MODE1 & !VM_A3.Q)
+	# (!MODE2 & !VM_A4.Q & MODE0 & VM_A0.Q & VM_A1.Q & VM_A2.Q & VM_A3.Q)
+	# (MODE2 & VM_A4.Q));
+
+XXL_150 = ((!C6 & MODE2 & VM_A6.Q)
+	# (!C6 & MODE0 & VM_A6.Q)
+	# (!C6 & !MODE1 & VM_A6.Q)
+	# (C6 & !MODE0 & MODE1 & !MODE2 & VM_A6.Q)
+	# (C6 & MODE2 & !VM_A6.Q));
+
+XXL_151 = ((C6 & MODE0 & !VM_A6.Q)
+	# (C6 & !MODE1 & !VM_A6.Q)
+	# (!C6 & !MODE0 & MODE1 & !MODE2 & !VM_A6.Q));
+
+VM_A0.C = VM_ADDR_CLOCK;
+
+VM_A0.AR = VM_ADDR_RESET;
+
+VM_A0.OE = !VM_ADDR_OE;
+
+VM_A1.C = VM_ADDR_CLOCK;
+
+VM_A1.AR = VM_ADDR_RESET;
+
+VM_A1.OE = !VM_ADDR_OE;
+
+VM_A2.C = VM_ADDR_CLOCK;
+
+VM_A2.AR = VM_ADDR_RESET;
+
+VM_A2.OE = !VM_ADDR_OE;
+
+VM_A4.C = VM_ADDR_CLOCK;
+
+VM_A4.AR = VM_ADDR_RESET;
+
+VM_A4.OE = !VM_ADDR_OE;
+
+VM_A3.C = VM_ADDR_CLOCK;
+
+VM_A3.AR = VM_ADDR_RESET;
+
+VM_A3.OE = !VM_ADDR_OE;
+
+VM_A5.C = VM_ADDR_CLOCK;
+
+VM_A5.AR = VM_ADDR_RESET;
+
+VM_A5.OE = !VM_ADDR_OE;
+
+VM_A6.C = VM_ADDR_CLOCK;
+
+VM_A6.AR = VM_ADDR_RESET;
+
+VM_A6.OE = !VM_ADDR_OE;
+
+VM_A7.C = VM_ADDR_CLOCK;
+
+VM_A7.AR = VM_ADDR_RESET;
+
+VM_A7.OE = !VM_ADDR_OE;
+
+VM_A8.C = VM_ADDR_CLOCK;
+
+VM_A8.AR = VM_ADDR_RESET;
+
+VM_A8.OE = !VM_ADDR_OE;
+
+VM_A9.C = VM_ADDR_CLOCK;
+
+VM_A9.AR = VM_ADDR_RESET;
+
+VM_A9.OE = !VM_ADDR_OE;
+
+S10.C = VM_ADDR_CLOCK;
+
+S10.AR = VM_ADDR_RESET;
+
+S11.C = VM_ADDR_CLOCK;
+
+S11.AR = VM_ADDR_RESET;
+
+S12.C = VM_ADDR_CLOCK;
+
+S12.AR = VM_ADDR_RESET;
+
+S13.C = VM_ADDR_CLOCK;
+
+S13.AR = VM_ADDR_RESET;
+
+
+PLCC44 Pin/Node Placement:
+------------------------------------
+Pin 1  = VM_ADDR_OE;
+Pin 2  = VM_PAGE3;
+Pin 4  = VM_PAGE2; /* MC 16 */
+Pin 5  = VM_PAGE1; /* MC 14 */
+Pin 6  = VM_PAGE0; /* MC 11 */
+Pin 7  = TDI; /* MC 8 */
+Pin 8  = VID_CPLD_6; /* MC 5 */
+Pin 9  = VM_A0; /* MC 4 */
+Pin 11 = VM_A1; /* MC  3 */
+Pin 12 = VM_A2; /* MC  1 */
+Pin 13 = TMS; /* MC 32 */ 
+Pin 14 = VM_A3; /* MC 30 */ 
+Pin 16 = VM_A4; /* MC 25 */ 
+Pin 17 = UNUSED5; /* MC 24 */ 
+Pin 18 = UNUSED2; /* MC 21 */ 
+Pin 19 = UNUSED3; /* MC 20 */ 
+Pin 20 = UNUSED4; /* MC 19 */ 
+Pin 21 = VM_A5; /* MC 17 */ 
+Pin 24 = VM_A6; /* MC 33 */ 
+Pin 25 = VM_A7; /* MC 35 */ 
+Pin 26 = UNUSED7; /* MC 36 */ 
+Pin 27 = UNUSED8; /* MC 37 */ 
+Pin 28 = UNUSED6; /* MC 40 */ 
+Pin 29 = VM_A9; /* MC 41 */ 
+Pin 31 = VM_A8; /* MC 46 */ 
+Pin 32 = TCK; /* MC 48 */ 
+Pin 33 = VM_A10; /* MC 49 */ 
+Pin 34 = VM_A11; /* MC 51 */ 
+Pin 36 = VM_A12; /* MC 52 */ 
+Pin 37 = VM_A13; /* MC 53 */ 
+Pin 38 = TDO; /* MC 56 */ 
+Pin 39 = MODE2; /* MC 57 */ 
+Pin 40 = MODE1; /* MC 62 */ 
+Pin 41 = MODE0; /* MC 64 */ 
+Pin 43 = VM_ADDR_CLOCK;
+Pin 44 = VM_ADDR_RESET;
+PINNODE 602 = C7; /* MC 2 Feedback */
+PINNODE 605 = S12; /* MC 5 Feedback */
+PINNODE 606 = S10; /* MC 6 Feedback */
+PINNODE 607 = S11; /* MC 7 Feedback */
+PINNODE 608 = XXL_149; /* MC 8 Feedback */
+PINNODE 609 = C6; /* MC 9 Feedback */
+PINNODE 610 = XXL_150; /* MC 10 Feedback */
+PINNODE 611 = XXL_136; /* MC 11 Feedback */
+PINNODE 612 = XXL_138; /* MC 12 Feedback */
+PINNODE 613 = XXL_137; /* MC 13 Feedback */
+PINNODE 614 = XXL_148; /* MC 14 Feedback */
+PINNODE 615 = XXL_139; /* MC 15 Feedback */
+PINNODE 616 = XXL_140; /* MC 16 Feedback */
+PINNODE 622 = C9; /* MC 22 Feedback */
+PINNODE 623 = C8; /* MC 23 Feedback */
+PINNODE 626 = XXL_151; /* MC 26 Feedback */
+PINNODE 627 = S13; /* MC 27 Feedback */
+PINNODE 628 = XXL_135; /* MC 28 Feedback */
+PINNODE 629 = XXL_147; /* MC 29 Feedback */
+PINNODE 631 = XXL_142; /* MC 31 Feedback */
+PINNODE 632 = XXL_141; /* MC 32 Feedback */
+PINNODE 638 = C13; /* MC 38 Feedback */
+PINNODE 639 = C12; /* MC 39 Feedback */
+PINNODE 642 = C11; /* MC 42 Feedback */
+PINNODE 643 = C10; /* MC 43 Feedback */
+PINNODE 644 = XXL_146; /* MC 44 Feedback */
+PINNODE 645 = XXL_145; /* MC 45 Feedback */
+PINNODE 647 = XXL_144; /* MC 47 Feedback */
+PINNODE 648 = XXL_143; /* MC 48 Feedback */
+
+** Resource Usage **
+
+
+DCERP Field = Summary of Allocations.
+|||||
+|||||_Preset [p,-]       ==  p = PT preset, - No Preset.
+||||
+||||__Reset [g,r,-]      ==  g= Global AR, r = PT reset, - No reset.
+|||
+|||___Clock Enable [e,-] ==  e = Product Term, - always enabled, - none.
+||
+||____Clock [c,g,-],     ==  c = Product term, g = Global term, - No Clock.
+|
+|_____Type [C,D,L,T],    ==  Register type C= combin, D=dff, L=latch, T=tff.
+
+For input only = INPUT.
+
+MCell Pin# Oe   PinDrive      DCERP  FBDrive  DCERP  Foldback  CascadeOut     TotPT output_slew
+MC1   12   PT   VM_A2         Dg-r-  --              --        --             4     slow
+MC2   0         --                   C7       C----  --        --             3     slow
+MC3   11   PT   VM_A1         Dg-r-  --              --        --             3     slow
+MC4   9    PT   VM_A0         Dg-r-  --              --        --             3     slow
+MC5   8    --   VID_CPLD_6    INPUT  S12      Dg-r-  --        --             3     slow
+MC6   0         --                   S10      Dg-r-  --        --             3     slow
+MC7   0         --                   S11      Dg-r-  --        --             3     slow
+MC8   7    --   TDI           INPUT  XXL_149  C----  --        --             3     slow
+MC9   0         --                   C6       C----  --        --             3     slow
+MC10  0         --                   XXL_150  C----  NA        --             5     slow
+MC11  6    --   VM_PAGE0      INPUT  XXL_136  C----  NA        --             5     slow
+MC12  0         --                   XXL_138  C----  NA        --             5     slow
+MC13  0         --                   XXL_137  C----  NA        --             5     slow
+MC14  5    --   VM_PAGE1      INPUT  XXL_148  C----  NA        --             5     slow
+MC15  0         --                   XXL_139  C----  NA        --             5     slow
+MC16  4    --   VM_PAGE2      INPUT  XXL_140  C----  NA        --             5     slow
+MC17  21   PT   VM_A5         Dg-r-  --              --        --             4     slow
+MC18  0         --                   --              --        --             0     slow
+MC19  20   on   UNUSED4       C----  --              --        --             1     slow
+MC20  19   on   UNUSED3       C----  --              --        --             1     slow
+MC21  18   on   UNUSED2       C----  --              --        --             1     slow
+MC22  0         --                   C9       C----  --        --             3     slow
+MC23  0         --                   C8       C----  --        --             3     slow
+MC24  17   on   UNUSED5       C----  --              --        --             1     slow
+MC25  16   PT   VM_A4         Dg-r-  --              --        --             4     slow
+MC26  0         --                   XXL_151  C----  --        --             3     slow
+MC27  0         --                   S13      Dg-r-  --        --             3     slow
+MC28  0         --                   XXL_135  C----  --        --             4     slow
+MC29  0         --                   XXL_147  C----  NA        --             5     slow
+MC30  14   PT   VM_A3         Dg-r-  --              NA        --             5     slow
+MC31  0         --                   XXL_142  C----  NA        --             5     slow
+MC32  13   --   TMS           INPUT  XXL_141  C----  NA        --             5     slow
+MC33  24   PT   VM_A6         Dg-r-  --              --        --             4     slow
+MC34  0         --                   --              --        --             0     slow
+MC35  25   PT   VM_A7         Dg-r-  --              --        --             4     slow
+MC36  26   on   UNUSED7       C----  --              --        --             1     slow
+MC37  27   on   UNUSED8       C----  --              --        --             1     slow
+MC38  0         --                   C13      C----  --        --             3     slow
+MC39  0         --                   C12      C----  --        --             3     slow
+MC40  28   on   UNUSED6       C----  --              --        --             1     slow
+MC41  29   PT   VM_A9         Dg-r-  --              --        --             4     slow
+MC42  0         --                   C11      C----  --        --             3     slow
+MC43  0         --                   C10      C----  --        --             3     slow
+MC44  0         --                   XXL_146  C----  NA        --             5     slow
+MC45  0         --                   XXL_145  C----  NA        --             5     slow
+MC46  31   PT   VM_A8         Dg-r-  --              --        --             4     slow
+MC47  0         --                   XXL_144  C----  NA        --             5     slow
+MC48  32   --   TCK           INPUT  XXL_143  C----  NA        --             5     slow
+MC49  33   on   VM_A10        C----  --              --        --             1     slow
+MC50  0         --                   --              --        --             0     slow
+MC51  34   on   VM_A11        C----  --              --        --             1     slow
+MC52  36   on   VM_A12        C----  --              --        --             1     slow
+MC53  37   on   VM_A13        C----  --              --        --             1     slow
+MC54  0         --                   --              --        --             0     slow
+MC55  0         --                   --              --        --             0     slow
+MC56  38   --   TDO           INPUT  --              --        --             0     slow
+MC57  39   --   MODE2         INPUT  --              --        --             0     slow
+MC58  0         --                   --              --        --             0     slow
+MC59  0         --                   --              --        --             0     slow
+MC60  0         --                   --              --        --             0     slow
+MC61  0         --                   --              --        --             0     slow
+MC62  40   --   MODE1         INPUT  --              --        --             0     slow
+MC63  0         --                   --              --        --             0     slow
+MC64  41   --   MODE0         INPUT  --              --        --             0     slow
+MC0   2         VM_PAGE3      INPUT  --              --        --             0     slow
+MC0   1         VM_ADDR_OE    INPUT  --              --        --             0     slow
+MC0   44        VM_ADDR_RESET INPUT  --              --        --             0     slow
+MC0   43        VM_ADDR_CLOCK INPUT  --              --        --             0     slow
+
+Logic Array Block	Logic Cells	I/O Pins	Foldbacks	TotalPT		FanIN	Cascades
+A: LC1	- LC16		16/16(100%)	8/16(50%)	0/16(0%)	63/80(78%)	(25)	0
+B: LC17	- LC32		15/16(93%)	8/16(50%)	0/16(0%)	48/80(60%)	(24)	0
+C: LC33	- LC48		15/16(93%)	8/16(50%)	0/16(0%)	51/80(63%)	(22)	0
+D: LC49	- LC64		4/16(25%)	8/16(50%)	0/16(0%)	4/80(5%)	(5)	0
+
+Total dedicated input used:	4/4 	(100%)
+Total I/O pins used		32/32 	(100%)
+Total Logic cells used 		50/64 	(78%)
+Total Flip-Flop used 		14/64 	(21%)
+Total Foldback logic used 	0/64 	(0%)
+Total Nodes+FB/MCells 		50/64 	(78%)
+Total cascade used 		0
+Total input pins 		15
+Total output pins 		21
+Total Pts 			166
+Creating pla file C:\USERS\JBS\DOCUMENTS\SRC\RSC68K\CPLD\TRS80M1-VIDEO\VID_ADDR.tt3 with 0 inputs 0 outputs, 0 pins 0 nodes and 0 pterms...
+
+----------------  End fitter, Design FITS
+$Device PLCC44 fits 
+FIT1504 completed in 0.00 seconds

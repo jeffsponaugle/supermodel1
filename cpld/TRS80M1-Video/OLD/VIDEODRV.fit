@@ -1,0 +1,939 @@
+Atmel ATF1504AS Fitter Version 1.8.7.8 ,running Thu Aug 10 21:36:49 2023
+
+
+fit1504 C:\VIDEODRV.tt2 -CUPL -dev P1504C44 -JTAG ON
+
+
+****** Initial fitting strategy and property ******
+ Pla_in_file = VIDEODRV.tt2
+ Pla_out_file = VIDEODRV.tt3
+ Jedec_file = VIDEODRV.jed
+ Vector_file = VIDEODRV.tmv
+ verilog_file = VIDEODRV.vt
+ Time_file = 
+ Log_file = VIDEODRV.fit
+ err_file = 
+ Device_name = PLCC44
+ Module_name = 
+ Package_type = PLCC
+ Preassign_file = 
+ Property_file = 
+ Sleep_mode = 
+ Preassignment = 
+ Security_mode = OFF
+ Pin_keep_mode = ON
+ Dedicated_input_clock = 
+ Dedicated_input_reset = 
+ Dedicated_input_oe = 
+ supporter = CUPL
+ optimize = ON
+ Soft_buffer = 
+ Xor_synthesis = OFF
+ Foldback_logic =  on
+ Expander = 
+ Cascade_logic = OFF
+ Dedicated_input = 
+ Output_fast = OFF
+ *******************************
+ Power down pin 1 = OFF
+ Power down pin 2 = OFF
+ power_reset = OFF
+ JTAG = ON
+ TDI pullup = ON
+ TMS pullup = ON
+ MC_power = OFF
+ Open_collector = OFF
+ ITD0 = ON
+ ITD1 = ON
+ ITD2 = ON
+ Fast_inlatch = off
+ *******************************
+---------------------------------------------------------
+ Fitter_Pass 1, Preassign = KEEP, LOGIC_DOUBLING : OFF 
+ ... 
+## ERROR : Bad user pin assignement : 78
+ ## ERROR : Bad user pin assignement 
+---------------------------------------------------------
+ Fitter_Pass 2, Preassign = KEEP, NODE ASSIGN : OFF 
+ ... 
+Info: C:\VIDEODRV uses 90% of the logic resources in device PLCC44
+  If you wish to have more pins available for future logic change
+  Atmel recommends using a larger device.
+ ## Warning : Placement fail 
+---------------------------------------------------------
+ Fitter_Pass 3, Preassign = KEEP, CASCADE_LOGIC : (TRY) 
+ ... 
+  If you wish to have more pins available for future logic change
+  Atmel recommends using a larger device.
+
+Performing global Output Enable pin assignments ...
+
+Performing global pin assignments ...
+--------------------------------------
+
+
+
+Final global control pins assignment (if applicable)...
+-------------------------------------------------------
+CLK_25M assigned to pin  43
+RESET_IN assigned to pin  1
+
+
+
+Performing input pin pre-assignments ...
+------------------------------------
+CLK_25M assigned to pin  43
+RESET_IN assigned to pin  1
+
+Attempt to place floating signals ...
+------------------------------------
+CHAR_COL3 is placed at pin 12 (MC 1)
+VSYNC_CLOCK_A is placed at feedback node 602 (MC 2)
+CHAR_COL2 is placed at pin 11 (MC 3)
+CHAR_COL1 is placed at pin 9 (MC 4)
+CHAR_COL0 is placed at pin 8 (MC 5)
+HSYNC_COUNTER6 is placed at feedback node 606 (MC 6)
+XXL_213 is placed at feedback node 607 (MC 7)
+TDI is placed at pin 7 (MC 8)
+XXL_211 is placed at feedback node 608 (MC 8)
+XXL_206 is placed at feedback node 609 (MC 9)
+XXL_215 is placed at feedback node 610 (MC 10)
+CLK_12M is placed at pin 6 (MC 11)
+XXL_212 is placed at feedback node 612 (MC 12)
+HSYNC_COUNTER7 is placed at feedback node 613 (MC 13)
+SYNC_OUT is placed at pin 5 (MC 14)
+XXL_214 is placed at feedback node 615 (MC 15)
+PIXEL_OUT is placed at pin 4 (MC 16)
+FONTLINE1 is placed at pin 21 (MC 17)
+VSYNC_COUNTER2 is placed at feedback node 618 (MC 18)
+FONTLINE0 is placed at pin 20 (MC 19)
+VSYNC_COUNTER0 is placed at feedback node 620 (MC 20)
+VSYNC_COUNTER1 is placed at feedback node 621 (MC 21)
+VSYNC_COUNTER6 is placed at feedback node 622 (MC 22)
+XXL_218 is placed at feedback node 623 (MC 23)
+VSYNC_COUNTER5 is placed at feedback node 624 (MC 24)
+CHAR_COL5 is placed at pin 16 (MC 25)
+XXL_217 is placed at feedback node 626 (MC 26)
+XXL_216 is placed at feedback node 627 (MC 27)
+VSYNC_COUNTER3 is placed at feedback node 628 (MC 28)
+VSYNC_COUNTER7 is placed at feedback node 629 (MC 29)
+CHAR_COL4 is placed at pin 14 (MC 30)
+VSYNC_ZERO is placed at foldback expander node 330 (MC 30)
+TMS is placed at pin 13 (MC 32)
+VSYNC_COUNTER8 is placed at feedback node 632 (MC 32)
+FONTLINE2 is placed at pin 24 (MC 33)
+VSYNC_COUNTER4 is placed at feedback node 634 (MC 34)
+FONTLINE3 is placed at pin 25 (MC 35)
+FONTLINE_RESET is placed at feedback node 638 (MC 38)
+VSYNC_DISPLAY_ACTIVE is placed at feedback node 639 (MC 39)
+VSYNC_COUNTER9 is placed at feedback node 642 (MC 42)
+VSYNC_ZERO is placed at foldback expander node 342 (MC 42)
+XXL_207 is placed at feedback node 643 (MC 43)
+XXL_208 is placed at feedback node 644 (MC 44)
+XXL_210 is placed at feedback node 645 (MC 45)
+DIN0 is placed at pin 31 (MC 46)
+XXL_221 is placed at feedback node 646 (MC 46)
+XXL_220 is placed at feedback node 647 (MC 47)
+TCK is placed at pin 32 (MC 48)
+XXL_219 is placed at feedback node 648 (MC 48)
+DIN1 is placed at pin 33 (MC 49)
+VSYNC_CLOCK_B is placed at feedback node 650 (MC 50)
+DIN2 is placed at pin 34 (MC 51)
+HSYNC_COUNTER0 is placed at feedback node 651 (MC 51)
+DIN3 is placed at pin 36 (MC 52)
+SHIFTREG0 is placed at feedback node 652 (MC 52)
+DIN4 is placed at pin 37 (MC 53)
+HSYNC_COUNTER9 is placed at feedback node 653 (MC 53)
+HSYNC_COUNTER8 is placed at feedback node 654 (MC 54)
+HSYNC_COUNTER1 is placed at feedback node 655 (MC 55)
+TDO is placed at pin 38 (MC 56)
+HSYNC_COUNTER2 is placed at feedback node 656 (MC 56)
+DIN5 is placed at pin 39 (MC 57)
+SHIFTREG7 is placed at feedback node 657 (MC 57)
+SHIFTREG5 is placed at feedback node 658 (MC 58)
+SHIFTREG6 is placed at feedback node 659 (MC 59)
+SHIFTREG4 is placed at feedback node 660 (MC 60)
+SHIFTREG2 is placed at feedback node 661 (MC 61)
+DIN6 is placed at pin 40 (MC 62)
+SHIFTREG3 is placed at feedback node 662 (MC 62)
+SHIFTREG1 is placed at feedback node 663 (MC 63)
+DIN7 is placed at pin 41 (MC 64)
+XXL_209 is placed at feedback node 664 (MC 64)
+
+                                                                 
+                                                                 
+                                                                 
+                        P                                        
+                     S  I        R                               
+                  C  Y  X        E    C                          
+                  L  N  E        S    L                          
+                  K  C  L        E    K                          
+                  _  _  _        T    _     D  D                 
+                  1  O  O  V     _    2  G  I  I                 
+                  2  U  U  C     I    5  N  N  N                 
+                  M  T  T  C     N    M  D  7  6                 
+               ____________________________________              
+              /   6  5  4  3  2  1 44 43 42 41 40  \             
+         TDI |  7                                39 | DIN5       
+   CHAR_COL0 |  8                                38 | TDO        
+   CHAR_COL1 |  9                                37 | DIN4       
+         GND | 10                                36 | DIN3       
+   CHAR_COL2 | 11                                35 | VCC        
+   CHAR_COL3 | 12            ATF1504             34 | DIN2       
+         TMS | 13          44-Lead PLCC          33 | DIN1       
+   CHAR_COL4 | 14                                32 | TCK        
+         VCC | 15                                31 | DIN0       
+   CHAR_COL5 | 16                                30 | GND        
+             | 17                                29 |            
+             |   18 19 20 21 22 23 24 25 26 27 28   |            
+              \____________________________________/             
+                       F  F  G  V  F  F                          
+                       O  O  N  C  O  O                          
+                       N  N  D  C  N  N                          
+                       T  T        T  T                          
+                       L  L        L  L                          
+                       I  I        I  I                          
+                       N  N        N  N                          
+                       E  E        E  E                          
+                       0  1        2  3                          
+
+
+
+VCC = Supply Voltage pin which must be connected to (5.0V or 3.0V)
+
+GND = GND pin which must be connected to ground
+
+TMS,TDI,TDO,TDI = JTAG pins which must reserved for the JTAG interface
+
+NC = Unused I/O pins which must be unconnected on the board
+
+Universal-Interconnect-Multiplexer assignments
+------------------------------------------------
+FanIn assignment for block A [28]
+{
+CLK_12M,CHAR_COL2,CHAR_COL1,CHAR_COL0,
+HSYNC_COUNTER0,HSYNC_COUNTER6,HSYNC_COUNTER2,HSYNC_COUNTER7,HSYNC_COUNTER1,HSYNC_COUNTER8,HSYNC_COUNTER9,
+RESET_IN,
+SHIFTREG7,
+VSYNC_COUNTER5,VSYNC_COUNTER6,VSYNC_COUNTER1,VSYNC_COUNTER8,VSYNC_COUNTER7,VSYNC_DISPLAY_ACTIVE,VSYNC_COUNTER4,VSYNC_COUNTER2,VSYNC_COUNTER9,VSYNC_COUNTER3,
+XXL_215,XXL_210,XXL_207,XXL_208,XXL_209,
+}
+Multiplexer assignment for block A
+VSYNC_COUNTER5		(MC11	FB)  : MUX 0		Ref (B24fb)
+VSYNC_COUNTER6		(MC10	FB)  : MUX 2		Ref (B22fb)
+VSYNC_COUNTER1		(MC9	FB)  : MUX 4		Ref (B21fb)
+VSYNC_COUNTER8		(MC14	FB)  : MUX 5		Ref (B32fb)
+CLK_12M			(MC6	P)   : MUX 6		Ref (A11p)
+CHAR_COL2		(MC1	P)   : MUX 7		Ref (A3p)
+HSYNC_COUNTER0		(MC21	FB)  : MUX 8		Ref (D51fb)
+XXL_215			(MC5	FB)  : MUX 9		Ref (A10fb)
+VSYNC_COUNTER7		(MC13	FB)  : MUX 11		Ref (B29fb)
+SHIFTREG7		(MC26	FB)  : MUX 13		Ref (D57fb)
+VSYNC_DISPLAY_ACTIVE		(MC16	FB)  : MUX 14		Ref (C39fb)
+CHAR_COL1		(MC2	P)   : MUX 17		Ref (A4p)
+XXL_210			(MC20	FB)  : MUX 19		Ref (C45fb)
+HSYNC_COUNTER6		(MC4	FB)  : MUX 20		Ref (A6fb)
+CHAR_COL0		(MC3	P)   : MUX 21		Ref (A5p)
+VSYNC_COUNTER4		(MC15	FB)  : MUX 22		Ref (C34fb)
+XXL_207			(MC18	FB)  : MUX 23		Ref (C43fb)
+HSYNC_COUNTER2		(MC25	FB)  : MUX 24		Ref (D56fb)
+HSYNC_COUNTER7		(MC7	FB)  : MUX 25		Ref (A13fb)
+VSYNC_COUNTER2		(MC8	FB)  : MUX 26		Ref (B18fb)
+HSYNC_COUNTER1		(MC24	FB)  : MUX 28		Ref (D55fb)
+XXL_208			(MC19	FB)  : MUX 29		Ref (C44fb)
+HSYNC_COUNTER8		(MC23	FB)  : MUX 30		Ref (D54fb)
+XXL_209			(MC27	FB)  : MUX 31		Ref (D64fb)
+VSYNC_COUNTER9		(MC17	FB)  : MUX 33		Ref (C42fb)
+HSYNC_COUNTER9		(MC22	FB)  : MUX 34		Ref (D53fb)
+VSYNC_COUNTER3		(MC12	FB)  : MUX 37		Ref (B28fb)
+RESET_IN		(MC28	FB)  : MUX 38		Ref (GCLR)
+
+FanIn assignment for block B [20]
+{
+FONTLINE_RESET,FONTLINE1,FONTLINE0,
+HSYNC_COUNTER6,HSYNC_COUNTER7,HSYNC_COUNTER8,
+VSYNC_COUNTER7,VSYNC_COUNTER6,VSYNC_COUNTER1,VSYNC_CLOCK_B,VSYNC_COUNTER8,VSYNC_COUNTER5,VSYNC_COUNTER0,VSYNC_COUNTER4,VSYNC_COUNTER3,VSYNC_COUNTER2,VSYNC_COUNTER9,
+XXL_218,XXL_219,XXL_217,
+}
+Multiplexer assignment for block B
+VSYNC_COUNTER7		(MC13	FB)  : MUX 1		Ref (B29fb)
+FONTLINE_RESET		(MC16	FB)  : MUX 2		Ref (C38fb)
+XXL_218			(MC9	FB)  : MUX 4		Ref (B23fb)
+XXL_219			(MC18	FB)  : MUX 5		Ref (C48fb)
+VSYNC_COUNTER6		(MC8	FB)  : MUX 6		Ref (B22fb)
+VSYNC_COUNTER1		(MC7	FB)  : MUX 8		Ref (B21fb)
+VSYNC_CLOCK_B		(MC19	FB)  : MUX 10		Ref (D50fb)
+VSYNC_COUNTER8		(MC14	FB)  : MUX 17		Ref (B32fb)
+VSYNC_COUNTER5		(MC10	FB)  : MUX 18		Ref (B24fb)
+VSYNC_COUNTER0		(MC6	FB)  : MUX 20		Ref (B20fb)
+FONTLINE1		(MC3	P)   : MUX 21		Ref (B17p)
+VSYNC_COUNTER4		(MC15	FB)  : MUX 22		Ref (C34fb)
+FONTLINE0		(MC5	P)   : MUX 23		Ref (B19p)
+VSYNC_COUNTER3		(MC12	FB)  : MUX 25		Ref (B28fb)
+VSYNC_COUNTER2		(MC4	FB)  : MUX 26		Ref (B18fb)
+XXL_217			(MC11	FB)  : MUX 27		Ref (B26fb)
+VSYNC_COUNTER9		(MC17	FB)  : MUX 31		Ref (C42fb)
+HSYNC_COUNTER6		(MC1	FB)  : MUX 34		Ref (A6fb)
+HSYNC_COUNTER7		(MC2	FB)  : MUX 35		Ref (A13fb)
+HSYNC_COUNTER8		(MC20	FB)  : MUX 38		Ref (D54fb)
+
+FanIn assignment for block C [28]
+{
+CHAR_COL2,CHAR_COL1,CHAR_COL0,
+FONTLINE_RESET,FONTLINE1,FONTLINE3,FONTLINE0,FONTLINE2,
+HSYNC_COUNTER0,HSYNC_COUNTER1,HSYNC_COUNTER2,HSYNC_COUNTER7,
+VSYNC_COUNTER5,VSYNC_COUNTER7,VSYNC_COUNTER1,VSYNC_COUNTER8,VSYNC_COUNTER6,VSYNC_DISPLAY_ACTIVE,VSYNC_CLOCK_B,VSYNC_COUNTER2,VSYNC_COUNTER3,VSYNC_COUNTER9,VSYNC_COUNTER0,VSYNC_COUNTER4,
+XXL_220,XXL_221,XXL_206,XXL_216,
+}
+Multiplexer assignment for block C
+VSYNC_COUNTER5		(MC12	FB)  : MUX 0		Ref (B24fb)
+VSYNC_COUNTER7		(MC15	FB)  : MUX 1		Ref (B29fb)
+FONTLINE_RESET		(MC20	FB)  : MUX 2		Ref (C38fb)
+XXL_220			(MC24	FB)  : MUX 3		Ref (C47fb)
+VSYNC_COUNTER1		(MC10	FB)  : MUX 4		Ref (B21fb)
+VSYNC_COUNTER8		(MC16	FB)  : MUX 5		Ref (B32fb)
+VSYNC_COUNTER6		(MC11	FB)  : MUX 6		Ref (B22fb)
+CHAR_COL2		(MC1	P)   : MUX 7		Ref (A3p)
+HSYNC_COUNTER0		(MC26	FB)  : MUX 8		Ref (D51fb)
+CHAR_COL1		(MC2	P)   : MUX 9		Ref (A4p)
+XXL_221			(MC23	FB)  : MUX 11		Ref (C46fb)
+VSYNC_DISPLAY_ACTIVE		(MC21	FB)  : MUX 14		Ref (C39fb)
+XXL_206			(MC4	FB)  : MUX 15		Ref (A9fb)
+VSYNC_CLOCK_B		(MC25	FB)  : MUX 18		Ref (D50fb)
+HSYNC_COUNTER1		(MC27	FB)  : MUX 20		Ref (D55fb)
+FONTLINE1		(MC6	P)   : MUX 21		Ref (B17p)
+HSYNC_COUNTER2		(MC28	FB)  : MUX 22		Ref (D56fb)
+CHAR_COL0		(MC3	P)   : MUX 23		Ref (A5p)
+FONTLINE3		(MC19	P)   : MUX 25		Ref (C35p)
+VSYNC_COUNTER2		(MC7	FB)  : MUX 26		Ref (B18fb)
+VSYNC_COUNTER3		(MC14	FB)  : MUX 29		Ref (B28fb)
+FONTLINE0		(MC8	P)   : MUX 31		Ref (B19p)
+VSYNC_COUNTER9		(MC22	FB)  : MUX 33		Ref (C42fb)
+HSYNC_COUNTER7		(MC5	FB)  : MUX 35		Ref (A13fb)
+VSYNC_COUNTER0		(MC9	FB)  : MUX 36		Ref (B20fb)
+FONTLINE2		(MC17	P)   : MUX 37		Ref (C33p)
+VSYNC_COUNTER4		(MC18	FB)  : MUX 38		Ref (C34fb)
+XXL_216			(MC13	FB)  : MUX 39		Ref (B27fb)
+
+FanIn assignment for block D [27]
+{
+CLK_12M,CHAR_COL1,CHAR_COL0,
+DIN3,DIN0,DIN2,DIN1,DIN5,DIN7,DIN6,DIN4,
+HSYNC_COUNTER0,HSYNC_COUNTER1,HSYNC_COUNTER2,HSYNC_COUNTER6,
+SHIFTREG5,SHIFTREG4,SHIFTREG0,SHIFTREG6,SHIFTREG3,SHIFTREG2,SHIFTREG1,
+VSYNC_CLOCK_A,
+XXL_212,XXL_211,XXL_214,XXL_213,
+}
+Multiplexer assignment for block D
+CLK_12M			(MC7	P)   : MUX 0		Ref (A11p)
+DIN3			(MC21	P)   : MUX 1		Ref (D52p)
+DIN0			(MC27	P)   : MUX 2		Ref (C46p)
+SHIFTREG5		(MC14	FB)  : MUX 3		Ref (D58fb)
+SHIFTREG4		(MC16	FB)  : MUX 7		Ref (D60fb)
+HSYNC_COUNTER0		(MC10	FB)  : MUX 8		Ref (D51fb)
+DIN2			(MC22	P)   : MUX 9		Ref (D51p)
+DIN1			(MC20	P)   : MUX 11		Ref (D49p)
+SHIFTREG0		(MC11	FB)  : MUX 14		Ref (D52fb)
+XXL_212			(MC8	FB)  : MUX 15		Ref (A12fb)
+DIN5			(MC25	P)   : MUX 16		Ref (D57p)
+CHAR_COL1		(MC2	P)   : MUX 17		Ref (A4p)
+VSYNC_CLOCK_A		(MC1	FB)  : MUX 18		Ref (A2fb)
+SHIFTREG6		(MC15	FB)  : MUX 19		Ref (D59fb)
+HSYNC_COUNTER1		(MC12	FB)  : MUX 20		Ref (D55fb)
+CHAR_COL0		(MC3	P)   : MUX 21		Ref (A5p)
+DIN7			(MC26	P)   : MUX 22		Ref (D64p)
+SHIFTREG3		(MC18	FB)  : MUX 23		Ref (D62fb)
+SHIFTREG2		(MC17	FB)  : MUX 25		Ref (D61fb)
+DIN6			(MC24	P)   : MUX 26		Ref (D62p)
+DIN4			(MC23	P)   : MUX 31		Ref (D53p)
+XXL_211			(MC6	FB)  : MUX 32		Ref (A8fb)
+XXL_214			(MC9	FB)  : MUX 33		Ref (A15fb)
+HSYNC_COUNTER2		(MC13	FB)  : MUX 34		Ref (D56fb)
+XXL_213			(MC5	FB)  : MUX 36		Ref (A7fb)
+HSYNC_COUNTER6		(MC4	FB)  : MUX 38		Ref (A6fb)
+SHIFTREG1		(MC19	FB)  : MUX 39		Ref (D63fb)
+
+Creating JEDEC file C:\VIDEODRV.jed ...
+
+PLCC44 programmed logic:
+-----------------------------------
+CHAR_COL3 = !HSYNC_COUNTER6.Q;
+
+CHAR_COL4 = ((!HSYNC_COUNTER6.Q & HSYNC_COUNTER7.Q)
+	# (HSYNC_COUNTER6.Q & !HSYNC_COUNTER7.Q));
+
+CHAR_COL5 = ((!HSYNC_COUNTER8.Q & !HSYNC_COUNTER7.Q)
+	# (HSYNC_COUNTER8.Q & HSYNC_COUNTER6.Q & HSYNC_COUNTER7.Q)
+	# (!HSYNC_COUNTER8.Q & !HSYNC_COUNTER6.Q));
+
+CLK_12M.D = !CLK_12M.Q;
+
+SHIFTREG0.D = (DIN0 & HSYNC_COUNTER0.Q & HSYNC_COUNTER1.Q & HSYNC_COUNTER2.Q);
+
+SHIFTREG1.D = ((SHIFTREG0.Q & !HSYNC_COUNTER0.Q)
+	# (HSYNC_COUNTER1.Q & HSYNC_COUNTER0.Q & HSYNC_COUNTER2.Q & DIN1)
+	# (SHIFTREG0.Q & !HSYNC_COUNTER2.Q)
+	# (SHIFTREG0.Q & !HSYNC_COUNTER1.Q));
+
+SHIFTREG2.D = ((SHIFTREG1.Q & !HSYNC_COUNTER0.Q)
+	# (HSYNC_COUNTER1.Q & HSYNC_COUNTER0.Q & HSYNC_COUNTER2.Q & DIN2)
+	# (SHIFTREG1.Q & !HSYNC_COUNTER2.Q)
+	# (SHIFTREG1.Q & !HSYNC_COUNTER1.Q));
+
+SHIFTREG3.D = ((SHIFTREG2.Q & !HSYNC_COUNTER0.Q)
+	# (HSYNC_COUNTER1.Q & HSYNC_COUNTER0.Q & HSYNC_COUNTER2.Q & DIN3)
+	# (SHIFTREG2.Q & !HSYNC_COUNTER2.Q)
+	# (SHIFTREG2.Q & !HSYNC_COUNTER1.Q));
+
+SHIFTREG4.D = ((SHIFTREG3.Q & !HSYNC_COUNTER0.Q)
+	# (HSYNC_COUNTER1.Q & HSYNC_COUNTER0.Q & HSYNC_COUNTER2.Q & DIN4)
+	# (SHIFTREG3.Q & !HSYNC_COUNTER2.Q)
+	# (SHIFTREG3.Q & !HSYNC_COUNTER1.Q));
+
+SHIFTREG5.D = ((SHIFTREG4.Q & !HSYNC_COUNTER0.Q)
+	# (HSYNC_COUNTER1.Q & HSYNC_COUNTER0.Q & HSYNC_COUNTER2.Q & DIN5)
+	# (SHIFTREG4.Q & !HSYNC_COUNTER2.Q)
+	# (SHIFTREG4.Q & !HSYNC_COUNTER1.Q));
+
+SHIFTREG6.D = ((SHIFTREG5.Q & !HSYNC_COUNTER0.Q)
+	# (HSYNC_COUNTER1.Q & HSYNC_COUNTER0.Q & HSYNC_COUNTER2.Q & DIN6)
+	# (SHIFTREG5.Q & !HSYNC_COUNTER2.Q)
+	# (SHIFTREG5.Q & !HSYNC_COUNTER1.Q));
+
+SHIFTREG7.D = ((SHIFTREG6.Q & !HSYNC_COUNTER0.Q)
+	# (HSYNC_COUNTER1.Q & HSYNC_COUNTER0.Q & HSYNC_COUNTER2.Q & DIN7)
+	# (SHIFTREG6.Q & !HSYNC_COUNTER2.Q)
+	# (SHIFTREG6.Q & !HSYNC_COUNTER1.Q));
+
+!SYNC_OUT.D = ((!HSYNC_COUNTER7.Q & !HSYNC_COUNTER8.Q & !HSYNC_COUNTER9.Q & !HSYNC_COUNTER6.Q)
+	# (VSYNC_COUNTER1.Q & VSYNC_COUNTER2.Q & !VSYNC_COUNTER3.Q & !VSYNC_COUNTER4.Q & !VSYNC_COUNTER5.Q & !VSYNC_COUNTER6.Q & !VSYNC_COUNTER7.Q & VSYNC_COUNTER8.Q & !VSYNC_COUNTER9.Q & !HSYNC_COUNTER9.Q)
+	# (VSYNC_COUNTER1.Q & VSYNC_COUNTER2.Q & !VSYNC_COUNTER3.Q & !VSYNC_COUNTER4.Q & !VSYNC_COUNTER5.Q & !VSYNC_COUNTER6.Q & !VSYNC_COUNTER7.Q & VSYNC_COUNTER8.Q & !VSYNC_COUNTER9.Q & !HSYNC_COUNTER7.Q & !HSYNC_COUNTER8.Q));
+
+VSYNC_CLOCK_B.D = VSYNC_CLOCK_A.Q;
+
+VSYNC_DISPLAY_ACTIVE = (XXL_206
+	# (VSYNC_COUNTER5.Q & !VSYNC_COUNTER7.Q & !VSYNC_COUNTER8.Q & !VSYNC_COUNTER9.Q & VSYNC_COUNTER4.Q));
+
+!VSYNC_ZERO = (VSYNC_COUNTER0.Q & VSYNC_COUNTER1.Q & VSYNC_COUNTER2.Q & !VSYNC_COUNTER3.Q & !VSYNC_COUNTER4.Q & !VSYNC_COUNTER5.Q & !VSYNC_COUNTER6.Q & !VSYNC_COUNTER7.Q & VSYNC_COUNTER8.Q & !VSYNC_COUNTER9.Q);
+
+VSYNC_CLOCK_A.D = (!CHAR_COL2.Q & HSYNC_COUNTER9.Q & HSYNC_COUNTER8.Q & !HSYNC_COUNTER7.Q & !HSYNC_COUNTER6.Q & CHAR_COL1.Q & CHAR_COL0.Q & HSYNC_COUNTER2.Q & HSYNC_COUNTER1.Q & HSYNC_COUNTER0.Q);
+
+FONTLINE_RESET = (!VSYNC_DISPLAY_ACTIVE
+	# (FONTLINE0.Q & FONTLINE1.Q & !FONTLINE2.Q & FONTLINE3.Q));
+
+HSYNC_COUNTER0.D = !HSYNC_COUNTER0.Q;
+
+HSYNC_COUNTER1.D = ((HSYNC_COUNTER0.Q & !HSYNC_COUNTER1.Q)
+	# (!HSYNC_COUNTER0.Q & HSYNC_COUNTER1.Q));
+
+HSYNC_COUNTER2.D = ((!HSYNC_COUNTER2.Q & HSYNC_COUNTER0.Q & HSYNC_COUNTER1.Q)
+	# (HSYNC_COUNTER2.Q & !HSYNC_COUNTER1.Q)
+	# (HSYNC_COUNTER2.Q & !HSYNC_COUNTER0.Q));
+
+CHAR_COL0.D = ((CHAR_COL0.Q & !HSYNC_COUNTER0.Q)
+	# (!CHAR_COL0.Q & HSYNC_COUNTER1.Q & HSYNC_COUNTER0.Q & HSYNC_COUNTER2.Q)
+	# (CHAR_COL0.Q & !HSYNC_COUNTER2.Q)
+	# (CHAR_COL0.Q & !HSYNC_COUNTER1.Q));
+
+CHAR_COL1.D = XXL_207;
+
+!CHAR_COL2.D = ((!CHAR_COL2.Q & !HSYNC_COUNTER0.Q)
+	# XXL_208
+	# (!CHAR_COL2.Q & !HSYNC_COUNTER6.Q & !HSYNC_COUNTER7.Q & HSYNC_COUNTER8.Q & HSYNC_COUNTER9.Q));
+
+HSYNC_COUNTER6.D = ((!CHAR_COL2.Q & HSYNC_COUNTER6.Q)
+	# XXL_209
+	# (CHAR_COL2.Q & !HSYNC_COUNTER6.Q & CHAR_COL1.Q & CHAR_COL0.Q & HSYNC_COUNTER2.Q & HSYNC_COUNTER1.Q & HSYNC_COUNTER0.Q));
+
+HSYNC_COUNTER7.D = ((!HSYNC_COUNTER7.Q & HSYNC_COUNTER0.Q & HSYNC_COUNTER6.Q & CHAR_COL2.Q & CHAR_COL1.Q & CHAR_COL0.Q & HSYNC_COUNTER2.Q & HSYNC_COUNTER1.Q)
+	# (HSYNC_COUNTER7.Q & !HSYNC_COUNTER6.Q)
+	# XXL_210
+	# (HSYNC_COUNTER7.Q & !HSYNC_COUNTER0.Q));
+
+HSYNC_COUNTER8.D = (XXL_212
+	# XXL_211);
+
+HSYNC_COUNTER9.D = (XXL_214
+	# XXL_213);
+
+PIXEL_OUT.D = ((HSYNC_COUNTER6.Q & HSYNC_COUNTER7.Q & !HSYNC_COUNTER9.Q & SHIFTREG7.Q & VSYNC_DISPLAY_ACTIVE & CHAR_COL1.Q)
+	# XXL_215
+	# (HSYNC_COUNTER6.Q & HSYNC_COUNTER7.Q & !HSYNC_COUNTER9.Q & SHIFTREG7.Q & VSYNC_DISPLAY_ACTIVE & CHAR_COL0.Q));
+
+VSYNC_COUNTER0.D = (!VSYNC_COUNTER0.Q & VSYNC_ZERO);
+
+VSYNC_COUNTER1.D = ((VSYNC_COUNTER0.Q & !VSYNC_COUNTER1.Q & VSYNC_ZERO)
+	# (!VSYNC_COUNTER0.Q & VSYNC_COUNTER1.Q & VSYNC_ZERO));
+
+VSYNC_COUNTER2.D = ((!VSYNC_COUNTER2.Q & VSYNC_ZERO & VSYNC_COUNTER0.Q & VSYNC_COUNTER1.Q)
+	# (VSYNC_COUNTER2.Q & VSYNC_ZERO & !VSYNC_COUNTER1.Q)
+	# (VSYNC_COUNTER2.Q & VSYNC_ZERO & !VSYNC_COUNTER0.Q));
+
+VSYNC_COUNTER3.D = ((VSYNC_COUNTER3.Q & VSYNC_ZERO & !VSYNC_COUNTER0.Q)
+	# (!VSYNC_COUNTER3.Q & VSYNC_ZERO & VSYNC_COUNTER1.Q & VSYNC_COUNTER0.Q & VSYNC_COUNTER2.Q)
+	# (VSYNC_COUNTER3.Q & VSYNC_ZERO & !VSYNC_COUNTER2.Q)
+	# (VSYNC_COUNTER3.Q & VSYNC_ZERO & !VSYNC_COUNTER1.Q));
+
+VSYNC_COUNTER4.D = XXL_216;
+
+VSYNC_COUNTER5.D = (XXL_217
+	# (!VSYNC_COUNTER4.Q & VSYNC_COUNTER5.Q & VSYNC_ZERO));
+
+VSYNC_COUNTER6.D = ((!VSYNC_COUNTER5.Q & VSYNC_COUNTER6.Q & VSYNC_ZERO)
+	# XXL_218
+	# (VSYNC_COUNTER5.Q & !VSYNC_COUNTER6.Q & VSYNC_ZERO & VSYNC_COUNTER4.Q & VSYNC_COUNTER3.Q & VSYNC_COUNTER2.Q & VSYNC_COUNTER1.Q & VSYNC_COUNTER0.Q));
+
+VSYNC_COUNTER7.D = ((!VSYNC_COUNTER7.Q & VSYNC_ZERO & VSYNC_COUNTER0.Q & VSYNC_COUNTER6.Q & VSYNC_COUNTER5.Q & VSYNC_COUNTER4.Q & VSYNC_COUNTER3.Q & VSYNC_COUNTER2.Q & VSYNC_COUNTER1.Q)
+	# (VSYNC_COUNTER7.Q & VSYNC_ZERO & !VSYNC_COUNTER6.Q)
+	# XXL_219
+	# (VSYNC_COUNTER7.Q & VSYNC_ZERO & !VSYNC_COUNTER0.Q));
+
+VSYNC_COUNTER8.D = ((VSYNC_COUNTER8.Q & VSYNC_ZERO & !VSYNC_COUNTER5.Q)
+	# (VSYNC_COUNTER8.Q & VSYNC_ZERO & !VSYNC_COUNTER4.Q)
+	# (VSYNC_COUNTER8.Q & VSYNC_ZERO & !VSYNC_COUNTER3.Q)
+	# (VSYNC_COUNTER8.Q & VSYNC_ZERO & !VSYNC_COUNTER2.Q)
+	# (VSYNC_COUNTER8.Q & VSYNC_ZERO & !VSYNC_COUNTER1.Q)
+	# (VSYNC_COUNTER8.Q & VSYNC_ZERO & !VSYNC_COUNTER0.Q)
+	# (!VSYNC_COUNTER8.Q & VSYNC_ZERO & VSYNC_COUNTER6.Q & VSYNC_COUNTER5.Q & VSYNC_COUNTER4.Q & VSYNC_COUNTER3.Q & VSYNC_COUNTER2.Q & VSYNC_COUNTER1.Q & VSYNC_COUNTER0.Q & VSYNC_COUNTER7.Q)
+	# (VSYNC_COUNTER8.Q & VSYNC_ZERO & !VSYNC_COUNTER7.Q)
+	# (VSYNC_COUNTER8.Q & VSYNC_ZERO & !VSYNC_COUNTER6.Q));
+
+VSYNC_COUNTER9.D = (XXL_221
+	# XXL_220);
+
+FONTLINE0.D = (!FONTLINE0.Q & !FONTLINE_RESET);
+
+FONTLINE1.D = ((!FONTLINE0.Q & FONTLINE1.Q & !FONTLINE_RESET)
+	# (FONTLINE0.Q & !FONTLINE1.Q & !FONTLINE_RESET));
+
+FONTLINE2.D = ((!FONTLINE2.Q & !FONTLINE_RESET & FONTLINE1.Q & FONTLINE0.Q)
+	# (FONTLINE2.Q & !FONTLINE_RESET & !FONTLINE0.Q)
+	# (FONTLINE2.Q & !FONTLINE_RESET & !FONTLINE1.Q));
+
+FONTLINE3.D = ((FONTLINE3.Q & !FONTLINE_RESET & !FONTLINE1.Q)
+	# (!FONTLINE3.Q & !FONTLINE_RESET & FONTLINE0.Q & FONTLINE1.Q & FONTLINE2.Q)
+	# (FONTLINE3.Q & !FONTLINE_RESET & !FONTLINE2.Q)
+	# (FONTLINE3.Q & !FONTLINE_RESET & !FONTLINE0.Q));
+
+XXL_206 = ((!VSYNC_COUNTER8.Q & !VSYNC_COUNTER9.Q & !VSYNC_COUNTER5.Q & VSYNC_COUNTER6.Q)
+	# (!VSYNC_COUNTER7.Q & !VSYNC_COUNTER8.Q & !VSYNC_COUNTER9.Q & VSYNC_COUNTER6.Q)
+	# (VSYNC_COUNTER7.Q & !VSYNC_COUNTER8.Q & !VSYNC_COUNTER9.Q & !VSYNC_COUNTER6.Q)
+	# (!VSYNC_COUNTER7.Q & !VSYNC_COUNTER8.Q & !VSYNC_COUNTER9.Q & VSYNC_COUNTER3.Q & VSYNC_COUNTER5.Q)
+	# (VSYNC_COUNTER7.Q & !VSYNC_COUNTER8.Q & !VSYNC_COUNTER9.Q & !VSYNC_COUNTER4.Q & !VSYNC_COUNTER3.Q));
+
+XXL_207 = ((CHAR_COL1.Q & !HSYNC_COUNTER1.Q)
+	# (CHAR_COL1.Q & !HSYNC_COUNTER0.Q)
+	# (!CHAR_COL1.Q & HSYNC_COUNTER2.Q & HSYNC_COUNTER1.Q & HSYNC_COUNTER0.Q & CHAR_COL0.Q)
+	# (CHAR_COL1.Q & !CHAR_COL0.Q)
+	# (CHAR_COL1.Q & !HSYNC_COUNTER2.Q));
+
+XXL_208 = ((!CHAR_COL2.Q & !HSYNC_COUNTER2.Q)
+	# (!CHAR_COL2.Q & !CHAR_COL0.Q)
+	# (!CHAR_COL2.Q & !CHAR_COL1.Q)
+	# (CHAR_COL2.Q & HSYNC_COUNTER1.Q & HSYNC_COUNTER2.Q & CHAR_COL0.Q & CHAR_COL1.Q & HSYNC_COUNTER0.Q)
+	# (!CHAR_COL2.Q & !HSYNC_COUNTER1.Q));
+
+XXL_209 = ((HSYNC_COUNTER6.Q & !CHAR_COL0.Q)
+	# (HSYNC_COUNTER6.Q & !HSYNC_COUNTER2.Q)
+	# (HSYNC_COUNTER6.Q & !HSYNC_COUNTER1.Q)
+	# (HSYNC_COUNTER6.Q & !HSYNC_COUNTER0.Q)
+	# (HSYNC_COUNTER6.Q & !CHAR_COL1.Q));
+
+XXL_210 = ((HSYNC_COUNTER7.Q & !CHAR_COL1.Q)
+	# (HSYNC_COUNTER7.Q & !CHAR_COL0.Q)
+	# (HSYNC_COUNTER7.Q & !HSYNC_COUNTER2.Q)
+	# (HSYNC_COUNTER7.Q & !HSYNC_COUNTER1.Q)
+	# (HSYNC_COUNTER7.Q & !CHAR_COL2.Q));
+
+XXL_211 = ((!HSYNC_COUNTER7.Q & HSYNC_COUNTER8.Q & HSYNC_COUNTER6.Q)
+	# (HSYNC_COUNTER8.Q & !CHAR_COL1.Q)
+	# (HSYNC_COUNTER8.Q & !CHAR_COL0.Q)
+	# (HSYNC_COUNTER8.Q & !HSYNC_COUNTER2.Q)
+	# (!HSYNC_COUNTER7.Q & HSYNC_COUNTER8.Q & !HSYNC_COUNTER9.Q));
+
+XXL_212 = ((HSYNC_COUNTER8.Q & !HSYNC_COUNTER0.Q)
+	# (HSYNC_COUNTER8.Q & CHAR_COL2.Q & !HSYNC_COUNTER6.Q)
+	# (!HSYNC_COUNTER8.Q & HSYNC_COUNTER1.Q & HSYNC_COUNTER0.Q & CHAR_COL2.Q & HSYNC_COUNTER6.Q & HSYNC_COUNTER7.Q & CHAR_COL1.Q & CHAR_COL0.Q & HSYNC_COUNTER2.Q)
+	# (HSYNC_COUNTER8.Q & !CHAR_COL2.Q & HSYNC_COUNTER7.Q)
+	# (HSYNC_COUNTER8.Q & !HSYNC_COUNTER1.Q));
+
+XXL_213 = ((HSYNC_COUNTER9.Q & !HSYNC_COUNTER7.Q & HSYNC_COUNTER6.Q)
+	# (HSYNC_COUNTER9.Q & !CHAR_COL1.Q)
+	# (HSYNC_COUNTER9.Q & !CHAR_COL0.Q)
+	# (HSYNC_COUNTER9.Q & !HSYNC_COUNTER2.Q)
+	# (HSYNC_COUNTER9.Q & !CHAR_COL2.Q & HSYNC_COUNTER7.Q));
+
+XXL_214 = ((HSYNC_COUNTER9.Q & !HSYNC_COUNTER0.Q)
+	# (HSYNC_COUNTER9.Q & CHAR_COL2.Q & !HSYNC_COUNTER6.Q)
+	# (!HSYNC_COUNTER9.Q & HSYNC_COUNTER1.Q & HSYNC_COUNTER0.Q & CHAR_COL2.Q & HSYNC_COUNTER6.Q & HSYNC_COUNTER8.Q & HSYNC_COUNTER7.Q & CHAR_COL1.Q & CHAR_COL0.Q & HSYNC_COUNTER2.Q)
+	# (HSYNC_COUNTER9.Q & !HSYNC_COUNTER8.Q)
+	# (HSYNC_COUNTER9.Q & !HSYNC_COUNTER1.Q));
+
+XXL_215 = ((HSYNC_COUNTER9.Q & SHIFTREG7.Q & VSYNC_DISPLAY_ACTIVE & !HSYNC_COUNTER8.Q & !HSYNC_COUNTER7.Q)
+	# (!HSYNC_COUNTER9.Q & SHIFTREG7.Q & VSYNC_DISPLAY_ACTIVE & HSYNC_COUNTER8.Q)
+	# (HSYNC_COUNTER9.Q & SHIFTREG7.Q & VSYNC_DISPLAY_ACTIVE & !HSYNC_COUNTER8.Q & !HSYNC_COUNTER6.Q)
+	# (!HSYNC_COUNTER9.Q & SHIFTREG7.Q & VSYNC_DISPLAY_ACTIVE & CHAR_COL2.Q & HSYNC_COUNTER7.Q & HSYNC_COUNTER6.Q)
+	# (HSYNC_COUNTER9.Q & SHIFTREG7.Q & VSYNC_DISPLAY_ACTIVE & !CHAR_COL1.Q & !CHAR_COL0.Q & !CHAR_COL2.Q & !HSYNC_COUNTER8.Q));
+
+XXL_216 = ((VSYNC_COUNTER4.Q & VSYNC_ZERO & !VSYNC_COUNTER1.Q)
+	# (VSYNC_COUNTER4.Q & VSYNC_ZERO & !VSYNC_COUNTER0.Q)
+	# (!VSYNC_COUNTER4.Q & VSYNC_ZERO & VSYNC_COUNTER2.Q & VSYNC_COUNTER1.Q & VSYNC_COUNTER0.Q & VSYNC_COUNTER3.Q)
+	# (VSYNC_COUNTER4.Q & VSYNC_ZERO & !VSYNC_COUNTER3.Q)
+	# (VSYNC_COUNTER4.Q & VSYNC_ZERO & !VSYNC_COUNTER2.Q));
+
+XXL_217 = ((VSYNC_COUNTER5.Q & VSYNC_ZERO & !VSYNC_COUNTER2.Q)
+	# (VSYNC_COUNTER5.Q & VSYNC_ZERO & !VSYNC_COUNTER1.Q)
+	# (VSYNC_COUNTER5.Q & VSYNC_ZERO & !VSYNC_COUNTER0.Q)
+	# (!VSYNC_COUNTER5.Q & VSYNC_ZERO & VSYNC_COUNTER3.Q & VSYNC_COUNTER2.Q & VSYNC_COUNTER1.Q & VSYNC_COUNTER0.Q & VSYNC_COUNTER4.Q)
+	# (VSYNC_COUNTER5.Q & VSYNC_ZERO & !VSYNC_COUNTER3.Q));
+
+XXL_218 = ((VSYNC_COUNTER6.Q & VSYNC_ZERO & !VSYNC_COUNTER3.Q)
+	# (VSYNC_COUNTER6.Q & VSYNC_ZERO & !VSYNC_COUNTER2.Q)
+	# (VSYNC_COUNTER6.Q & VSYNC_ZERO & !VSYNC_COUNTER1.Q)
+	# (VSYNC_COUNTER6.Q & VSYNC_ZERO & !VSYNC_COUNTER0.Q)
+	# (VSYNC_COUNTER6.Q & VSYNC_ZERO & !VSYNC_COUNTER4.Q));
+
+XXL_219 = ((VSYNC_COUNTER7.Q & VSYNC_ZERO & !VSYNC_COUNTER4.Q)
+	# (VSYNC_COUNTER7.Q & VSYNC_ZERO & !VSYNC_COUNTER3.Q)
+	# (VSYNC_COUNTER7.Q & VSYNC_ZERO & !VSYNC_COUNTER2.Q)
+	# (VSYNC_COUNTER7.Q & VSYNC_ZERO & !VSYNC_COUNTER1.Q)
+	# (VSYNC_COUNTER7.Q & VSYNC_ZERO & !VSYNC_COUNTER5.Q));
+
+XXL_220 = ((VSYNC_COUNTER9.Q & VSYNC_ZERO & !VSYNC_COUNTER6.Q)
+	# (VSYNC_COUNTER9.Q & VSYNC_ZERO & !VSYNC_COUNTER5.Q)
+	# (VSYNC_COUNTER9.Q & VSYNC_ZERO & !VSYNC_COUNTER4.Q)
+	# (VSYNC_COUNTER9.Q & VSYNC_ZERO & !VSYNC_COUNTER3.Q)
+	# (VSYNC_COUNTER9.Q & VSYNC_ZERO & !VSYNC_COUNTER7.Q));
+
+XXL_221 = ((VSYNC_COUNTER9.Q & VSYNC_ZERO & !VSYNC_COUNTER1.Q)
+	# (VSYNC_COUNTER9.Q & VSYNC_ZERO & !VSYNC_COUNTER0.Q)
+	# (!VSYNC_COUNTER9.Q & VSYNC_ZERO & VSYNC_COUNTER2.Q & VSYNC_COUNTER1.Q & VSYNC_COUNTER0.Q & VSYNC_COUNTER8.Q & VSYNC_COUNTER7.Q & VSYNC_COUNTER6.Q & VSYNC_COUNTER5.Q & VSYNC_COUNTER4.Q & VSYNC_COUNTER3.Q)
+	# (VSYNC_COUNTER9.Q & VSYNC_ZERO & !VSYNC_COUNTER8.Q)
+	# (VSYNC_COUNTER9.Q & VSYNC_ZERO & !VSYNC_COUNTER2.Q));
+
+CLK_12M.C = CLK_25M;
+
+CLK_12M.AR = !RESET_IN;
+
+SHIFTREG0.C = !CLK_12M.Q;
+
+SHIFTREG0.AR = !RESET_IN;
+
+SHIFTREG1.C = !CLK_12M.Q;
+
+SHIFTREG1.AR = !RESET_IN;
+
+SHIFTREG2.C = !CLK_12M.Q;
+
+SHIFTREG2.AR = !RESET_IN;
+
+SHIFTREG3.C = !CLK_12M.Q;
+
+SHIFTREG3.AR = !RESET_IN;
+
+SHIFTREG4.C = !CLK_12M.Q;
+
+SHIFTREG4.AR = !RESET_IN;
+
+SHIFTREG5.C = !CLK_12M.Q;
+
+SHIFTREG5.AR = !RESET_IN;
+
+SHIFTREG6.C = !CLK_12M.Q;
+
+SHIFTREG6.AR = !RESET_IN;
+
+SHIFTREG7.C = !CLK_12M.Q;
+
+SHIFTREG7.AR = !RESET_IN;
+
+SYNC_OUT.C = !CLK_12M.Q;
+
+SYNC_OUT.AP = !RESET_IN;
+
+VSYNC_CLOCK_B.C = CLK_12M.Q;
+
+VSYNC_CLOCK_B.AR = !RESET_IN;
+
+VSYNC_CLOCK_A.C = !CLK_12M.Q;
+
+VSYNC_CLOCK_A.AR = !RESET_IN;
+
+HSYNC_COUNTER0.C = CLK_12M.Q;
+
+HSYNC_COUNTER0.AR = !RESET_IN;
+
+HSYNC_COUNTER1.C = CLK_12M.Q;
+
+HSYNC_COUNTER1.AR = !RESET_IN;
+
+HSYNC_COUNTER2.C = CLK_12M.Q;
+
+HSYNC_COUNTER2.AR = !RESET_IN;
+
+CHAR_COL0.C = CLK_12M.Q;
+
+CHAR_COL0.AR = !RESET_IN;
+
+CHAR_COL1.C = CLK_12M.Q;
+
+CHAR_COL1.AR = !RESET_IN;
+
+CHAR_COL2.C = CLK_12M.Q;
+
+CHAR_COL2.AR = !RESET_IN;
+
+HSYNC_COUNTER6.C = CLK_12M.Q;
+
+HSYNC_COUNTER6.AR = !RESET_IN;
+
+HSYNC_COUNTER7.C = CLK_12M.Q;
+
+HSYNC_COUNTER7.AR = !RESET_IN;
+
+HSYNC_COUNTER8.C = CLK_12M.Q;
+
+HSYNC_COUNTER8.AR = !RESET_IN;
+
+HSYNC_COUNTER9.C = CLK_12M.Q;
+
+HSYNC_COUNTER9.AR = !RESET_IN;
+
+PIXEL_OUT.C = !CLK_12M.Q;
+
+PIXEL_OUT.AR = !RESET_IN;
+
+VSYNC_COUNTER0.C = VSYNC_CLOCK_B.Q;
+
+VSYNC_COUNTER0.AR = !RESET_IN;
+
+VSYNC_COUNTER1.C = VSYNC_CLOCK_B.Q;
+
+VSYNC_COUNTER1.AR = !RESET_IN;
+
+VSYNC_COUNTER2.C = VSYNC_CLOCK_B.Q;
+
+VSYNC_COUNTER2.AR = !RESET_IN;
+
+VSYNC_COUNTER3.C = VSYNC_CLOCK_B.Q;
+
+VSYNC_COUNTER3.AR = !RESET_IN;
+
+VSYNC_COUNTER4.C = VSYNC_CLOCK_B.Q;
+
+VSYNC_COUNTER4.AR = !RESET_IN;
+
+VSYNC_COUNTER5.C = VSYNC_CLOCK_B.Q;
+
+VSYNC_COUNTER5.AR = !RESET_IN;
+
+VSYNC_COUNTER6.C = VSYNC_CLOCK_B.Q;
+
+VSYNC_COUNTER6.AR = !RESET_IN;
+
+VSYNC_COUNTER7.C = VSYNC_CLOCK_B.Q;
+
+VSYNC_COUNTER7.AR = !RESET_IN;
+
+VSYNC_COUNTER8.C = VSYNC_CLOCK_B.Q;
+
+VSYNC_COUNTER8.AR = !RESET_IN;
+
+VSYNC_COUNTER9.C = VSYNC_CLOCK_B.Q;
+
+VSYNC_COUNTER9.AR = !RESET_IN;
+
+FONTLINE0.C = VSYNC_CLOCK_B.Q;
+
+FONTLINE1.C = VSYNC_CLOCK_B.Q;
+
+FONTLINE2.C = VSYNC_CLOCK_B.Q;
+
+FONTLINE3.C = VSYNC_CLOCK_B.Q;
+
+
+PLCC44 Pin/Node Placement:
+------------------------------------
+Pin 1  = RESET_IN;
+Pin 4  = PIXEL_OUT; /* MC 16 */
+Pin 5  = SYNC_OUT; /* MC 14 */
+Pin 6  = CLK_12M; /* MC 11 */
+Pin 7  = TDI; /* MC 8 */
+Pin 8  = CHAR_COL0; /* MC 5 */
+Pin 9  = CHAR_COL1; /* MC 4 */
+Pin 11 = CHAR_COL2; /* MC  3 */
+Pin 12 = CHAR_COL3; /* MC  1 */
+Pin 13 = TMS; /* MC 32 */ 
+Pin 14 = CHAR_COL4; /* MC 30 */ 
+Pin 16 = CHAR_COL5; /* MC 25 */ 
+Pin 20 = FONTLINE0; /* MC 19 */ 
+Pin 21 = FONTLINE1; /* MC 17 */ 
+Pin 24 = FONTLINE2; /* MC 33 */ 
+Pin 25 = FONTLINE3; /* MC 35 */ 
+Pin 31 = DIN0; /* MC 46 */ 
+Pin 32 = TCK; /* MC 48 */ 
+Pin 33 = DIN1; /* MC 49 */ 
+Pin 34 = DIN2; /* MC 51 */ 
+Pin 36 = DIN3; /* MC 52 */ 
+Pin 37 = DIN4; /* MC 53 */ 
+Pin 38 = TDO; /* MC 56 */ 
+Pin 39 = DIN5; /* MC 57 */ 
+Pin 40 = DIN6; /* MC 62 */ 
+Pin 41 = DIN7; /* MC 64 */ 
+Pin 43 = CLK_25M;
+PINNODE 330 = VSYNC_ZERO; /* MC 30 Foldback */
+PINNODE 342 = VSYNC_ZERO; /* MC 42 Foldback */
+PINNODE 602 = VSYNC_CLOCK_A; /* MC 2 Feedback */
+PINNODE 606 = HSYNC_COUNTER6; /* MC 6 Feedback */
+PINNODE 607 = XXL_213; /* MC 7 Feedback */
+PINNODE 608 = XXL_211; /* MC 8 Feedback */
+PINNODE 609 = XXL_206; /* MC 9 Feedback */
+PINNODE 610 = XXL_215; /* MC 10 Feedback */
+PINNODE 612 = XXL_212; /* MC 12 Feedback */
+PINNODE 613 = HSYNC_COUNTER7; /* MC 13 Feedback */
+PINNODE 615 = XXL_214; /* MC 15 Feedback */
+PINNODE 618 = VSYNC_COUNTER2; /* MC 18 Feedback */
+PINNODE 620 = VSYNC_COUNTER0; /* MC 20 Feedback */
+PINNODE 621 = VSYNC_COUNTER1; /* MC 21 Feedback */
+PINNODE 622 = VSYNC_COUNTER6; /* MC 22 Feedback */
+PINNODE 623 = XXL_218; /* MC 23 Feedback */
+PINNODE 624 = VSYNC_COUNTER5; /* MC 24 Feedback */
+PINNODE 626 = XXL_217; /* MC 26 Feedback */
+PINNODE 627 = XXL_216; /* MC 27 Feedback */
+PINNODE 628 = VSYNC_COUNTER3; /* MC 28 Feedback */
+PINNODE 629 = VSYNC_COUNTER7; /* MC 29 Feedback */
+PINNODE 632 = VSYNC_COUNTER8; /* MC 32 Feedback */
+PINNODE 634 = VSYNC_COUNTER4; /* MC 34 Feedback */
+PINNODE 638 = FONTLINE_RESET; /* MC 38 Feedback */
+PINNODE 639 = VSYNC_DISPLAY_ACTIVE; /* MC 39 Feedback */
+PINNODE 642 = VSYNC_COUNTER9; /* MC 42 Feedback */
+PINNODE 643 = XXL_207; /* MC 43 Feedback */
+PINNODE 644 = XXL_208; /* MC 44 Feedback */
+PINNODE 645 = XXL_210; /* MC 45 Feedback */
+PINNODE 646 = XXL_221; /* MC 46 Feedback */
+PINNODE 647 = XXL_220; /* MC 47 Feedback */
+PINNODE 648 = XXL_219; /* MC 48 Feedback */
+PINNODE 650 = VSYNC_CLOCK_B; /* MC 50 Feedback */
+PINNODE 651 = HSYNC_COUNTER0; /* MC 51 Feedback */
+PINNODE 652 = SHIFTREG0; /* MC 52 Feedback */
+PINNODE 653 = HSYNC_COUNTER9; /* MC 53 Feedback */
+PINNODE 654 = HSYNC_COUNTER8; /* MC 54 Feedback */
+PINNODE 655 = HSYNC_COUNTER1; /* MC 55 Feedback */
+PINNODE 656 = HSYNC_COUNTER2; /* MC 56 Feedback */
+PINNODE 657 = SHIFTREG7; /* MC 57 Feedback */
+PINNODE 658 = SHIFTREG5; /* MC 58 Feedback */
+PINNODE 659 = SHIFTREG6; /* MC 59 Feedback */
+PINNODE 660 = SHIFTREG4; /* MC 60 Feedback */
+PINNODE 661 = SHIFTREG2; /* MC 61 Feedback */
+PINNODE 662 = SHIFTREG3; /* MC 62 Feedback */
+PINNODE 663 = SHIFTREG1; /* MC 63 Feedback */
+PINNODE 664 = XXL_209; /* MC 64 Feedback */
+
+** Resource Usage **
+
+
+DCERP Field = Summary of Allocations.
+|||||
+|||||_Preset [p,-]       ==  p = PT preset, - No Preset.
+||||
+||||__Reset [g,r,-]      ==  g= Global AR, r = PT reset, - No reset.
+|||
+|||___Clock Enable [e,-] ==  e = Product Term, - always enabled, - none.
+||
+||____Clock [c,g,-],     ==  c = Product term, g = Global term, - No Clock.
+|
+|_____Type [C,D,L,T],    ==  Register type C= combin, D=dff, L=latch, T=tff.
+
+For input only = INPUT.
+
+MCell Pin# Oe   PinDrive  DCERP  FBDrive              DCERP  Foldback   CascadeOut        TotPT output_slew
+MC1   12   on   CHAR_COL3 C----  --                          --         --                1     slow
+MC2   0         --               VSYNC_CLOCK_A        Dc-g-  --         --                2     slow
+MC3   11   on   CHAR_COL2 Dc-g-  --                          --         --                4     slow
+MC4   9    on   CHAR_COL1 Dc-g-  --                          --         --                2     slow
+MC5   8    on   CHAR_COL0 Dc-g-  --                          NA         --                5     slow
+MC6   0         --               HSYNC_COUNTER6       Dc-g-  --         --                4     slow
+MC7   0         --               XXL_213              C----  NA         --                5     slow
+MC8   7    --   TDI       INPUT  XXL_211              C----  NA         --                5     slow
+MC9   0         --               XXL_206              C----  NA         --                5     slow
+MC10  0         --               XXL_215              C----  NA         --                5     slow
+MC11  6    on   CLK_12M   Dg-g-  --                          --         --                1     slow
+MC12  0         --               XXL_212              C----  NA         --                5     slow
+MC13  0         --               HSYNC_COUNTER7       Dc-g-  NA         --                5     slow
+MC14  5    on   SYNC_OUT  Dc--p  --                          NA         --                5     slow
+MC15  0         --               XXL_214              C----  NA         --                5     slow
+MC16  4    on   PIXEL_OUT Dc-g-  --                          --         --                4     slow
+MC17  21   on   FONTLINE1 Dc---  --                          --         --                3     slow
+MC18  0         --               VSYNC_COUNTER2       Dc-g-  --         --                4     slow
+MC19  20   on   FONTLINE0 Dc---  --                          --         --                2     slow
+MC20  19        --               VSYNC_COUNTER0       Dc-g-  --         --                2     slow
+MC21  18        --               VSYNC_COUNTER1       Dc-g-  --         --                3     slow
+MC22  0         --               VSYNC_COUNTER6       Dc-g-  --         --                4     slow
+MC23  0         --               XXL_218              C----  NA         --                5     slow
+MC24  17        --               VSYNC_COUNTER5       Dc-g-  --         --                3     slow
+MC25  16   on   CHAR_COL5 C----  --                          --         --                3     slow
+MC26  0         --               XXL_217              C----  NA         --                5     slow
+MC27  0         --               XXL_216              C----  NA         --                5     slow
+MC28  0         --               VSYNC_COUNTER3       Dc-g-  NA         --                5     slow
+MC29  0         --               VSYNC_COUNTER7       Dc-g-  NA         --                5     slow
+MC30  14   on   CHAR_COL4 C----  --                          VSYNC_ZERO --                3     slow
+MC31  0         --               --                          NA         -> VSYNC_COUNTER8 5     slow
+MC32  13   --   TMS       INPUT  VSYNC_COUNTER8       Dc-g-  NA         --                5     slow
+MC33  24   on   FONTLINE2 Dc---  --                          --         --                4     slow
+MC34  0         --               VSYNC_COUNTER4       Dc-g-  --         --                2     slow
+MC35  25   on   FONTLINE3 Dc---  --                          NA         --                5     slow
+MC36  26        --               --                          --         --                0     slow
+MC37  27        --               --                          --         --                0     slow
+MC38  0         --               FONTLINE_RESET       C----  --         --                2     slow
+MC39  0         --               VSYNC_DISPLAY_ACTIVE C----  --         --                2     slow
+MC40  28        --               --                          --         --                0     slow
+MC41  29        --               --                          --         --                0     slow
+MC42  0         --               VSYNC_COUNTER9       Dc-g-  VSYNC_ZERO --                4     slow
+MC43  0         --               XXL_207              C----  NA         --                5     slow
+MC44  0         --               XXL_208              C----  NA         --                5     slow
+MC45  0         --               XXL_210              C----  NA         --                5     slow
+MC46  31   --   DIN0      INPUT  XXL_221              C----  NA         --                5     slow
+MC47  0         --               XXL_220              C----  NA         --                5     slow
+MC48  32   --   TCK       INPUT  XXL_219              C----  NA         --                5     slow
+MC49  33   --   DIN1      INPUT  --                          --         --                0     slow
+MC50  0         --               VSYNC_CLOCK_B        Dc-g-  --         --                2     slow
+MC51  34   --   DIN2      INPUT  HSYNC_COUNTER0       Dc-g-  --         --                2     slow
+MC52  36   --   DIN3      INPUT  SHIFTREG0            Dc-g-  --         --                2     slow
+MC53  37   --   DIN4      INPUT  HSYNC_COUNTER9       Dc-g-  --         --                3     slow
+MC54  0         --               HSYNC_COUNTER8       Dc-g-  --         --                3     slow
+MC55  0         --               HSYNC_COUNTER1       Dc-g-  --         --                3     slow
+MC56  38   --   TDO       INPUT  HSYNC_COUNTER2       Dc-g-  --         --                4     slow
+MC57  39   --   DIN5      INPUT  SHIFTREG7            Dc-g-  NA         --                5     slow
+MC58  0         --               SHIFTREG5            Dc-g-  NA         --                5     slow
+MC59  0         --               SHIFTREG6            Dc-g-  NA         --                5     slow
+MC60  0         --               SHIFTREG4            Dc-g-  NA         --                5     slow
+MC61  0         --               SHIFTREG2            Dc-g-  NA         --                5     slow
+MC62  40   --   DIN6      INPUT  SHIFTREG3            Dc-g-  NA         --                5     slow
+MC63  0         --               SHIFTREG1            Dc-g-  NA         --                5     slow
+MC64  41   --   DIN7      INPUT  XXL_209              C----  NA         --                5     slow
+MC0   2         --               --                          --         --                0     slow
+MC0   1         RESET_IN  INPUT  --                          --         --                0     slow
+MC0   44        --               --                          --         --                0     slow
+MC0   43        CLK_25M   INPUT  --                          --         --                0     slow
+
+Logic Array Block	Logic Cells	I/O Pins	Foldbacks	TotalPT		FanIN	Cascades
+A: LC1	- LC16		16/16(100%)	8/16(50%)	0/16(0%)	63/80(78%)	(28)	0
+B: LC17	- LC32		15/16(93%)	5/16(31%)	1/16(6%)	62/80(77%)	(20)	1
+C: LC33	- LC48		12/16(75%)	4/16(25%)	1/16(6%)	49/80(61%)	(28)	0
+D: LC49	- LC64		15/16(93%)	8/16(50%)	0/16(0%)	59/80(73%)	(27)	0
+
+Total dedicated input used:	2/4 	(50%)
+Total I/O pins used		25/32 	(78%)
+Total Logic cells used 		59/64 	(92%)
+Total Flip-Flop used 		37/64 	(57%)
+Total Foldback logic used 	2/64 	(3%)
+Total Nodes+FB/MCells 		60/64 	(93%)
+Total cascade used 		1
+Total input pins 		14
+Total output pins 		13
+Total Pts 			233
+Creating pla file C:\VIDEODRV.tt3 with 0 inputs 0 outputs, 0 pins 0 nodes and 0 pterms...
+
+----------------  End fitter, Design FITS
+$Device PLCC44 fits 
+FIT1504 completed in 0.00 seconds

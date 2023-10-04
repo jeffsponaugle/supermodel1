@@ -1,0 +1,231 @@
+{COMPONENT C:\VIDEODRV.SYM
+
+ {ENVIRONMENT
+  {PDIFvrev 3.00}
+  {Program "CUPL(WM) Version 5.0a"}
+  {DBtype "Schematic"}
+  {DBvrev 1.01}
+  {DBtime "Thu Aug 10 21:36:48 2023 "}
+  {DBunit "MIL"}
+  {DBgrid 10}
+  {Lyrstr "WIRES" 1 "BUS" 1 "GATE" 2 "IEEE" 2 "PINFUN" 3 "PINNUM" 1 
+          "PINNAM" 6 "PINCON" 4 "REFDES" 2 "ATTR" 6 "SDOT" 1 
+          "DEVICE" 5 "OUTLIN" 5 "ATTR2" 6 "NOTES" 6 "NETNAM" 4 
+          "CMPNAM" 5 "BORDER" 5}
+ }
+
+ {USER
+  {VIEW
+   {Mode SYMB}
+   {Nlst OPEN}
+   {Vw 0 0 2}
+   {Lv 12 2 2 2 0 0 2 2 2 2 0 0 2 1 2 0 0 0 0}
+   {Gs 10 10}
+  }
+ }
+
+ {DISPLAY
+  [Ly "PINNUM"]
+  [Ls "SOLID"][Wd 0]
+  [Ts 15][Tj "LC"][Tr 0][Tm "N"]
+ }
+
+ {SYMBOL
+  {PIN_DEF
+   [Ly "PINCON"]
+   {P CLK_25M {Pt "INPUT"}{Lq 0}{Ploc 100 380}}
+   {P RESET_IN {Pt "INPUT"}{Lq 0}{Ploc 100 340}}
+   {P V64OR32M {Pt "INPUT"}{Lq 0}{Ploc 100 320}}
+   {P PIXEL_OU {Pt "INPUT"}{Lq 0}{Ploc 100 300}}
+   {P SYNC_OUT {Pt "INPUT"}{Lq 0}{Ploc 100 280}}
+   {P CLK_12M {Pt "INPUT"}{Lq 0}{Ploc 100 260}}
+   {P FONTLI0 {Pt "INPUT"}{Lq 0}{Ploc 100 240}}
+   {P FONTLI1 {Pt "INPUT"}{Lq 0}{Ploc 100 220}}
+   {P FONTLI2 {Pt "INPUT"}{Lq 0}{Ploc 100 200}}
+   {P FONTLI3 {Pt "INPUT"}{Lq 0}{Ploc 100 180}}
+   {P DIN0 {Pt "INPUT"}{Lq 0}{Ploc 100 160}}
+   {P DIN1 {Pt "INPUT"}{Lq 0}{Ploc 100 140}}
+   {P DIN2 {Pt "INPUT"}{Lq 0}{Ploc 100 120}}
+   {P DIN3 {Pt "INPUT"}{Lq 0}{Ploc 100 100}}
+   {P DIN4 {Pt "INPUT"}{Lq 0}{Ploc 100 80}}
+   {P DIN5 {Pt "INPUT"}{Lq 0}{Ploc 100 60}}
+   {P DIN6 {Pt "INPUT"}{Lq 0}{Ploc 100 40}}
+   {P DIN7 {Pt "INPUT"}{Lq 0}{Ploc 100 20}}
+   {P CHAR_C0 {Pt "I/O"}{Lq 0}{Ploc 350 20}}
+   {P CHAR_C1 {Pt "I/O"}{Lq 0}{Ploc 350 40}}
+   {P CHAR_C2 {Pt "I/O"}{Lq 0}{Ploc 350 60}}
+   {P CHAR_C3 {Pt "I/O"}{Lq 0}{Ploc 350 80}}
+   {P CHAR_C4 {Pt "I/O"}{Lq 0}{Ploc 350 100}}
+   {P CHAR_C5 {Pt "I/O"}{Lq 0}{Ploc 350 120}}
+  }
+
+  {PKG
+   [Ly "REFDES"]
+   [Ts 25][Tj "CB"][Tr 0][Tm "N"]
+   {Rdl 225 410}
+
+   [Ly "PINNUM"]
+   [Ts 15][Tj "RC"]
+   {Pnl 120 390}
+   [Ts 15][Tj "RC"]
+   {Pnl 120 350}
+   {Pnl 120 330}
+   {Pnl 120 310}
+   {Pnl 120 290}
+   {Pnl 120 270}
+   {Pnl 120 250}
+   {Pnl 120 230}
+   {Pnl 120 210}
+   {Pnl 120 190}
+   {Pnl 120 170}
+   {Pnl 120 150}
+   {Pnl 120 130}
+   {Pnl 120 110}
+   {Pnl 120 90}
+   {Pnl 120 70}
+   {Pnl 120 50}
+   {Pnl 120 30}
+   [Ts 15][Tj "LC"]
+   {Pnl 330 30}
+   {Pnl 330 50}
+   {Pnl 330 70}
+   {Pnl 330 90}
+   {Pnl 330 110}
+   {Pnl 330 130}
+
+   {Sd A 43 1 2 4 5 6 20 21 24 25 31 33 34 36 37 39 40 41 8 9 11 12 14 16}
+  }
+
+  {PIC
+   [Ly "GATE"]
+   [Ts 15][Tj "LC"][Tr 0][Tm "N"]
+   {R 130 400 320 0}
+   {L 130 380 100 380}
+   {L 130 390 140 380 130 370}
+   {L 130 340 100 340}
+   {L 130 320 100 320}
+   {L 130 300 100 300}
+   {L 130 280 100 280}
+   {L 130 260 100 260}
+   {L 130 240 100 240}
+   {L 130 220 100 220}
+   {L 130 200 100 200}
+   {L 130 180 100 180}
+   {L 130 160 100 160}
+   {L 130 140 100 140}
+   {L 130 120 100 120}
+   {L 130 100 100 100}
+   {L 130 80 100 80}
+   {L 130 60 100 60}
+   {L 130 40 100 40}
+   {L 130 20 100 20}
+   {L 320 20 350 20}
+   {L 320 40 350 40}
+   {L 320 60 350 60}
+   {L 320 80 350 80}
+   {L 320 100 350 100}
+   {L 320 120 350 120}
+   [Ly "PINNAM"]
+   [Tj "LC"]
+   {T "CLK_25M" 140 380}
+   {T "RESET_IN" 140 340}
+   {T "V64OR32M" 140 320}
+   {T "PIXEL_OU" 140 300}
+   {T "SYNC_OUT" 140 280}
+   {T "CLK_12M" 140 260}
+   {T "FONTLI0" 140 240}
+   {T "FONTLI1" 140 220}
+   {T "FONTLI2" 140 200}
+   {T "FONTLI3" 140 180}
+   {T "DIN0" 140 160}
+   {T "DIN1" 140 140}
+   {T "DIN2" 140 120}
+   {T "DIN3" 140 100}
+   {T "DIN4" 140 80}
+   {T "DIN5" 140 60}
+   {T "DIN6" 140 40}
+   {T "DIN7" 140 20}
+   [Tj "RC"]
+   {T "CHAR_C0" 310 20}
+   {T "CHAR_C1" 310 40}
+   {T "CHAR_C2" 310 60}
+   {T "CHAR_C3" 310 80}
+   {T "CHAR_C4" 310 100}
+   {T "CHAR_C5" 310 120}
+   [Ly "DEVICE"]
+   [Tj "CT"]
+   {T "F1504ISPPLCC44" 225 -10}
+  }
+
+  {ATR
+   {IN
+    {Org 100 20}
+    {Ty 255}
+   }
+   {EX
+    [Ly "ATTR2"]
+    [Ts 12][Tj "CT"][Tr 0][Tm "N"]
+    {At PLD C:\VIDEODRV 225 400}
+   }
+  }
+ }
+
+ {DETAIL
+  {ANNOTATE
+  }
+
+  {NET_DEF
+   {N CLK_25M
+   }
+   {N RESET_IN
+   }
+   {N V64OR32M
+   }
+   {N PIXEL_OU
+   }
+   {N SYNC_OUT
+   }
+   {N CLK_12M
+   }
+   {N FONTLI0
+   }
+   {N FONTLI1
+   }
+   {N FONTLI2
+   }
+   {N FONTLI3
+   }
+   {N DIN0
+   }
+   {N DIN1
+   }
+   {N DIN2
+   }
+   {N DIN3
+   }
+   {N DIN4
+   }
+   {N DIN5
+   }
+   {N DIN6
+   }
+   {N DIN7
+   }
+   {N CHAR_C0
+   }
+   {N CHAR_C1
+   }
+   {N CHAR_C2
+   }
+   {N CHAR_C3
+   }
+   {N CHAR_C4
+   }
+   {N CHAR_C5
+   }
+  }
+
+  {SUBCOMP
+  }
+ }
+}
