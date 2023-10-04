@@ -9,7 +9,7 @@ This work is Open-Source, Open-Hardware, and free for anyone to use.
 
 + Z80 CPU DIP 40, 1-16 MHz software adjustable based on installed oscillator. 
 
-+  With 28.332 oscillator you can get original spec 1.77Mhz operation.
+  - With 28.332 oscillator you can get original spec 1.77Mhz operation.
 
 + 512K SRAM, bankable across all 4 16K regions, write protectable as well.
 
