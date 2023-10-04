@@ -43,7 +43,7 @@ We have completed the design and build of the first prototype PCBs.  The video s
 
 The first prototype PCB has been built and tested!  It works with the Level 2 R/S 1.3 ROMs allowing BASIC execution.  Next up will be testing with a few different variations of the EIs.
 
-Once validation of all of the interconnects and compatibilty a new PCB will be build in the original case form factor.
+Once validation of all of the interconnects and compatibilty is complete a new PCB will be built in the original case form factor.
 
 On the current PCB power usage is about 2.6 watts running VGA output and an 8Mhz CPU.
 
