@@ -34,6 +34,8 @@ This work is Open-Source, Open-Hardware, and free for anyone to use.
 
 + Onboard power regulation from DC input 7-36V.  Switching regulator, 94% efficient.  
 
++ CPLDS are all ATF1504/1508 family CPLD in PLCC form factor, 5V, 7ns, JTAG flashable.
+
 ### Status as of Oct 4, 2023:
 
 We have completed the design and build of the first prototype PCBs.  The video section was built on a seperate PCB from the main CPU to allow for revisions to the video section if needed... and it turns out to not be an issue.  We were able to get both NTSC composite output and VGA output from the video interface.  
@@ -51,9 +53,9 @@ On the current PCB power usage is about 2.6 watts running VGA output and an 8Mhz
 
 ### Technical Notes
 
-Video memory is shared between the CPU and the Video Drive Processor (the CPLD that creates video) via a shared timeslot clock.  The timeslot clock runs at 12.5875 Mhz (25.175/2), and each full clock period is allocated to either the CPU or the VDP.  This clock perios is much smaller than the minumum access time needed by either requested so it allows completion of the transaction within to allocated time without adding wait_states or skipping pixels on the output.  This gives access to the video memory from the CPU without the aritifacts present on the original TRS-80 model 1.
+Video memory is shared between the CPU and the Video Drive Processor (the CPLD that creates video) via a shared timeslot clock.  The timeslot clock runs at 12.5875 Mhz (25.175/2), and each full clock period is allocated to either the CPU or the VDP.  This clock period is much smaller than the minumum access time needed by either request so it allows completion of the transaction within to allocated time without adding wait_states or skipping pixels on the output. This gives access to the video memory from the CPU without the aritifacts present on the original TRS-80 model 1.
 
-Video out is either NTSC B&W Composite *or* VGA 640x480.  Due to resource limiations in the CPLD it is not possible to do both at the same time.  The actual video pixel output is 512x384 using a 8x12 font resource in the default 64x16/32x16 text mode.  Support is also possible for 80x24 using 640x480 using 8x10 font resouces, as well as a bitmap 512x384 direct bit access.  All output is currently B&W only.
+Video out is either NTSC B&W Composite *or* VGA 640x480.  Due to resource limiations in the CPLD it is not possible to do both at the same time. The active video pixel output is 512x384 using a 8x12 font resource in the default 64x16/32x16 text mode.  Support is also possible for 80x24 using 640x480 using 8x10 font resouces, as well as a bitmap 512x384 direct bit access.  All output is currently B&W only.
 
 
 (Authors:  Jeff Sponaugle, Neil Bradley)
