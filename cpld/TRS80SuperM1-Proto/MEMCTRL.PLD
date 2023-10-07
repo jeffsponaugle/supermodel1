@@ -60,7 +60,7 @@ Pin[76]    = RTC_CS;
 Pin[77]    = RTC_AS;
 Pin[79]    = RTC_DS;
 Pin[80]    = RTC_A_LATCH;
-Pin[81]    = UNUSED1_IO;
+Pin[81]    = EI_RAS;
 Pin[52]    = UNUSED2_IO;
 
 
@@ -114,7 +114,7 @@ CLK_DIV16.ck = CLK_DIV8;
 */
 
 
-Z80_CLK = (!SYSTEM_CONFIG1 & !SYSTEM_CONFIG0 & CLK_DIV8)
+Z80_CLK = (!SYSTEM_CONFIG1 & !SYSTEM_CONFIG0 & CLK_DIV16)
         # (!SYSTEM_CONFIG1 & SYSTEM_CONFIG0 & CLK_DIV8)
         # (SYSTEM_CONFIG1 & !SYSTEM_CONFIG0 & CLK_DIV4)
         # (SYSTEM_CONFIG1 & SYSTEM_CONFIG0 & CLK_DIV2);
@@ -129,7 +129,8 @@ ISIOACCESS = !Z80_IOREQ  & Z80_RFSH;
 
 
 MMAP_HARDWARE_ACCESS = !REGION0_CONFIG7 & ISMEMORYACCESS & 
-                                        (cpu_address_bus:'h'38XX
+                                        ( cpu_address_bus:'h'37XX
+                                       # cpu_address_bus:'h'38XX
                                        # cpu_address_bus:'h'39XX
                                        # cpu_address_bus:'h'3AXX
                                        # cpu_address_bus:'h'3BXX
@@ -228,6 +229,10 @@ VID_MEM_ACCESS = !(!Z80_MEMREQ & MMAP_HARDWARE_ACCESS & (cpu_address_bus:'h'3CXX
                                                     # cpu_address_bus:'h'3EXX 
                                                     # cpu_address_bus:'h'3FXX 
                                                     ));
+
+EI_CS = !(!Z80_MEMREQ & MMAP_HARDWARE_ACCESS & (cpu_address_bus:'h'37XX));
+
+EI_RAS = EI_CS;
 
 /* We will delay the VID_MEM_CS signal until the next rising Z80_CLK edge so we can syncronize with a VID_RW signal */
 
