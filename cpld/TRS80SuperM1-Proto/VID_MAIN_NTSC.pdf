@@ -5,7 +5,7 @@
   {Program "CUPL(WM) Version 5.0a"}
   {DBtype "Schematic"}
   {DBvrev 1.01}
-  {DBtime "Sun Oct 08 12:57:21 2023 "}
+  {DBtime "Mon Oct 09 16:37:09 2023 "}
   {DBunit "MIL"}
   {DBgrid 10}
   {Lyrstr "WIRES" 1 "BUS" 1 "GATE" 2 "IEEE" 2 "PINFUN" 3 "PINNUM" 1 
@@ -33,41 +33,42 @@
  {SYMBOL
   {PIN_DEF
    [Ly "PINCON"]
-   {P CLK_25M {Pt "INPUT"}{Lq 0}{Ploc 100 760}}
-   {P RESET_IN {Pt "INPUT"}{Lq 0}{Ploc 100 720}}
-   {P V64OR32M {Pt "INPUT"}{Lq 0}{Ploc 100 700}}
-   {P VID_MEM_ {Pt "INPUT"}{Lq 0}{Ploc 100 680}}
-   {P VID_RW {Pt "INPUT"}{Lq 0}{Ploc 100 660}}
-   {P FONTLI0 {Pt "INPUT"}{Lq 0}{Ploc 100 640}}
-   {P FONTLI1 {Pt "INPUT"}{Lq 0}{Ploc 100 620}}
-   {P FONTLI2 {Pt "INPUT"}{Lq 0}{Ploc 100 600}}
-   {P FONTLI3 {Pt "INPUT"}{Lq 0}{Ploc 100 580}}
-   {P CPU_A0 {Pt "INPUT"}{Lq 0}{Ploc 100 560}}
-   {P CPU_A1 {Pt "INPUT"}{Lq 0}{Ploc 100 540}}
-   {P VID_CP6 {Pt "INPUT"}{Lq 0}{Ploc 100 520}}
-   {P Z80_WAIT {Pt "INPUT"}{Lq 0}{Ploc 100 500}}
-   {P MODE0 {Pt "INPUT"}{Lq 0}{Ploc 100 480}}
-   {P MODE1 {Pt "INPUT"}{Lq 0}{Ploc 100 460}}
-   {P MODE2 {Pt "INPUT"}{Lq 0}{Ploc 100 440}}
-   {P VM_ADDR_ {Pt "INPUT"}{Lq 0}{Ploc 100 420}}
-   {P DIN0 {Pt "INPUT"}{Lq 0}{Ploc 100 400}}
-   {P DIN1 {Pt "INPUT"}{Lq 0}{Ploc 100 380}}
-   {P DIN2 {Pt "INPUT"}{Lq 0}{Ploc 100 360}}
-   {P DIN3 {Pt "INPUT"}{Lq 0}{Ploc 100 340}}
-   {P DIN4 {Pt "INPUT"}{Lq 0}{Ploc 100 320}}
-   {P DIN5 {Pt "INPUT"}{Lq 0}{Ploc 100 300}}
-   {P DIN6 {Pt "INPUT"}{Lq 0}{Ploc 100 280}}
-   {P DIN7 {Pt "INPUT"}{Lq 0}{Ploc 100 260}}
-   {P NTSC_SYN {Pt "INPUT"}{Lq 0}{Ploc 100 240}}
-   {P NTSC_PIX {Pt "INPUT"}{Lq 0}{Ploc 100 220}}
-   {P CPU_D0 {Pt "INPUT"}{Lq 0}{Ploc 100 200}}
-   {P CPU_D1 {Pt "INPUT"}{Lq 0}{Ploc 100 180}}
-   {P CPU_D2 {Pt "INPUT"}{Lq 0}{Ploc 100 160}}
-   {P CPU_D3 {Pt "INPUT"}{Lq 0}{Ploc 100 140}}
-   {P CPU_D4 {Pt "INPUT"}{Lq 0}{Ploc 100 120}}
-   {P CPU_D5 {Pt "INPUT"}{Lq 0}{Ploc 100 100}}
-   {P CPU_D6 {Pt "INPUT"}{Lq 0}{Ploc 100 80}}
-   {P CPU_D7 {Pt "INPUT"}{Lq 0}{Ploc 100 60}}
+   {P CLK_25M {Pt "INPUT"}{Lq 0}{Ploc 100 780}}
+   {P RESET_IN {Pt "INPUT"}{Lq 0}{Ploc 100 740}}
+   {P V64OR32M {Pt "INPUT"}{Lq 0}{Ploc 100 720}}
+   {P VID_MEM_ {Pt "INPUT"}{Lq 0}{Ploc 100 700}}
+   {P VID_RW {Pt "INPUT"}{Lq 0}{Ploc 100 680}}
+   {P FONTLI0 {Pt "INPUT"}{Lq 0}{Ploc 100 660}}
+   {P FONTLI1 {Pt "INPUT"}{Lq 0}{Ploc 100 640}}
+   {P FONTLI2 {Pt "INPUT"}{Lq 0}{Ploc 100 620}}
+   {P FONTLI3 {Pt "INPUT"}{Lq 0}{Ploc 100 600}}
+   {P CPU_A0 {Pt "INPUT"}{Lq 0}{Ploc 100 580}}
+   {P CPU_A1 {Pt "INPUT"}{Lq 0}{Ploc 100 560}}
+   {P VID_CP6 {Pt "INPUT"}{Lq 0}{Ploc 100 540}}
+   {P Z80_WAIT {Pt "INPUT"}{Lq 0}{Ploc 100 520}}
+   {P MODE0 {Pt "INPUT"}{Lq 0}{Ploc 100 500}}
+   {P MODE1 {Pt "INPUT"}{Lq 0}{Ploc 100 480}}
+   {P MODE2 {Pt "INPUT"}{Lq 0}{Ploc 100 460}}
+   {P VM_ADDR_ {Pt "INPUT"}{Lq 0}{Ploc 100 440}}
+   {P DIN0 {Pt "INPUT"}{Lq 0}{Ploc 100 420}}
+   {P DIN1 {Pt "INPUT"}{Lq 0}{Ploc 100 400}}
+   {P DIN2 {Pt "INPUT"}{Lq 0}{Ploc 100 380}}
+   {P DIN3 {Pt "INPUT"}{Lq 0}{Ploc 100 360}}
+   {P DIN4 {Pt "INPUT"}{Lq 0}{Ploc 100 340}}
+   {P DIN5 {Pt "INPUT"}{Lq 0}{Ploc 100 320}}
+   {P DIN6 {Pt "INPUT"}{Lq 0}{Ploc 100 300}}
+   {P DIN7 {Pt "INPUT"}{Lq 0}{Ploc 100 280}}
+   {P NTSC_SYN {Pt "INPUT"}{Lq 0}{Ploc 100 260}}
+   {P NTSC_PIX {Pt "INPUT"}{Lq 0}{Ploc 100 240}}
+   {P CPU_D0 {Pt "INPUT"}{Lq 0}{Ploc 100 220}}
+   {P CPU_D1 {Pt "INPUT"}{Lq 0}{Ploc 100 200}}
+   {P CPU_D2 {Pt "INPUT"}{Lq 0}{Ploc 100 180}}
+   {P CPU_D3 {Pt "INPUT"}{Lq 0}{Ploc 100 160}}
+   {P CPU_D4 {Pt "INPUT"}{Lq 0}{Ploc 100 140}}
+   {P CPU_D5 {Pt "INPUT"}{Lq 0}{Ploc 100 120}}
+   {P CPU_D6 {Pt "INPUT"}{Lq 0}{Ploc 100 100}}
+   {P CPU_D7 {Pt "INPUT"}{Lq 0}{Ploc 100 80}}
+   {P FM_WE {Pt "INPUT"}{Lq 0}{Ploc 100 60}}
    {P VID_CP5 {Pt "INPUT"}{Lq 0}{Ploc 100 40}}
    {P VID_IO_C {Pt "INPUT"}{Lq 0}{Ploc 100 20}}
    {P FONTSEL0 {Pt "I/O"}{Lq 0}{Ploc 360 20}}
@@ -94,20 +95,20 @@
    {P VGA_HSYN {Pt "I/O"}{Lq 0}{Ploc 360 440}}
    {P VGA_VSYN {Pt "I/O"}{Lq 0}{Ploc 360 460}}
    {P VGA_VIDE {Pt "I/O"}{Lq 0}{Ploc 360 480}}
-   {P FM_WE {Pt "I/O"}{Lq 0}{Ploc 360 500}}
-   {P FM_OE {Pt "I/O"}{Lq 0}{Ploc 360 520}}
-   {P VID_CP4 {Pt "I/O"}{Lq 0}{Ploc 360 540}}
+   {P FM_OE {Pt "I/O"}{Lq 0}{Ploc 360 500}}
+   {P VID_CP4 {Pt "I/O"}{Lq 0}{Ploc 360 520}}
   }
 
   {PKG
    [Ly "REFDES"]
    [Ts 25][Tj "CB"][Tr 0][Tm "N"]
-   {Rdl 230 790}
+   {Rdl 230 810}
 
    [Ly "PINNUM"]
    [Ts 15][Tj "RC"]
-   {Pnl 120 770}
+   {Pnl 120 790}
    [Ts 15][Tj "RC"]
+   {Pnl 120 750}
    {Pnl 120 730}
    {Pnl 120 710}
    {Pnl 120 690}
@@ -171,17 +172,17 @@
    {Pnl 340 490}
    {Pnl 340 510}
    {Pnl 340 530}
-   {Pnl 340 550}
 
-   {Sd A 83 1 2 4 5 6 8 9 10 17 18 22 29 33 34 35 44 50 51 52 54 55 56 57 58 60 61 67 68 69 70 73 74 75 76 81 84 11 12 15 16 20 21 24 25 27 28 30 31 36 37 39 40 41 45 46 48 49 63 64 65 77 79 80}
+   {Sd A 83 1 2 4 5 6 8 9 10 17 18 22 29 33 34 35 44 50 51 52 54 55 56 57 58 60 61 67 68 69 70 73 74 75 76 77 81 84 11 12 15 16 20 21 24 25 27 28 30 31 36 37 39 40 41 45 46 48 49 63 64 65 79 80}
   }
 
   {PIC
    [Ly "GATE"]
    [Ts 15][Tj "LC"][Tr 0][Tm "N"]
-   {R 130 780 330 0}
-   {L 130 760 100 760}
-   {L 130 770 140 760 130 750}
+   {R 130 800 330 0}
+   {L 130 780 100 780}
+   {L 130 790 140 780 130 770}
+   {L 130 740 100 740}
    {L 130 720 100 720}
    {L 130 700 100 700}
    {L 130 680 100 680}
@@ -244,44 +245,44 @@
    {L 330 480 360 480}
    {L 330 500 360 500}
    {L 330 520 360 520}
-   {L 330 540 360 540}
    [Ly "PINNAM"]
    [Tj "LC"]
-   {T "CLK_25M" 140 760}
-   {T "RESET_IN" 140 720}
-   {T "V64OR32M" 140 700}
-   {T "VID_MEM_" 140 680}
-   {T "VID_RW" 140 660}
-   {T "FONTLI0" 140 640}
-   {T "FONTLI1" 140 620}
-   {T "FONTLI2" 140 600}
-   {T "FONTLI3" 140 580}
-   {T "CPU_A0" 140 560}
-   {T "CPU_A1" 140 540}
-   {T "VID_CP6" 140 520}
-   {T "Z80_WAIT" 140 500}
-   {T "MODE0" 140 480}
-   {T "MODE1" 140 460}
-   {T "MODE2" 140 440}
-   {T "VM_ADDR_" 140 420}
-   {T "DIN0" 140 400}
-   {T "DIN1" 140 380}
-   {T "DIN2" 140 360}
-   {T "DIN3" 140 340}
-   {T "DIN4" 140 320}
-   {T "DIN5" 140 300}
-   {T "DIN6" 140 280}
-   {T "DIN7" 140 260}
-   {T "NTSC_SYN" 140 240}
-   {T "NTSC_PIX" 140 220}
-   {T "CPU_D0" 140 200}
-   {T "CPU_D1" 140 180}
-   {T "CPU_D2" 140 160}
-   {T "CPU_D3" 140 140}
-   {T "CPU_D4" 140 120}
-   {T "CPU_D5" 140 100}
-   {T "CPU_D6" 140 80}
-   {T "CPU_D7" 140 60}
+   {T "CLK_25M" 140 780}
+   {T "RESET_IN" 140 740}
+   {T "V64OR32M" 140 720}
+   {T "VID_MEM_" 140 700}
+   {T "VID_RW" 140 680}
+   {T "FONTLI0" 140 660}
+   {T "FONTLI1" 140 640}
+   {T "FONTLI2" 140 620}
+   {T "FONTLI3" 140 600}
+   {T "CPU_A0" 140 580}
+   {T "CPU_A1" 140 560}
+   {T "VID_CP6" 140 540}
+   {T "Z80_WAIT" 140 520}
+   {T "MODE0" 140 500}
+   {T "MODE1" 140 480}
+   {T "MODE2" 140 460}
+   {T "VM_ADDR_" 140 440}
+   {T "DIN0" 140 420}
+   {T "DIN1" 140 400}
+   {T "DIN2" 140 380}
+   {T "DIN3" 140 360}
+   {T "DIN4" 140 340}
+   {T "DIN5" 140 320}
+   {T "DIN6" 140 300}
+   {T "DIN7" 140 280}
+   {T "NTSC_SYN" 140 260}
+   {T "NTSC_PIX" 140 240}
+   {T "CPU_D0" 140 220}
+   {T "CPU_D1" 140 200}
+   {T "CPU_D2" 140 180}
+   {T "CPU_D3" 140 160}
+   {T "CPU_D4" 140 140}
+   {T "CPU_D5" 140 120}
+   {T "CPU_D6" 140 100}
+   {T "CPU_D7" 140 80}
+   {T "FM_WE" 140 60}
    {T "VID_CP5" 140 40}
    {T "VID_IO_C" 140 20}
    [Tj "RC"]
@@ -309,9 +310,8 @@
    {T "VGA_HSYN" 320 440}
    {T "VGA_VSYN" 320 460}
    {T "VGA_VIDE" 320 480}
-   {T "FM_WE" 320 500}
-   {T "FM_OE" 320 520}
-   {T "VID_CP4" 320 540}
+   {T "FM_OE" 320 500}
+   {T "VID_CP4" 320 520}
    [Ly "DEVICE"]
    [Tj "CT"]
    {T "F1508ISPPLCC84" 230 -10}
@@ -325,7 +325,7 @@
    {EX
     [Ly "ATTR2"]
     [Ts 12][Tj "CT"][Tr 0][Tm "N"]
-    {At PLD C:\USERS\JBS\DOCUMENTS\SRC\SUPERMODEL1\CPLD\TRS80SUPERM1-PROTO\VID_MAIN_NTSC 230 780}
+    {At PLD C:\USERS\JBS\DOCUMENTS\SRC\SUPERMODEL1\CPLD\TRS80SUPERM1-PROTO\VID_MAIN_NTSC 230 800}
    }
   }
  }
@@ -405,6 +405,8 @@
    }
    {N CPU_D7
    }
+   {N FM_WE
+   }
    {N VID_CP5
    }
    {N VID_IO_C
@@ -456,8 +458,6 @@
    {N VGA_VSYN
    }
    {N VGA_VIDE
-   }
-   {N FM_WE
    }
    {N FM_OE
    }

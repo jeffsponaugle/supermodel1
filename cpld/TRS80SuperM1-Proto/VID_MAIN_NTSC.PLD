@@ -299,8 +299,15 @@ FM_OE = (VDP_OR_FONT_ACCESS) & (!VDP_OR_FONT_ACCESS # VID_MEM_CS # !VID_RW);
            ONLY if VDP_OR_FONT_ACCESS == 1 ( CPU is configured for FONT RAM access) 
            AND VID_MEM_CS==0 and VID_RW==0
 */
+NODE FM_WE_DELAY;
 
-FM_WE = !VDP_OR_FONT_ACCESS # VID_MEM_CS # VID_RW;
+FM_WE_DELAY.d = !VDP_OR_FONT_ACCESS # VID_MEM_CS # VID_RW;
+FM_WE_DELAY.ck = CLK_12M;
+FM_WE_DELAY.ap = (!VDP_OR_FONT_ACCESS # VID_MEM_CS # VID_RW);
+
+FM_WE.d = FM_WE_DELAY;
+FM_WE.ck = !CLK_12M;
+FM_WD.ap = FM_WE_DELAY;
 
 /*
    CP_FM_DATA_OE - Enable both the address lines and the data lines going from the CPU to the FONT RAM.  This should be enabled

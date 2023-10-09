@@ -31,6 +31,7 @@ PIN  20 =  FM_A10
 PIN  21 =  FM_A11 
 PIN  79 =  FM_OE 
 PIN  77 =  FM_WE 
+PIN 145 =  FM_WE_DELAY 
 PIN   6 =  FONTLINE0 
 PIN   8 =  FONTLINE1 
 PIN   9 =  FONTLINE2 
@@ -215,10 +216,27 @@ FM_OE =>
     VCONFB7 & VID_MEM_CS
   # VCONFB7 & !VID_RW
 
-FM_WE =>
+FM_WD =>
+    FM_WE_DELAY
+
+FM_WE.d  =>
+    FM_WE_DELAY
+
+FM_WE.ck  =>
+    !CLK_12M
+
+FM_WE_DELAY.d  =>
     !VCONFB7
   # VID_MEM_CS
   # VID_RW
+
+FM_WE_DELAY.ap  =>
+    !VCONFB7
+  # VID_MEM_CS
+  # VID_RW
+
+FM_WE_DELAY.ck  =>
+    CLK_12M
 
 FONTLINE0.d  =>
     !FONTLINE0 & !FONTLINE_RESET
