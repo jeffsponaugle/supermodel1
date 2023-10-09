@@ -252,11 +252,20 @@ VID_MEM_CS.ck = Z80_CLK;
 */
 NODE VID_RW_GATE;
 
+/*
 VID_RW_GATE.d  = VID_MEM_ACCESS # !Z80_RFSH # !Z80_RD;
 VID_RW_GATE.ap = VID_MEM_ACCESS;
 VID_RW_GATE.ck = Z80_CLK;
 
-VID_RW = (!VID_MEM_ACCESS & VID_RW_GATE) # (!VID_IO_CS & Z80_WR);
+VID_RW = (!VID_MEM_ACESS & VID_RW_GATE) # (!VID_IO_CS & Z80_WR);
+
+*/
+
+VID_RW_GATE.d  = VID_MEM_ACCESS # !Z80_RFSH # !Z80_RD;
+VID_RW_GATE.ap = VID_MEM_ACCESS;
+VID_RW_GATE.ck = Z80_CLK;
+
+VID_RW = !((!VID_MEM_ACCESS&Z80_RFSH&Z80_RD) # (!VID_IO_CS & !Z80_WR));
 
 VID_IO_CS = !(ISIOACCESS &  (cpu_address_bus:'h'XX7A
                             # cpu_address_bus:'h'XX7B
