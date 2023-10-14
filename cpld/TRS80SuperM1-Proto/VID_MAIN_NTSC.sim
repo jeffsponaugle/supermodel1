@@ -216,27 +216,24 @@ FM_OE =>
     VCONFB7 & VID_MEM_CS
   # VCONFB7 & !VID_RW
 
-FM_WD =>
-    FM_WE_DELAY
-
 FM_WE.d  =>
     FM_WE_DELAY
 
+FM_WE.ap  =>
+    !RESET_IN
+
 FM_WE.ck  =>
-    !CLK_12M
+    CLK_12M
 
 FM_WE_DELAY.d  =>
-    !VCONFB7
-  # VID_MEM_CS
-  # VID_RW
+    0 
 
 FM_WE_DELAY.ap  =>
-    !VCONFB7
-  # VID_MEM_CS
-  # VID_RW
+    !FM_WE
+  # !RESET_IN
 
 FM_WE_DELAY.ck  =>
-    CLK_12M
+    VCONFB7 & !VID_MEM_CS & !VID_RW
 
 FONTLINE0.d  =>
     !FONTLINE0 & !FONTLINE_RESET
