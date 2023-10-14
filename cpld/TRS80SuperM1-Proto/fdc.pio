@@ -1,0 +1,75 @@
+.program fdcinterface
+.side_set 3 OPT PINDIRS
+
+
+;  This program will be running on all 4 state machines, and before exection is started each of the state
+;  machines will have the 'y' register loaded with the state machine number (0,1,2, or 3).  Each state machine
+;  will compare the first two input pins from [IN], which are A0 and A1 to that preloaded value in Y.  Only one
+;  of the 4 state machine will match a particular A0/A1 value, and that state machine will then process 
+;  the request.  The other 3 state machines that don't match will restart at the init: entry point and wait for
+;  the chip select signal to go back high and then low.
+;
+;  The init: entry point also has a mov x,osr that save the value current in the osr in the 'x' register.  
+;  This is used to store a copy of the last value sent out of the 
+
+;  The contiguous io pins are:
+
+;       [CS,RW,A1,A0,D7,D6,D5,D4,D3,D2,D1,D0] = GPIO[7,8,9,10,11,12,13,14,15,16,17,18]
+;       and the groups for each SM are, parenthisis indicates selection:
+;       [IN]      = [CS,RW,(A1,A0,D7,D6,D5,D4,D3,D2,D1,D0)] 10 pins 9-18
+;       [OUT]     = [CS,RW,A1,A0,(D7,D6,D5,D4,D3,D2,D1,D0)] 8 pins 11-18
+;       [PINDIRS] = [CS,RW,A1,A0,(D7,D6,D5,D4,D3),D2,D1,D0] 5 pins 11-15
+;       [SIDESET] = [CS,RW,A1,A0,D7,D6,D5,D4,D3,(D2,D1,D0)] 3 pins 16-18
+;       JMPPIN    = [CS,(RW),A1,A0,D7,D6,D5,D4,D3,D2,D1,D0] 1 pin 8
+;
+;
+;       The ".side_set 3 OPT PINDIRS" above is used to setup the last three data bit pins (D2,D1,D0)
+;          as side-set pins, and in particular as side set pins where the setting is the pin direction.
+;          These 3 pins in the side-set are combined with the 5 in the PINDIRS group to all us to set the
+;          pin direction of all 8 databits in a single instruction: SET PINDIRS 0b00000 SIDE 0b000.
+;          This trick is needed because the SET instruction can only set 5 pin or 5 pin directions at a 
+;          time, so by adding three more pin directions as sideset you get all 8 direction setting changes
+;          in a single pass.
+
+
+init: 
+    mov x, osr              ; on startup, osr will have the 'default' value for this partuicular SM register
+    wait 1 gpio 7           ; wait for CS to be high, so we don't start in the middle of an acccess
+.wrap_target
+restart:
+    wait 0 gpio 7           ; Wait for falling edge of Chip Select line which indicates an access
+    in pins, 2              ; Read in the first two pins from the [IN] group, which are A1 and A0
+    mov osr, x              ; Since we are going to use 'x' for the compare, lets save the current x in osr
+    mov x, isr              ; put the two bits we got from A1,A0 into x
+    mov isr, null           ; clear out the isr (is this needed?)
+    jmp x!=y, init          ; if x!=y then this state machine is not the one for this request, so go to init
+    jmp pin readop          ; if we fall through this is the SM for this request.  Lets just to readop if the 
+                            ; R/W signal is high.  (R/W is assigned to the jmppin)
+writeop:        
+                            ; if we fall through here, this is write op
+    in pins,10              ; read in all 10 input pins: [A1,A0,D7-D0] into isr
+    push noblock            ; put the isr in the RX_FIFO, but don't block if it is full
+    irq set 0 _rel          ; signal the irq for this particular state machine to tell the CPU someting 
+                            ; has be placed in the RX_FIFO
+    jmp init                ; we are done with the write operation, so we can go back to init to wait for
+                            ; chip select to go back to 1.  remember osr has the backup of what was in x
+                            ; but that will get restored in the first line after init:
+readop:
+    mov x, osr               ; restore x from osr, so now x has the current register value we save from the 
+                            ; last time TX_FIFO was used.                       
+    set pindirs 0b11111 side 0b111                       
+    pull noblock            ; grap a value from TX_FIFO and put it in osr.  If TX_FIFO is empty, put 
+                            ; the value from x in osr.  This means if the TX_FIFO is empty, we will return 
+                            ; the same register value we did on the previous read
+    mov x,osr               ; save a copy of what we are going to send out in the x register (prevous read)
+    out pins,8              ; output the osr value to the data bus pins
+    wait 1 gpio 7           ; wait for the CS signal to go back high indicating the request is done
+    set pindirs 0b00000 side 0b000      ; output the osr, which is all zero, to set all pindirs (which are the data bus pins) 
+                                        ; to 0=output disable
+                            ; We are now done with the read operation, and since we have already waited
+                            ; for the CS to go high, we can just loop back to where we are waiting for
+                            ; CS to go low again.  Reminder at this point X has the previous read value.
+.wrap
+
+
+
